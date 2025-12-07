@@ -1,70 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import ParallaxSection from "@/components/interactive/ParallaxSection";
-import { Users, Projector, Wifi, UtensilsCrossed, Wine, Calendar, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
-
-// Zoznam všetkých fotiek interiéru
-const interiorPhotos = [
-  { src: "/images/gallery/interior-1.jpeg", alt: "Interiér kaštieľa 1" },
-  { src: "/images/gallery/interior-2.jpg", alt: "Interiér kaštieľa 2" },
-  { src: "/images/gallery/interior-3.png", alt: "Interiér kaštieľa 3" },
-  { src: "/images/gallery/interior-4.jpg", alt: "Interiér kaštieľa 4" },
-  { src: "/images/gallery/interior-5.jpg", alt: "Interiér kaštieľa 5" },
-  { src: "/images/gallery/interior-6.jpg", alt: "Interiér kaštieľa 6" },
-  { src: "/images/gallery/interior-7.jpg", alt: "Interiér kaštieľa 7" },
-  { src: "/images/gallery/interior-8.jpg", alt: "Interiér kaštieľa 8" },
-  { src: "/images/gallery/interior-9.jpg", alt: "Interiér kaštieľa 9" },
-  { src: "/images/gallery/interior-10.jpg", alt: "Interiér kaštieľa 10" },
-  { src: "/images/gallery/interior-11.jpg", alt: "Interiér kaštieľa 11" },
-  { src: "/images/gallery/interior-12.jpg", alt: "Interiér kaštieľa 12" },
-  { src: "/images/gallery/interior-13.jpg", alt: "Interiér kaštieľa 13" },
-  { src: "/images/gallery/interior-14.jpg", alt: "Interiér kaštieľa 14" },
-  { src: "/images/gallery/interior-15.jpg", alt: "Interiér kaštieľa 15" },
-  { src: "/images/gallery/interior-16.jpg", alt: "Interiér kaštieľa 16" },
-  { src: "/images/gallery/interior-17.jpg", alt: "Interiér kaštieľa 17" },
-  { src: "/images/gallery/interior-18.jpg", alt: "Interiér kaštieľa 18" },
-  { src: "/images/gallery/interior-19.jpg", alt: "Interiér kaštieľa 19" },
-  { src: "/images/gallery/interior-20.jpg", alt: "Interiér kaštieľa 20" },
-  { src: "/images/gallery/interior-21.jpg", alt: "Interiér kaštieľa 21" },
-  { src: "/images/gallery/interior-22.jpg", alt: "Interiér kaštieľa 22" },
-  { src: "/images/gallery/interior-23.jpg", alt: "Interiér kaštieľa 23" },
-  { src: "/images/gallery/interior-24.jpg", alt: "Interiér kaštieľa 24" },
-  { src: "/images/gallery/interior-25.jpg", alt: "Interiér kaštieľa 25" },
-  { src: "/images/gallery/interior-26.jpg", alt: "Interiér kaštieľa 26" },
-  { src: "/images/gallery/interior-27.jpg", alt: "Interiér kaštieľa 27" },
-  { src: "/images/gallery/interior-28.jpg", alt: "Interiér kaštieľa 28" },
-  { src: "/images/gallery/interior-29.jpg", alt: "Interiér kaštieľa 29" },
-  { src: "/images/gallery/interior-30.jpg", alt: "Interiér kaštieľa 30" },
-  { src: "/images/gallery/interior-31.jpg", alt: "Interiér kaštieľa 31" },
-  { src: "/images/gallery/interior-32.jpg", alt: "Interiér kaštieľa 32" },
-  { src: "/images/gallery/interior-33.jpg", alt: "Interiér kaštieľa 33" },
-];
-
-const INITIAL_COUNT = 8;
+import { Users, Projector, Wifi, UtensilsCrossed, Wine, Calendar } from "lucide-react";
 
 export default function GalleryPage() {
   const t = useTranslations("gallery");
-  const [showAll, setShowAll] = useState(false);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const displayedPhotos = showAll ? interiorPhotos : interiorPhotos.slice(0, INITIAL_COUNT);
-
-  const openLightbox = (index: number) => {
-    setCurrentIndex(index);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => setLightboxOpen(false);
-  
-  const goToPrev = () => setCurrentIndex((prev) => (prev === 0 ? interiorPhotos.length - 1 : prev - 1));
-  const goToNext = () => setCurrentIndex((prev) => (prev === interiorPhotos.length - 1 ? 0 : prev + 1));
 
   const conferenceFeatures = [
     { icon: Users, label: t("conference.features.capacity") },
@@ -84,10 +28,10 @@ export default function GalleryPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/gallery-hero.jpeg"
+        backgroundImage="/images/gallery-hero.jpg"
       />
 
-      {/* Conference Section - DOČASNE SKRYTÉ
+      {/* Conference Section */}
       <section className="py-24 md:py-32 bg-cream">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -120,6 +64,7 @@ export default function GalleryPage() {
                   {t("conference.description")}
                 </p>
 
+                {/* Features */}
                 <div className="grid grid-cols-3 gap-4 pt-6">
                   {conferenceFeatures.map((feature, i) => {
                     const Icon = feature.icon;
@@ -138,9 +83,8 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
-      */}
 
-      {/* Culture Section - DOČASNE SKRYTÉ
+      {/* Culture Section */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
@@ -159,6 +103,7 @@ export default function GalleryPage() {
             </p>
           </FadeInOnScroll>
 
+          {/* Events Calendar */}
           <FadeInOnScroll delay={0.2}>
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center gap-2 mb-6">
@@ -197,9 +142,8 @@ export default function GalleryPage() {
           </FadeInOnScroll>
         </div>
       </section>
-      */}
 
-      {/* Wine Cellar Section - DOČASNE SKRYTÉ
+      {/* Wine Cellar Section */}
       <ParallaxSection
         backgroundImage="/images/wine-cellar-large.jpg"
         speed={0.3}
@@ -219,7 +163,6 @@ export default function GalleryPage() {
           </FadeInOnScroll>
         </div>
       </ParallaxSection>
-      */}
 
       {/* Gallery Grid */}
       <section className="py-24 md:py-32 bg-cream">
@@ -228,129 +171,31 @@ export default function GalleryPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
               Fotogaléria
             </h2>
-            <p className="text-charcoal/60 mt-4 max-w-2xl mx-auto">
-              Prezrite si interiéry a priestory nášho renesančného kaštieľa
-            </p>
           </FadeInOnScroll>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {displayedPhotos.map((photo, i) => (
-              <FadeInOnScroll key={i} delay={i * 0.03}>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <FadeInOnScroll key={i} delay={i * 0.05}>
                 <div
-                  onClick={() => openLightbox(showAll ? i : i)}
                   className={`relative overflow-hidden group cursor-pointer ${
-                    i === 0 || i === 5 ? "md:col-span-2 md:row-span-2" : ""
+                    i === 1 || i === 6 ? "md:col-span-2 md:row-span-2" : ""
                   }`}
                 >
                   <div className="relative aspect-square">
                     <Image
-                      src={photo.src}
-                      alt={photo.alt}
+                      src={`/images/gallery/interior-${i}.jpg`}
+                      alt={`Interiér ${i}`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors duration-300 flex items-center justify-center">
-                      <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={32} />
-                    </div>
+                    <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors duration-300" />
                   </div>
                 </div>
               </FadeInOnScroll>
             ))}
           </div>
-
-          {/* Show More Button */}
-          {!showAll && interiorPhotos.length > INITIAL_COUNT && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-center mt-12"
-            >
-              <button
-                onClick={() => setShowAll(true)}
-                className="inline-flex items-center gap-2 bg-gold/20 hover:bg-gold text-gold hover:text-charcoal px-8 py-3 rounded-full transition-all duration-300 font-medium uppercase tracking-wider text-sm cursor-pointer"
-              >
-                Zobraziť všetky fotky ({interiorPhotos.length})
-              </button>
-            </motion.div>
-          )}
-
-          {showAll && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-center mt-12"
-            >
-              <button
-                onClick={() => setShowAll(false)}
-                className="inline-flex items-center gap-2 bg-charcoal/10 hover:bg-charcoal text-charcoal hover:text-white px-8 py-3 rounded-full transition-all duration-300 font-medium uppercase tracking-wider text-sm cursor-pointer"
-              >
-                Zobraziť menej
-              </button>
-            </motion.div>
-          )}
         </div>
       </section>
-
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-charcoal/95 flex items-center justify-center"
-            onClick={closeLightbox}
-          >
-            {/* Close button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-50"
-            >
-              <X size={32} />
-            </button>
-
-            {/* Navigation */}
-            <button
-              onClick={(e) => { e.stopPropagation(); goToPrev(); }}
-              className="absolute left-4 md:left-8 text-white/60 hover:text-white transition-colors z-50 p-2"
-            >
-              <ChevronLeft size={48} />
-            </button>
-
-            <button
-              onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              className="absolute right-4 md:right-8 text-white/60 hover:text-white transition-colors z-50 p-2"
-            >
-              <ChevronRight size={48} />
-            </button>
-
-            {/* Image */}
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-[90vw] h-[80vh] max-w-6xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={interiorPhotos[currentIndex].src}
-                alt={interiorPhotos[currentIndex].alt}
-                fill
-                className="object-contain"
-                sizes="90vw"
-              />
-            </motion.div>
-
-            {/* Counter */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm">
-              {currentIndex + 1} / {interiorPhotos.length}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }

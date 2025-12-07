@@ -34,7 +34,7 @@ export default function ContactPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/contact-hero.jpeg"
+        backgroundImage="/images/contact-hero.jpg"
       />
 
       <section className="py-24 md:py-32 bg-cream">
@@ -134,8 +134,9 @@ export default function ContactPage() {
                           {t("info.address")}
                         </h4>
                         <p className="text-charcoal/60">
-                          SNP 113/1<br />
-                          956 18 Bošany
+                          Kaštieľ Bošany<br />
+                          956 18 Bošany<br />
+                          Slovensko
                         </p>
                       </div>
                     </div>
@@ -149,10 +150,10 @@ export default function ContactPage() {
                           {t("info.phone")}
                         </h4>
                         <a
-                          href="tel:+421907726726"
+                          href="tel:+421000000000"
                           className="text-charcoal/60 hover:text-gold transition-colors duration-300"
                         >
-                          +421 907 726 726
+                          +421 000 000 000
                         </a>
                       </div>
                     </div>
@@ -166,10 +167,10 @@ export default function ContactPage() {
                           {t("info.email")}
                         </h4>
                         <a
-                          href="mailto:jmiskeje@gmail.com"
+                          href="mailto:info@inintegrum.sk"
                           className="text-charcoal/60 hover:text-gold transition-colors duration-300"
                         >
-                          jmiskeje@gmail.com
+                          info@inintegrum.sk
                         </a>
                       </div>
                     </div>
@@ -191,34 +192,19 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Občianske združenie */}
-                <div className="bg-white p-8 shadow-lg border-l-4 border-gold">
-                  <h3 className="font-serif text-xl text-charcoal mb-4">
-                    Občianske združenie
-                  </h3>
-                  <p className="text-charcoal/60 text-sm mb-4">
-                    Kaštieľ Bošany je spravovaný občianskym združením In Integrum, ktoré sa už 17 rokov venuje záchrane a obnove tejto historickej pamiatky.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-charcoal/40 block">Názov:</span>
-                      <span className="text-charcoal font-medium">IN INTEGRUM</span>
-                    </div>
-                    <div>
-                      <span className="text-charcoal/40 block">IČO:</span>
-                      <span className="text-charcoal font-medium">42024757</span>
-                    </div>
-                    <div>
-                      <span className="text-charcoal/40 block">DIČ:</span>
-                      <span className="text-charcoal font-medium">2022449737</span>
-                    </div>
-                    <div>
-                      <span className="text-charcoal/40 block">Sídlo:</span>
-                      <span className="text-charcoal font-medium">SNP 113/1, 956 18 Bošany</span>
-                    </div>
-                  </div>
+                {/* Map Placeholder */}
+                <div className="relative aspect-video bg-slate-castle/10 overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641.0!2d18.15!3d48.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQm_FoWFueQ!5e0!3m2!1ssk!2ssk!4v1234567890"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                  />
                 </div>
-
 
                 {/* Newsletter */}
                 <div className="bg-slate-castle p-8">

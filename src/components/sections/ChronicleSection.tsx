@@ -79,8 +79,8 @@ export default function ChronicleSection() {
                   className="object-cover"
                 />
               </div>
-              {/* Decorative frame - hidden on mobile to prevent overflow */}
-              <div className="hidden md:block absolute -bottom-6 -right-6 w-full h-full border-2 border-gold -z-10" />
+              {/* Decorative frame */}
+              <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-gold -z-10" />
             </div>
           </FadeInOnScroll>
         </div>

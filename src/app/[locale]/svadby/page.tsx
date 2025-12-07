@@ -123,8 +123,7 @@ export default function WeddingsPage() {
                     className="object-cover"
                   />
                 </div>
-                {/* Decorative frame - hidden on mobile to prevent overflow */}
-                <div className="hidden md:block absolute -bottom-6 -left-6 w-full h-full border-2 border-gold -z-10" />
+                <div className="absolute -bottom-6 -left-6 w-full h-full border-2 border-gold -z-10" />
               </div>
             </FadeInOnScroll>
           </div>

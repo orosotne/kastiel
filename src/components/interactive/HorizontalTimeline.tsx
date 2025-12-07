@@ -89,25 +89,25 @@ export default function HorizontalTimeline({
         </div>
       )}
 
-      {/* Navigation Arrows - hidden on small mobile, visible on larger screens */}
+      {/* Navigation Arrows */}
       <button
         onClick={() => scroll("left")}
-        className={`absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-label="Scroll left"
       >
-        <ChevronLeft size={20} className="md:w-6 md:h-6" />
+        <ChevronLeft size={24} />
       </button>
 
       <button
         onClick={() => scroll("right")}
-        className={`absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-label="Scroll right"
       >
-        <ChevronRight size={20} className="md:w-6 md:h-6" />
+        <ChevronRight size={24} />
       </button>
 
       {/* Timeline Container */}
@@ -173,11 +173,10 @@ export default function HorizontalTimeline({
 
       {/* Scroll Hint */}
       <div className="flex justify-center mt-6 gap-2">
-        <span className="text-charcoal/40 text-xs md:text-sm flex items-center gap-1 md:gap-2">
-          <ChevronLeft size={14} className="md:w-4 md:h-4" />
-          <span className="hidden sm:inline">Scrollujte pre zobrazenie celej histórie</span>
-          <span className="sm:hidden">Scrollujte →</span>
-          <ChevronRight size={14} className="md:w-4 md:h-4" />
+        <span className="text-charcoal/40 text-sm flex items-center gap-2">
+          <ChevronLeft size={16} />
+          Scrollujte pre zobrazenie celej histórie
+          <ChevronRight size={16} />
         </span>
       </div>
     </div>
