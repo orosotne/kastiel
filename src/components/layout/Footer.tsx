@@ -37,7 +37,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/renesancny_kastiel_bosany/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-ivory/20 hover:border-gold hover:text-gold transition-colors duration-300"
@@ -74,34 +74,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Contact Column - Občianske združenie */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-6">{t("contact")}</h4>
+            <h4 className="font-serif text-lg text-white mb-6">Občianske združenie</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-ivory/70 text-sm">
                 <MapPin size={18} className="text-gold mt-0.5 flex-shrink-0" />
                 <span>
-                  Kaštieľ Bošany<br />
-                  956 18 Bošany<br />
-                  Slovensko
+                  IN INTEGRUM<br />
+                  SNP 113/1<br />
+                  956 18 Bošany
                 </span>
               </li>
-              <li>
-                <a
-                  href="tel:+421000000000"
-                  className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
-                >
-                  <Phone size={18} className="text-gold flex-shrink-0" />
-                  +421 000 000 000
-                </a>
+              <li className="flex items-start gap-3 text-ivory/70 text-sm">
+                <span className="text-gold flex-shrink-0 text-xs font-medium mt-0.5">IČO</span>
+                <span>42024757</span>
+              </li>
+              <li className="flex items-start gap-3 text-ivory/70 text-sm">
+                <span className="text-gold flex-shrink-0 text-xs font-medium mt-0.5">DIČ</span>
+                <span>2022449737</span>
               </li>
               <li>
                 <a
-                  href="mailto:info@inintegrum.sk"
+                  href="mailto:jmiskeje@gmail.com"
                   className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
                 >
                   <Mail size={18} className="text-gold flex-shrink-0" />
-                  info@inintegrum.sk
+                  jmiskeje@gmail.com
                 </a>
               </li>
             </ul>
@@ -138,11 +137,8 @@ export default function Footer() {
             {t("copyright")}
           </p>
           <div className="flex gap-6 text-ivory/50 text-xs">
-            <Link href="#" className="hover:text-gold transition-colors duration-300">
+            <Link href={`/${locale}/privacy-policy`} className="hover:text-gold transition-colors duration-300">
               Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-gold transition-colors duration-300">
-              Terms of Use
             </Link>
           </div>
         </div>

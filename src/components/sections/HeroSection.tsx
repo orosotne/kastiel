@@ -18,15 +18,19 @@ export default function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        {/* Video s obrázkom ako poster/fallback */}
+        {/* Video s obrázkom ako poster/fallback - optimalizované pre rýchle načítanie */}
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover"
           poster="/images/Hero_image.jpeg"
         >
+          {/* WebM pre moderné prehliadače (menšia veľkosť) */}
+          <source src="/videos/hero_video.webm" type="video/webm" />
+          {/* MP4 fallback */}
           <source src="/videos/hero_video.mp4" type="video/mp4" />
         </video>
         
@@ -40,7 +44,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="max-w-4xl"
+          className="max-w-4xl bg-charcoal/30 backdrop-blur-sm px-8 py-10 md:px-12 md:py-14 rounded-2xl border border-white/10"
         >
           {/* Decorative line */}
           <motion.div

@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Kaštieľ Bošany",
+  "name_for_model": "kastiel_bosany",
+  "description_for_human": "Information about Bošany Castle - a Renaissance wedding venue and historical monument in Slovakia.",
+  "description_for_model": "Kaštieľ Bošany is a 16th-century Renaissance castle in Bošany, Slovakia. It's managed by civic association In Integrum and serves as a wedding venue, event space, and tourist attraction. The castle features distinctive polygonal towers, historic parkland, and unique mascots including alpacas. Restoration has been ongoing since 2007.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://inintegrum.sk/openapi.yaml"
+  },
+  "logo_url": "https://inintegrum.sk/icon-512.png",
+  "contact_email": "jmiskeje@gmail.com",
+  "legal_info_url": "https://inintegrum.sk/sk/privacy-policy"
+}
+

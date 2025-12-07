@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -56,18 +57,18 @@ export default function Header() {
           <Link href={`/${locale}`} className="relative z-10">
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="flex flex-col items-start"
+              className="relative"
             >
-              <span className={`font-serif text-2xl md:text-3xl tracking-wide transition-colors duration-300 ${
-                isScrolled ? "text-charcoal" : "text-white"
-              }`}>
-                In Integrum
-              </span>
-              <span className={`text-xs uppercase tracking-[0.3em] transition-colors duration-300 ${
-                isScrolled ? "text-gold" : "text-gold-light"
-              }`}>
-                Kaštieľ Bošany
-              </span>
+              <Image
+                src="/kastiel-bosany-logo.svg"
+                alt="Kaštieľ Bošany - In Integrum"
+                width={240}
+                height={80}
+                className={`h-16 md:h-[72px] w-auto transition-all duration-300 ${
+                  isScrolled ? "brightness-0" : "brightness-0 invert"
+                }`}
+                priority
+              />
             </motion.div>
           </Link>
 

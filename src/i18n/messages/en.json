@@ -35,12 +35,12 @@
   },
   "services": {
     "interior": {
-      "title": "Conferences & Culture",
-      "description": "Hall for 120 guests, gallery and technical facilities in historical attire.",
-      "cta": "Learn more about rental"
+      "title": "Photo Gallery",
+      "description": "Discover the beauty of the Renaissance castle through the lens. Interiors, exteriors and the atmosphere of history.",
+      "cta": "View gallery"
     },
     "exterior": {
-      "title": "Weddings & Events",
+      "title": "Weddings",
       "description": "Your day in a Renaissance park, under the castle towers.",
       "cta": "Wedding offer"
     }
@@ -104,8 +104,8 @@
   },
   "gallery": {
     "hero": {
-      "title": "Gallery & Conferences",
-      "subtitle": "Spaces for culture and business"
+      "title": "Spaces & Events",
+      "subtitle": "Photos of spaces and events at the castle"
     },
     "conference": {
       "title": "Conference Hall",
@@ -141,6 +141,41 @@
       "address": "Address",
       "phone": "Phone",
       "email": "Email"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "Privacy Policy",
+      "subtitle": "Personal Data Processing Policy"
+    },
+    "intro": "The civic association IN INTEGRUM values your privacy and is committed to protecting your personal data in accordance with GDPR regulations and Slovak data protection laws.",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "controller": {
+        "title": "Data Controller",
+        "content": "The data controller is the civic association IN INTEGRUM, ID: 42024757, with registered office at SNP 113/1, 956 18 Bošany, Slovak Republic."
+      },
+      "data": {
+        "title": "What Data We Collect",
+        "content": "We collect the following personal data:\n• Contact form: name, email, phone, message content\n• Newsletter: email address\n• Reservation form: name, email, phone, event date\n\nThe purpose of processing is to communicate with you, handle your inquiries and send newsletters (only with your consent)."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Our website uses only essential technical cookies for proper functioning of the site. We do not use marketing or third-party analytical cookies."
+      },
+      "rights": {
+        "title": "Your Rights",
+        "content": "You have the right to:\n• Access your personal data\n• Rectification of incorrect data\n• Erasure of data (right to be forgotten)\n• Restriction of processing\n• Data portability\n• Object to processing\n• Withdraw consent at any time"
+      },
+      "contact": {
+        "title": "Contact for Questions",
+        "content": "If you have any questions regarding the processing of your personal data, contact us at jmiskeje@gmail.com or in writing at the association's registered address."
+      }
+    },
+    "ozInfo": {
+      "title": "Controller Details",
+      "name": "Name",
+      "address": "Address"
     }
   }
 }

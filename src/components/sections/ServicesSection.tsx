@@ -11,21 +11,16 @@ export default function ServicesSection() {
   const t = useTranslations("services");
   const locale = useLocale();
 
-  // Nahraďte obrázky reálnymi fotkami:
-  // - /images/conference-hall.jpg (konferenčná sála)
-  // - /images/wedding-park.jpg (svadba v parku)
   const services = [
     {
       key: "interior",
       href: `/${locale}/galeria`,
-      image: null, // placeholder
-      placeholder: "🎨",
+      image: "/images/gallery/interior-1.jpeg",
     },
     {
       key: "exterior",
       href: `/${locale}/svadby`,
-      image: null, // placeholder
-      placeholder: "💒",
+      image: "/images/weddings/wedding-1.jpg",
     },
   ];
 
@@ -45,19 +40,13 @@ export default function ServicesSection() {
                   transition={{ duration: 0.5 }}
                   className="relative aspect-[4/3] overflow-hidden"
                 >
-                  {/* Image or Placeholder */}
-                  {service.image ? (
-                    <Image
-                      src={service.image}
-                      alt={t(`${service.key}.title`)}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-charcoal/60 to-slate-castle flex items-center justify-center">
-                      <span className="text-6xl opacity-30">{service.placeholder}</span>
-                    </div>
-                  )}
+                  {/* Image */}
+                  <Image
+                    src={service.image}
+                    alt={t(`${service.key}.title`)}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                   
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />

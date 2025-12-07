@@ -35,12 +35,12 @@
   },
   "services": {
     "interior": {
-      "title": "Konferenzen & Kultur",
-      "description": "Saal für 120 Gäste, Galerie und technische Einrichtungen im historischen Gewand.",
-      "cta": "Mehr über die Vermietung erfahren"
+      "title": "Fotogalerie",
+      "description": "Entdecken Sie die Schönheit des Renaissance-Schlosses durch die Linse. Innenräume, Außenbereiche und die Atmosphäre der Geschichte.",
+      "cta": "Galerie ansehen"
     },
     "exterior": {
-      "title": "Hochzeiten & Veranstaltungen",
+      "title": "Hochzeiten",
       "description": "Ihr Tag in einem Renaissance-Park, unter den Schlosstürmen.",
       "cta": "Hochzeitsangebot"
     }
@@ -104,8 +104,8 @@
   },
   "gallery": {
     "hero": {
-      "title": "Galerie & Konferenzen",
-      "subtitle": "Räume für Kultur und Business"
+      "title": "Räume & Events",
+      "subtitle": "Fotos von Räumen und Veranstaltungen im Schloss"
     },
     "conference": {
       "title": "Konferenzsaal",
@@ -141,6 +141,41 @@
       "address": "Adresse",
       "phone": "Telefon",
       "email": "E-Mail"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "Datenschutz",
+      "subtitle": "Datenschutzrichtlinie"
+    },
+    "intro": "Der Bürgerverein IN INTEGRUM schätzt Ihre Privatsphäre und verpflichtet sich, Ihre personenbezogenen Daten gemäß der DSGVO und den slowakischen Datenschutzgesetzen zu schützen.",
+    "lastUpdated": "Letzte Aktualisierung",
+    "sections": {
+      "controller": {
+        "title": "Verantwortlicher",
+        "content": "Der Verantwortliche für die Verarbeitung personenbezogener Daten ist der Bürgerverein IN INTEGRUM, ID: 42024757, mit Sitz in SNP 113/1, 956 18 Bošany, Slowakische Republik."
+      },
+      "data": {
+        "title": "Welche Daten wir erheben",
+        "content": "Wir erheben folgende personenbezogene Daten:\n• Kontaktformular: Name, E-Mail, Telefon, Nachrichteninhalt\n• Newsletter: E-Mail-Adresse\n• Reservierungsformular: Name, E-Mail, Telefon, Veranstaltungsdatum\n\nZweck der Verarbeitung ist die Kommunikation mit Ihnen, Bearbeitung Ihrer Anfragen und Versand von Newslettern (nur mit Ihrer Einwilligung)."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Unsere Website verwendet nur technisch notwendige Cookies für das ordnungsgemäße Funktionieren der Seite. Wir verwenden keine Marketing- oder analytischen Cookies von Drittanbietern."
+      },
+      "rights": {
+        "title": "Ihre Rechte",
+        "content": "Sie haben das Recht auf:\n• Zugang zu Ihren personenbezogenen Daten\n• Berichtigung unrichtiger Daten\n• Löschung der Daten (Recht auf Vergessenwerden)\n• Einschränkung der Verarbeitung\n• Datenübertragbarkeit\n• Widerspruch gegen die Verarbeitung\n• Widerruf der Einwilligung jederzeit"
+      },
+      "contact": {
+        "title": "Kontakt für Fragen",
+        "content": "Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns unter jmiskeje@gmail.com oder schriftlich an die Adresse des Vereinssitzes."
+      }
+    },
+    "ozInfo": {
+      "title": "Angaben zum Verantwortlichen",
+      "name": "Name",
+      "address": "Adresse"
     }
   }
 }

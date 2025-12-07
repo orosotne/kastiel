@@ -35,12 +35,12 @@
   },
   "services": {
     "interior": {
-      "title": "Kongresy & Kultúra",
-      "description": "Sála pre 120 hostí, galéria a technické zázemie v historickom šate.",
-      "cta": "Zistiť viac o prenájme"
+      "title": "Fotogaléria",
+      "description": "Objavte krásu renesančného kaštieľa cez objektív. Interiéry, exteriéry a atmosféra histórie.",
+      "cta": "Prezrieť galériu"
     },
     "exterior": {
-      "title": "Svadby & Podujatia",
+      "title": "Svadby",
       "description": "Váš deň v renesančnom parku, pod vežami kaštieľa.",
       "cta": "Svadobná ponuka"
     }
@@ -104,8 +104,8 @@
   },
   "gallery": {
     "hero": {
-      "title": "Galéria & Konferencie",
-      "subtitle": "Priestory pre kultúru a biznis"
+      "title": "Priestory a Eventy",
+      "subtitle": "Fotografie priestorov a udalostí v kaštieli"
     },
     "conference": {
       "title": "Konferenčná sála",
@@ -141,6 +141,41 @@
       "address": "Adresa",
       "phone": "Telefón",
       "email": "Email"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "Ochrana osobných údajov",
+      "subtitle": "Zásady spracovania osobných údajov"
+    },
+    "intro": "Občianske združenie IN INTEGRUM si váži vaše súkromie a zaväzuje sa chrániť vaše osobné údaje v súlade s nariadením GDPR a zákonom č. 18/2018 Z. z. o ochrane osobných údajov.",
+    "lastUpdated": "Posledná aktualizácia",
+    "sections": {
+      "controller": {
+        "title": "Prevádzkovateľ",
+        "content": "Prevádzkovateľom osobných údajov je občianske združenie IN INTEGRUM, IČO: 42024757, so sídlom SNP 113/1, 956 18 Bošany, Slovenská republika."
+      },
+      "data": {
+        "title": "Aké údaje zbierame",
+        "content": "Zbierame nasledujúce osobné údaje:\n• Kontaktný formulár: meno, email, telefón, obsah správy\n• Newsletter: emailová adresa\n• Rezervačný formulár: meno, email, telefón, dátum podujatia\n\nÚčelom spracovania je komunikácia s vami, vybavenie vašich dopytov a zasielanie noviniek (len s vaším súhlasom)."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Naša webová stránka používa iba nevyhnutné technické cookies pre správne fungovanie stránky. Nepoužívame marketingové ani analytické cookies tretích strán."
+      },
+      "rights": {
+        "title": "Vaše práva",
+        "content": "Máte právo na:\n• Prístup k vašim osobným údajom\n• Opravu nesprávnych údajov\n• Vymazanie údajov (právo byť zabudnutý)\n• Obmedzenie spracovania\n• Prenosnosť údajov\n• Namietanie proti spracovaniu\n• Odvolanie súhlasu kedykoľvek"
+      },
+      "contact": {
+        "title": "Kontakt pre otázky",
+        "content": "Ak máte akékoľvek otázky ohľadom spracovania vašich osobných údajov, kontaktujte nás na email jmiskeje@gmail.com alebo písomne na adresu sídla združenia."
+      }
+    },
+    "ozInfo": {
+      "title": "Údaje prevádzkovateľa",
+      "name": "Názov",
+      "address": "Sídlo"
     }
   }
 }
