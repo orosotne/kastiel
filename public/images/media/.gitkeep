@@ -1,0 +1,22 @@
+# Priečinok pre logá médií a video thumbnaily
+# 
+# Nahrajte sem:
+#
+# LOGÁ MÉDIÍ (PNG, preferované transparentné pozadie):
+# - sme.png
+# - pravda.png
+# - rtvs.png
+# - my-topolcany.png
+# - novycas.png
+# (alebo iné médiá, ktoré o vás písali)
+#
+# VIDEO THUMBNAILY (JPG):
+# - video-thumb-1.jpg
+# - video-thumb-2.jpg
+# - video-thumb-3.jpg
+# (náhľady pre YouTube videá, ideálne 16:9)
+#
+# TIP: Ak nemáte thumbnaily, môžete použiť automaticky generované
+# z YouTube: https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg
+
+

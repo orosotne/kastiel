@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "title": "In Integrum – Schloss Bošany",
+    "description": "Renaissance-Schloss Bošany - ein Ort, an dem Geschichte zum Leben erwacht. Hochzeiten, Konferenzen, Galerie und kulturelle Veranstaltungen."
+  },
+  "navigation": {
+    "home": "Startseite",
+    "story": "Geschichte",
+    "weddings": "Hochzeiten",
+    "gallery": "Galerie",
+    "contact": "Kontakt",
+    "reserve": "Reservieren"
+  },
+  "hero": {
+    "title": "In Integrum",
+    "subtitle": "Schloss Bošany: Wiederhergestelltes Erbe",
+    "motto": "Geschichte soll nicht konserviert werden. Sie soll zum Leben erweckt werden.",
+    "scroll": "Entdecken Sie die Geschichte"
+  },
+  "phoenix": {
+    "title": "17 Jahre Widerstand und Wiederaufbau",
+    "description": "Ziehen Sie und enthüllen Sie die Rettungsgeschichte.",
+    "before": "Vor der Restaurierung",
+    "after": "Nach der Restaurierung"
+  },
+  "chronicle": {
+    "title": "Wo Maria Theresia schlief",
+    "subtitle": "Eine Geschichte über fünf Jahrhunderte",
+    "description": "Von türkischen Überfällen im 16. Jahrhundert über den berühmten Besuch der Kaiserin bis zur vollständigen Zerstörung und Wiedergeburt. Schloss Bošany ist Zeuge einer Geschichte, die nicht vergessen werden wollte.",
+    "grant": {
+      "title": "Gegen alle Widerstände erbaut",
+      "description": "Ohne staatliche Unterstützung. Aus der puren Entschlossenheit einer Familie."
+    },
+    "readMore": "Die ganze Geschichte lesen"
+  },
+  "services": {
+    "interior": {
+      "title": "Konferenzen & Kultur",
+      "description": "Saal für 120 Gäste, Galerie und technische Einrichtungen im historischen Gewand.",
+      "cta": "Mehr über die Vermietung erfahren"
+    },
+    "exterior": {
+      "title": "Hochzeiten & Veranstaltungen",
+      "description": "Ihr Tag in einem Renaissance-Park, unter den Schlosstürmen.",
+      "cta": "Hochzeitsangebot"
+    }
+  },
+  "park": {
+    "title": "Leben im Park",
+    "description": "Wir sind kein Museum hinter Glas. Unser Park ist eine Promenade für die Öffentlichkeit und Heimat unserer unkonventionellen Bewohner.",
+    "cellar": {
+      "title": "Weinkeller",
+      "description": "Entdecken Sie die Geschichte der Gerberei in der Gruft der Familie Šmídov oder verkosten Sie Wein in einem ehemaligen Gefängnis."
+    }
+  },
+  "footer": {
+    "motto": "Wo Geschichte nicht konserviert, sondern zum Leben erweckt wird.",
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Ihre E-Mail",
+      "button": "Abonnieren"
+    },
+    "copyright": "© 2025 In Integrum. Alle Rechte vorbehalten."
+  },
+  "story": {
+    "hero": {
+      "title": "Schlossgeschichte",
+      "subtitle": "Fünf Jahrhunderte Geschichte, 17 Jahre Restaurierung"
+    },
+    "timeline": {
+      "title": "Reise durch die Zeit"
+    },
+    "philosophy": {
+      "title": "In Integrum Philosophie",
+      "subtitle": "Klimaanlage, vor 400 Jahren entworfen",
+      "description": "Ein Meter Stein für Ihren perfekten Komfort. Wir lehnen Polystyrol und moderne Dämmung ab. Die dicken Schlossmauern bieten ein natürliches Klima - angenehme Kühle im Sommer, Wärme im Winter."
+    }
+  },
+  "weddings": {
+    "hero": {
+      "title": "Hochzeiten & Feiern",
+      "subtitle": "Ihr großer Tag im Renaissance-Stil"
+    },
+    "venue": {
+      "title": "Hochzeit unter den Türmen",
+      "description": "Polygonale Türme, Renaissance-Park und eine Atmosphäre, die Sie nirgendwo sonst finden."
+    },
+    "mascots": {
+      "title": "Unsere Bewohner",
+      "description": "Alpakas Boška und Rišo, Koi-Teich - unsere Maskottchen werden Sie begrüßen."
+    },
+    "form": {
+      "title": "Planen Sie Ihren großen Tag",
+      "name": "Ihr Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "date": "Bevorzugtes Datum",
+      "guests": "Anzahl der Gäste",
+      "message": "Ihre Nachricht",
+      "submit": "Anfrage senden"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Galerie & Konferenzen",
+      "subtitle": "Räume für Kultur und Business"
+    },
+    "conference": {
+      "title": "Konferenzsaal",
+      "description": "Raum für 120 Personen mit moderner technischer Ausstattung, versteckt in historischer Optik.",
+      "features": {
+        "capacity": "Kapazität 120 Personen",
+        "tech": "Projektor, Sound, WiFi",
+        "catering": "Catering möglich"
+      }
+    },
+    "culture": {
+      "title": "Kulturelle Veranstaltungen",
+      "description": "Vernissagen, Konzerte, Diskussionen - Unterstützung der lokalen Gesellschaftsszene."
+    },
+    "cellar": {
+      "title": "Weinkeller",
+      "description": "Einst Gefängnis, jetzt Freiheit im Wein. Einzigartige Räume für Verkostungen und private Veranstaltungen."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Kontakt",
+      "subtitle": "Nehmen Sie Kontakt mit uns auf"
+    },
+    "form": {
+      "name": "Ihr Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden"
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail"
+    }
+  }
+}
+
+
+

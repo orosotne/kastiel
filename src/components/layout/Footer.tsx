@@ -1,0 +1,155 @@
+"use client";
+
+import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
+import { motion } from "framer-motion";
+import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+
+export default function Footer() {
+  const t = useTranslations("footer");
+  const nav = useTranslations("navigation");
+  const locale = useLocale();
+
+  const navLinks = [
+    { href: `/${locale}/pribeh`, label: nav("story") },
+    { href: `/${locale}/svadby`, label: nav("weddings") },
+    { href: `/${locale}/galeria`, label: nav("gallery") },
+    { href: `/${locale}/kontakt`, label: nav("contact") },
+  ];
+
+  return (
+    <footer className="bg-slate-castle text-ivory">
+      {/* Main Footer */}
+      <div className="container-custom py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <Link href={`/${locale}`} className="inline-block mb-6">
+              <h3 className="font-serif text-3xl text-white">In Integrum</h3>
+              <span className="text-xs uppercase tracking-[0.3em] text-gold">
+                Kaštieľ Bošany
+              </span>
+            </Link>
+            <p className="text-ivory/70 text-sm leading-relaxed">
+              {t("motto")}
+            </p>
+            
+            {/* Social Links */}
+            <div className="flex gap-4 mt-6">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-ivory/20 hover:border-gold hover:text-gold transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-ivory/20 hover:border-gold hover:text-gold transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Navigation Column */}
+          <div>
+            <h4 className="font-serif text-lg text-white mb-6">{t("navigation")}</h4>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h4 className="font-serif text-lg text-white mb-6">{t("contact")}</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-ivory/70 text-sm">
+                <MapPin size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                <span>
+                  Kaštieľ Bošany<br />
+                  956 18 Bošany<br />
+                  Slovensko
+                </span>
+              </li>
+              <li>
+                <a
+                  href="tel:+421000000000"
+                  className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
+                >
+                  <Phone size={18} className="text-gold flex-shrink-0" />
+                  +421 000 000 000
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@inintegrum.sk"
+                  className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
+                >
+                  <Mail size={18} className="text-gold flex-shrink-0" />
+                  info@inintegrum.sk
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter Column */}
+          <div>
+            <h4 className="font-serif text-lg text-white mb-6">{t("newsletter.title")}</h4>
+            <form className="space-y-4">
+              <div className="relative">
+                <input
+                  type="email"
+                  placeholder={t("newsletter.placeholder")}
+                  className="w-full px-4 py-3 bg-white/5 border border-ivory/20 text-ivory placeholder:text-ivory/40 text-sm focus:outline-none focus:border-gold transition-colors duration-300"
+                />
+              </div>
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full px-6 py-3 bg-gold text-charcoal font-medium text-sm uppercase tracking-wider hover:bg-gold-dark transition-colors duration-300"
+              >
+                {t("newsletter.button")}
+              </motion.button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-ivory/10">
+        <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-ivory/50 text-xs">
+            {t("copyright")}
+          </p>
+          <div className="flex gap-6 text-ivory/50 text-xs">
+            <Link href="#" className="hover:text-gold transition-colors duration-300">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-gold transition-colors duration-300">
+              Terms of Use
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+
+

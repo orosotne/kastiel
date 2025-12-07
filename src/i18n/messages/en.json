@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "title": "In Integrum – Bošany Castle",
+    "description": "Renaissance Bošany Castle - a place where history comes back to life. Weddings, conferences, gallery and cultural events."
+  },
+  "navigation": {
+    "home": "Home",
+    "story": "Story",
+    "weddings": "Weddings",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "reserve": "Reserve"
+  },
+  "hero": {
+    "title": "In Integrum",
+    "subtitle": "Bošany Castle: Restored Heritage",
+    "motto": "History should not be preserved. It should be brought back to life.",
+    "scroll": "Discover the story"
+  },
+  "phoenix": {
+    "title": "17 years of resilience and restoration",
+    "description": "Drag and reveal the story of rescue.",
+    "before": "Before restoration",
+    "after": "After restoration"
+  },
+  "chronicle": {
+    "title": "Where Maria Theresa Slept",
+    "subtitle": "A story spanning five centuries",
+    "description": "From Turkish raids in the 16th century, through the famous visit of the empress, to complete devastation and rebirth. Bošany Castle is a witness to history that refused to be forgotten.",
+    "grant": {
+      "title": "Built against all odds",
+      "description": "Without state support. From the pure determination of one family."
+    },
+    "readMore": "Read the full story"
+  },
+  "services": {
+    "interior": {
+      "title": "Conferences & Culture",
+      "description": "Hall for 120 guests, gallery and technical facilities in historical attire.",
+      "cta": "Learn more about rental"
+    },
+    "exterior": {
+      "title": "Weddings & Events",
+      "description": "Your day in a Renaissance park, under the castle towers.",
+      "cta": "Wedding offer"
+    }
+  },
+  "park": {
+    "title": "Life in the Park",
+    "description": "We are not a museum behind glass. Our park is a promenade for the public and home to our unconventional residents.",
+    "cellar": {
+      "title": "Wine Cellar",
+      "description": "Discover the history of tanning in the Šmídov family crypt or taste wine in a former prison."
+    }
+  },
+  "footer": {
+    "motto": "Where history is not preserved, but brought back to life.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Your email",
+      "button": "Subscribe"
+    },
+    "copyright": "© 2025 In Integrum. All rights reserved."
+  },
+  "story": {
+    "hero": {
+      "title": "Castle Story",
+      "subtitle": "Five centuries of history, 17 years of restoration"
+    },
+    "timeline": {
+      "title": "Journey through time"
+    },
+    "philosophy": {
+      "title": "In Integrum Philosophy",
+      "subtitle": "Air conditioning designed 400 years ago",
+      "description": "A meter of stone for your perfect comfort. We reject polystyrene and modern insulation. The thick castle walls provide natural climate - pleasant coolness in summer, warmth in winter."
+    }
+  },
+  "weddings": {
+    "hero": {
+      "title": "Weddings & Celebrations",
+      "subtitle": "Your big day in Renaissance style"
+    },
+    "venue": {
+      "title": "Wedding under the towers",
+      "description": "Polygonal towers, Renaissance park and an atmosphere you won't find anywhere else."
+    },
+    "mascots": {
+      "title": "Our residents",
+      "description": "Alpacas Boška and Rišo, koi pond - our mascots will welcome you."
+    },
+    "form": {
+      "title": "Plan your big day",
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone",
+      "date": "Preferred date",
+      "guests": "Number of guests",
+      "message": "Your message",
+      "submit": "Send inquiry"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Gallery & Conferences",
+      "subtitle": "Spaces for culture and business"
+    },
+    "conference": {
+      "title": "Conference Hall",
+      "description": "Space for 120 people with modern technical equipment hidden in historical visuals.",
+      "features": {
+        "capacity": "Capacity 120 people",
+        "tech": "Projector, sound, WiFi",
+        "catering": "Catering available"
+      }
+    },
+    "culture": {
+      "title": "Cultural Events",
+      "description": "Vernissages, concerts, discussions - supporting the local social scene."
+    },
+    "cellar": {
+      "title": "Wine Cellar",
+      "description": "Once a prison, now freedom in wine. Unique spaces for tastings and private events."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "Get in touch with us"
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Your message",
+      "submit": "Send message"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    }
+  }
+}
+
+
+

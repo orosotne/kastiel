@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "title": "In Integrum – Kaštieľ Bošany",
+    "description": "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života. Svadby, konferencie, galéria a kultúrne podujatia."
+  },
+  "navigation": {
+    "home": "Domov",
+    "story": "Príbeh",
+    "weddings": "Svadby",
+    "gallery": "Galéria",
+    "contact": "Kontakt",
+    "reserve": "Rezervovať"
+  },
+  "hero": {
+    "title": "In Integrum",
+    "subtitle": "Kaštieľ Bošany: Navrátené Dedičstvo",
+    "motto": "História sa nemá konzervovať. Má sa vrátiť do života.",
+    "scroll": "Objavte príbeh"
+  },
+  "phoenix": {
+    "title": "17 rokov vzdoru a obnovy",
+    "description": "Potiahnite a odhaľte príbeh záchrany.",
+    "before": "Pred obnovou",
+    "after": "Po obnove"
+  },
+  "chronicle": {
+    "title": "Kde spala Mária Terézia",
+    "subtitle": "Príbeh trvajúci päť storočí",
+    "description": "Od tureckých nájazdov v 16. storočí, cez slávnu návštevu cisárovnej, až po úplnú devastáciu a znovuzrodenie. Kaštieľ Bošany je svedkom dejín, ktoré odmietol zabudnúť.",
+    "grant": {
+      "title": "Postavené navzdory všetkému",
+      "description": "Bez štátnej podpory. Z čistého odhodlania jednej rodiny."
+    },
+    "readMore": "Čítať celý príbeh"
+  },
+  "services": {
+    "interior": {
+      "title": "Kongresy & Kultúra",
+      "description": "Sála pre 120 hostí, galéria a technické zázemie v historickom šate.",
+      "cta": "Zistiť viac o prenájme"
+    },
+    "exterior": {
+      "title": "Svadby & Podujatia",
+      "description": "Váš deň v renesančnom parku, pod vežami kaštieľa.",
+      "cta": "Svadobná ponuka"
+    }
+  },
+  "park": {
+    "title": "Život v parku",
+    "description": "Nie sme múzeum za sklom. Náš park je korzom pre verejnosť a domovom pre našich netradičných obyvateľov.",
+    "cellar": {
+      "title": "Vínna pivnica",
+      "description": "Objavte históriu garbiarstva v krypte rodiny Šmídovcov alebo ochutnajte víno v bývalom väzení."
+    }
+  },
+  "footer": {
+    "motto": "Kde sa história nekonzervuje, ale vracia do života.",
+    "navigation": "Navigácia",
+    "contact": "Kontakt",
+    "newsletter": {
+      "title": "Novinky",
+      "placeholder": "Váš email",
+      "button": "Odoberať"
+    },
+    "copyright": "© 2025 In Integrum. Všetky práva vyhradené."
+  },
+  "story": {
+    "hero": {
+      "title": "Príbeh Kaštieľa",
+      "subtitle": "Päť storočí histórie, 17 rokov obnovy"
+    },
+    "timeline": {
+      "title": "Cesta časom"
+    },
+    "philosophy": {
+      "title": "Filozofia In Integrum",
+      "subtitle": "Klimatizácia, ktorú navrhli pred 400 rokmi",
+      "description": "Meter kameňa pre váš dokonalý komfort. Odmietame polystyrén a moderné izolácie. Hrubé múry kaštieľa poskytujú prirodzenú klímu - v lete príjemný chlad, v zime teplo."
+    }
+  },
+  "weddings": {
+    "hero": {
+      "title": "Svadby & Oslavy",
+      "subtitle": "Váš veľký deň v renesančnom štýle"
+    },
+    "venue": {
+      "title": "Svadba pod vežami",
+      "description": "Polygonálne veže, renesančný park a atmosféra, ktorú nenájdete nikde inde."
+    },
+    "mascots": {
+      "title": "Naši obyvatelia",
+      "description": "Alpaky Boška a Rišo, jazierko s koi kaprami - naši maskoti vás privítajú."
+    },
+    "form": {
+      "title": "Naplánujte si svoj veľký deň",
+      "name": "Vaše meno",
+      "email": "Email",
+      "phone": "Telefón",
+      "date": "Preferovaný dátum",
+      "guests": "Počet hostí",
+      "message": "Vaša správa",
+      "submit": "Odoslať dopyt"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Galéria & Konferencie",
+      "subtitle": "Priestory pre kultúru a biznis"
+    },
+    "conference": {
+      "title": "Konferenčná sála",
+      "description": "Priestor pre 120 ľudí s moderným technickým vybavením ukrytým v historickom vizuále.",
+      "features": {
+        "capacity": "Kapacita 120 osôb",
+        "tech": "Projektor, zvuk, WiFi",
+        "catering": "Možnosť cateringu"
+      }
+    },
+    "culture": {
+      "title": "Kultúrne podujatia",
+      "description": "Vernisáže, koncerty, diskusie - podpora miestnej spoločenskej scény."
+    },
+    "cellar": {
+      "title": "Vínna pivnica",
+      "description": "Kedysi väzenie, dnes sloboda vo víne. Unikátne priestory pre degustácie a privátne akcie."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Kontakt",
+      "subtitle": "Spojte sa s nami"
+    },
+    "form": {
+      "name": "Vaše meno",
+      "email": "Email",
+      "subject": "Predmet",
+      "message": "Vaša správa",
+      "submit": "Odoslať správu"
+    },
+    "info": {
+      "address": "Adresa",
+      "phone": "Telefón",
+      "email": "Email"
+    }
+  }
+}
+
+
+
