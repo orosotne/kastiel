@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Camera, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 
@@ -19,13 +19,13 @@ export default function ServicesSection() {
       key: "interior",
       href: `/${locale}/galeria`,
       image: null, // placeholder
-      placeholder: "🎨",
+      icon: Camera,
     },
     {
       key: "exterior",
       href: `/${locale}/svadby`,
       image: null, // placeholder
-      placeholder: "💒",
+      icon: Heart,
     },
   ];
 
@@ -55,7 +55,7 @@ export default function ServicesSection() {
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-charcoal/60 to-slate-castle flex items-center justify-center">
-                      <span className="text-6xl opacity-30">{service.placeholder}</span>
+                      <service.icon size={80} className="text-white/20" />
                     </div>
                   )}
                   

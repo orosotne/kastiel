@@ -120,7 +120,7 @@ export default function MediaSection() {
                 transition={{ duration: 0.5 }}
               >
                 <blockquote className="font-serif text-2xl md:text-3xl text-charcoal mb-6 leading-relaxed">
-                  "{quotes[activeQuote].text}"
+                  &ldquo;{quotes[activeQuote].text}&rdquo;
                 </blockquote>
                 <cite className="text-charcoal/60 not-italic">
                   — {quotes[activeQuote].source}, {quotes[activeQuote].year}
