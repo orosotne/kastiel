@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   description: "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života. Svadby, konferencie, galéria a kultúrne podujatia.",
   keywords: ["kaštieľ", "Bošany", "svadby", "konferencie", "galéria", "renesancia", "história"],
   authors: [{ name: "In Integrum" }],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "In Integrum – Kaštieľ Bošany",
     description: "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života.",
