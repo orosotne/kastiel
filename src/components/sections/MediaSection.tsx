@@ -42,7 +42,7 @@ const mediaArticles = [
 
 const quotes = [
   {
-    text: "Renesančný kaštieľ v Bošanoch by mal v budúcnosti slúžiť ako kongresové centrum.",
+    text: "Renesančný kaštieľ v Bošanoch by mal v budúcnosti slúžiť ako múzeum a galéria.",
     source: "Denník N",
     year: "2024",
     url: "https://dennikn.sk/minuta/4014768/",
