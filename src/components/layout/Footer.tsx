@@ -120,17 +120,17 @@ export default function Footer() {
             <p className="text-ivory/70 text-sm mb-4 leading-relaxed">
               {t("newsletter.description")}
             </p>
-            <form className="flex flex-col sm:flex-row gap-3">
+            <form className="flex flex-col gap-3">
               <input
                 type="email"
                 placeholder={t("newsletter.placeholder")}
-                className="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-ivory/20 text-ivory placeholder:text-ivory/40 text-sm focus:outline-none focus:border-gold transition-colors duration-300"
+                className="w-full px-4 py-3 bg-white/5 border border-ivory/20 text-ivory placeholder:text-ivory/40 text-sm focus:outline-none focus:border-gold transition-colors duration-300"
               />
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 bg-gold text-charcoal font-medium text-sm uppercase tracking-wider hover:bg-gold-dark transition-colors duration-300 whitespace-nowrap"
+                className="w-full px-6 py-3 bg-gold text-charcoal font-medium text-sm uppercase tracking-wider hover:bg-gold-dark transition-colors duration-300"
               >
                 {t("newsletter.button")}
               </motion.button>
