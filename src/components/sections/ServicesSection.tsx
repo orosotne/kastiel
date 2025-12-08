@@ -11,20 +11,17 @@ export default function ServicesSection() {
   const t = useTranslations("services");
   const locale = useLocale();
 
-  // Nahraďte obrázky reálnymi fotkami:
-  // - /images/conference-hall.jpg (konferenčná sála)
-  // - /images/wedding-park.jpg (svadba v parku)
   const services = [
     {
       key: "interior",
       href: `/${locale}/galeria`,
-      image: null, // placeholder
+      image: "/images/gallery/interior-1.jpeg",
       icon: Camera,
     },
     {
       key: "exterior",
       href: `/${locale}/svadby`,
-      image: null, // placeholder
+      image: "/images/wedding-hero.png",
       icon: Heart,
     },
   ];
