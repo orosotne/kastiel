@@ -61,7 +61,7 @@ export default async function RootLayout({
       <body className="bg-cream text-charcoal font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main>{children}</main>
+          <main className="overflow-x-hidden">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

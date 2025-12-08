@@ -123,7 +123,7 @@ export default function WeddingsPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-full h-full border-2 border-gold -z-10" />
+                <div className="hidden md:block absolute -bottom-6 -left-6 w-full h-full border-2 border-gold -z-10" />
               </div>
             </FadeInOnScroll>
           </div>

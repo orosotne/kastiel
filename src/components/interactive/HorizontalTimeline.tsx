@@ -89,25 +89,25 @@ export default function HorizontalTimeline({
         </div>
       )}
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - hidden on mobile, visible on md+ */}
       <button
         onClick={() => scroll("left")}
-        className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg items-center justify-center transition-all duration-300 ${
           canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-label="Scroll left"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={20} />
       </button>
 
       <button
         onClick={() => scroll("right")}
-        className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg items-center justify-center transition-all duration-300 ${
           canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-label="Scroll right"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={20} />
       </button>
 
       {/* Timeline Container */}
