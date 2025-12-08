@@ -110,13 +110,16 @@ export default function BeforeAfterSlider({
         </div>
       </motion.div>
 
-      {/* Labels */}
-      <div className="absolute bottom-6 left-6 px-4 py-2 bg-charcoal/80 backdrop-blur-sm text-white text-sm uppercase tracking-wider">
-        {beforeLabel}
-      </div>
-      <div className="absolute bottom-6 right-6 px-4 py-2 bg-gold text-charcoal text-sm uppercase tracking-wider">
-        {afterLabel}
-      </div>
+      {/* Label - shows only one based on slider position */}
+      {sliderPosition >= 50 ? (
+        <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 bg-charcoal/80 backdrop-blur-sm text-white text-xs md:text-sm uppercase tracking-wider">
+          {beforeLabel}
+        </div>
+      ) : (
+        <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 bg-gold text-charcoal text-xs md:text-sm uppercase tracking-wider">
+          {afterLabel}
+        </div>
+      )}
     </div>
   );
 }
