@@ -53,7 +53,7 @@ export default function Header() {
             : "bg-transparent py-6"
         }`}
       >
-        <div className="container-custom flex items-center justify-between">
+        <div className="container-custom flex items-center justify-between relative">
           {/* Logo */}
           <Link href={`/${locale}`} className="relative z-10">
             <motion.div
@@ -73,8 +73,8 @@ export default function Header() {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
