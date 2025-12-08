@@ -28,7 +28,7 @@ export default function GalleryPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/gallery-hero.jpg"
+        backgroundImage="/images/gallery-hero.jpeg"
       />
 
       {/* Conference Section */}
@@ -39,7 +39,7 @@ export default function GalleryPage() {
               <div className="relative">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src="/images/conference-room.jpg"
+                    src="/images/gallery/interior-1.jpeg"
                     alt="Konferenčná sála"
                     fill
                     className="object-cover"
@@ -145,7 +145,7 @@ export default function GalleryPage() {
 
       {/* Wine Cellar Section */}
       <ParallaxSection
-        backgroundImage="/images/wine-cellar-large.jpg"
+        backgroundImage="/images/gallery/interior-5.jpg"
         speed={0.3}
         className="py-32 md:py-48"
       >

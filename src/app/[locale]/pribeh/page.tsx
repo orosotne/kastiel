@@ -13,37 +13,37 @@ import { X, ChevronLeft, ChevronRight, Landmark, Palette, Shield, Castle, ImageI
 // Historické fotky pre múzejnú galériu
 const historyPhotos = [
   {
-    src: "/images/history/history-1.jpg",
+    src: "/images/history/history-1.png",
     title: "Pohľad na kaštieľ",
     year: "okolo 1920",
     description: "Historický záber fasády kaštieľa z obdobia medzivojnovej republiky",
   },
   {
-    src: "/images/history/history-2.jpg",
+    src: "/images/history/history-2.png",
     title: "Nádvorie kaštieľa",
     year: "okolo 1930",
     description: "Pohľad na vnútorné nádvorie s pôvodnou dlažbou",
   },
   {
-    src: "/images/history/history-3.jpg",
+    src: "/images/history/history-3.png",
     title: "Vstupná brána",
     year: "okolo 1925",
     description: "Hlavný vstup do areálu kaštieľa s pôvodným portálom",
   },
   {
-    src: "/images/history/history-4.jpg",
+    src: "/images/history/history-4.png",
     title: "Park a okolie",
     year: "okolo 1935",
     description: "Anglický park pri kaštieli s vzácnymi drevinami",
   },
   {
-    src: "/images/history/history-5.jpg",
+    src: "/images/history/history-5.png",
     title: "Interiér sály",
     year: "okolo 1910",
     description: "Pôvodné zariadenie reprezentačnej sály",
   },
   {
-    src: "/images/history/history-6.jpg",
+    src: "/images/history/history-6.png",
     title: "Rodinný portrét",
     year: "okolo 1900",
     description: "Majitelia kaštieľa na dobovej fotografii",

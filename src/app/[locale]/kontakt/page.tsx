@@ -34,7 +34,7 @@ export default function ContactPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/contact-hero.jpg"
+        backgroundImage="/images/contact-hero.jpeg"
       />
 
       <section className="py-24 md:py-32 bg-cream">
