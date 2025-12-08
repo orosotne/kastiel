@@ -35,12 +35,12 @@
   },
   "services": {
     "interior": {
-      "title": "Kongresy & Kultúra",
-      "description": "Sála pre 120 hostí, galéria a technické zázemie v historickom šate.",
-      "cta": "Zistiť viac o prenájme"
+      "title": "Fotogaléria",
+      "description": "Objavte krásu renesančného kaštieľa cez objektív. Interiéry, exteriéry a atmosféra histórie.",
+      "cta": "Prezrieť galériu"
     },
     "exterior": {
-      "title": "Svadby & Podujatia",
+      "title": "Svadby",
       "description": "Váš deň v renesančnom parku, pod vežami kaštieľa.",
       "cta": "Svadobná ponuka"
     }
@@ -104,8 +104,8 @@
   },
   "gallery": {
     "hero": {
-      "title": "Galéria & Konferencie",
-      "subtitle": "Priestory pre kultúru a biznis"
+      "title": "Priestory a Eventy",
+      "subtitle": "Fotografie priestorov a udalostí v kaštieli"
     },
     "conference": {
       "title": "Konferenčná sála",
