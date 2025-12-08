@@ -10,10 +10,11 @@ export default function Footer() {
   const nav = useTranslations("navigation");
   const locale = useLocale();
 
+  // DOČASNE SKRYTÉ: svadby a galeria
   const navLinks = [
     { href: `/${locale}/pribeh`, label: nav("story") },
-    { href: `/${locale}/svadby`, label: nav("weddings") },
-    { href: `/${locale}/galeria`, label: nav("gallery") },
+    // { href: `/${locale}/svadby`, label: nav("weddings") }, // DOČASNE SKRYTÉ
+    // { href: `/${locale}/galeria`, label: nav("gallery") }, // DOČASNE SKRYTÉ
     { href: `/${locale}/kontakt`, label: nav("contact") },
   ];
 

@@ -32,11 +32,12 @@ export default function Header() {
     }
   }, [isMenuOpen]);
 
+  // DOČASNE SKRYTÉ: svadby a galeria
   const navLinks = [
     { href: `/${locale}`, label: t("home") },
     { href: `/${locale}/pribeh`, label: t("story") },
-    { href: `/${locale}/svadby`, label: t("weddings") },
-    { href: `/${locale}/galeria`, label: t("gallery") },
+    // { href: `/${locale}/svadby`, label: t("weddings") }, // DOČASNE SKRYTÉ
+    // { href: `/${locale}/galeria`, label: t("gallery") }, // DOČASNE SKRYTÉ
     { href: `/${locale}/kontakt`, label: t("contact") },
   ];
 
