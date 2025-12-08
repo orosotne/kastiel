@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, MapPin, Building2 } from "lucide-react";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -37,7 +37,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/renesancny_kastiel_bosany/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 border border-ivory/20 hover:border-gold hover:text-gold transition-colors duration-300"
@@ -74,34 +74,41 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Občianske združenie Column */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-6">{t("contact")}</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-ivory/70 text-sm">
+            <h4 className="font-serif text-lg text-white mb-6">Občianske združenie</h4>
+            <ul className="space-y-4 text-ivory/70 text-sm">
+              <li className="flex items-start gap-3">
+                <Building2 size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                <span>
+                  <strong className="text-white">IN INTEGRUM</strong><br />
+                  IČO: 42024757<br />
+                  DIČ: 2022449737
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold mt-0.5 flex-shrink-0" />
                 <span>
-                  Kaštieľ Bošany<br />
-                  956 18 Bošany<br />
-                  Slovensko
+                  SNP 113/1<br />
+                  956 18 Bošany
                 </span>
               </li>
               <li>
                 <a
-                  href="tel:+421000000000"
-                  className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
+                  href="tel:+421907726726"
+                  className="flex items-center gap-3 hover:text-gold transition-colors duration-300"
                 >
                   <Phone size={18} className="text-gold flex-shrink-0" />
-                  +421 000 000 000
+                  +421 907 726 726
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@inintegrum.sk"
-                  className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors duration-300 text-sm"
+                  href="mailto:jmiskeje@gmail.com"
+                  className="flex items-center gap-3 hover:text-gold transition-colors duration-300"
                 >
                   <Mail size={18} className="text-gold flex-shrink-0" />
-                  info@inintegrum.sk
+                  jmiskeje@gmail.com
                 </a>
               </li>
             </ul>
@@ -138,11 +145,8 @@ export default function Footer() {
             {t("copyright")}
           </p>
           <div className="flex gap-6 text-ivory/50 text-xs">
-            <Link href="#" className="hover:text-gold transition-colors duration-300">
+            <Link href={`/${locale}/privacy-policy`} className="hover:text-gold transition-colors duration-300">
               Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-gold transition-colors duration-300">
-              Terms of Use
             </Link>
           </div>
         </div>
@@ -150,6 +154,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-

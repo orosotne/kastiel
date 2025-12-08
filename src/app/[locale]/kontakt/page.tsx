@@ -134,7 +134,7 @@ export default function ContactPage() {
                           {t("info.address")}
                         </h4>
                         <p className="text-charcoal/60">
-                          Kaštieľ Bošany<br />
+                          SNP 113/1<br />
                           956 18 Bošany<br />
                           Slovensko
                         </p>
@@ -150,10 +150,10 @@ export default function ContactPage() {
                           {t("info.phone")}
                         </h4>
                         <a
-                          href="tel:+421000000000"
+                          href="tel:+421907726726"
                           className="text-charcoal/60 hover:text-gold transition-colors duration-300"
                         >
-                          +421 000 000 000
+                          +421 907 726 726
                         </a>
                       </div>
                     </div>
@@ -167,10 +167,10 @@ export default function ContactPage() {
                           {t("info.email")}
                         </h4>
                         <a
-                          href="mailto:info@inintegrum.sk"
+                          href="mailto:jmiskeje@gmail.com"
                           className="text-charcoal/60 hover:text-gold transition-colors duration-300"
                         >
-                          info@inintegrum.sk
+                          jmiskeje@gmail.com
                         </a>
                       </div>
                     </div>
