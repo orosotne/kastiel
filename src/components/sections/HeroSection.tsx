@@ -53,7 +53,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="max-w-4xl"
+          className="max-w-4xl bg-charcoal/30 backdrop-blur-sm px-8 py-10 md:px-12 md:py-14 rounded-2xl border border-white/10"
         >
           {/* Decorative line */}
           <motion.div
