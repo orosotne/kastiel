@@ -192,10 +192,10 @@ export default function MuseumGallery({
             {/* Close button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
+              className="absolute top-4 right-4 md:top-6 md:right-6 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg border border-white/20"
               aria-label="Zavrieť"
             >
-              <X className="text-white" size={24} />
+              <X className="text-white" size={20} />
             </button>
 
             {/* Navigation arrows */}
@@ -204,10 +204,10 @@ export default function MuseumGallery({
                 e.stopPropagation();
                 prevPhoto();
               }}
-              className="absolute left-4 md:left-8 z-50 w-12 h-12 bg-white/10 hover:bg-gold/80 rounded-full flex items-center justify-center transition-all duration-300 group"
+              className="absolute left-2 md:left-8 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group shadow-lg border border-white/20"
               aria-label="Predchádzajúca fotka"
             >
-              <ChevronLeft className="text-white group-hover:text-charcoal" size={28} />
+              <ChevronLeft className="text-white group-hover:text-charcoal" size={24} />
             </button>
 
             <button
@@ -215,10 +215,10 @@ export default function MuseumGallery({
                 e.stopPropagation();
                 nextPhoto();
               }}
-              className="absolute right-4 md:right-8 z-50 w-12 h-12 bg-white/10 hover:bg-gold/80 rounded-full flex items-center justify-center transition-all duration-300 group"
+              className="absolute right-2 md:right-8 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group shadow-lg border border-white/20"
               aria-label="Nasledujúca fotka"
             >
-              <ChevronRight className="text-white group-hover:text-charcoal" size={28} />
+              <ChevronRight className="text-white group-hover:text-charcoal" size={24} />
             </button>
 
             {/* Photo content */}
