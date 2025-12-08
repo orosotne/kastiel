@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 
 interface HistoryPhoto {
@@ -19,6 +19,10 @@ interface MuseumGalleryProps {
   subtitle?: string;
 }
 
+// Initial counts: 6 for desktop (3x2), 4 for mobile (2x2)
+const DESKTOP_INITIAL = 6;
+const MOBILE_INITIAL = 4;
+
 export default function MuseumGallery({
   photos,
   title = "Historické skvosty",
@@ -26,9 +30,26 @@ export default function MuseumGallery({
 }: MuseumGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const initialCount = isMobile ? MOBILE_INITIAL : DESKTOP_INITIAL;
+  const displayedPhotos = showAll ? photos : photos.slice(0, initialCount);
+  const hasMore = photos.length > initialCount;
 
   const openLightbox = (index: number) => {
-    setCurrentIndex(index);
+    // Find the actual index in full photos array
+    const actualIndex = showAll ? index : index;
+    setCurrentIndex(actualIndex);
     setLightboxOpen(true);
   };
 
@@ -70,9 +91,9 @@ export default function MuseumGallery({
             </p>
           </FadeInOnScroll>
 
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {photos.map((photo, index) => (
+          {/* Gallery Grid - 2 columns on mobile, 3 on desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-10">
+            {displayedPhotos.map((photo, index) => (
               <FadeInOnScroll key={index} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
@@ -114,17 +135,17 @@ export default function MuseumGallery({
                   </div>
 
                   {/* Museum label/plaque */}
-                  <div className="mt-4 bg-cream/95 backdrop-blur-sm p-4 border-l-4 border-gold shadow-md">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h3 className="font-serif text-charcoal text-lg leading-tight">
+                  <div className="mt-2 md:mt-4 bg-cream/95 backdrop-blur-sm p-2 md:p-4 border-l-2 md:border-l-4 border-gold shadow-md">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-2">
+                      <div className="min-w-0">
+                        <h3 className="font-serif text-charcoal text-sm md:text-lg leading-tight truncate">
                           {photo.title}
                         </h3>
-                        <p className="text-charcoal/60 text-sm mt-1 leading-relaxed">
+                        <p className="text-charcoal/60 text-xs md:text-sm mt-1 leading-relaxed line-clamp-2">
                           {photo.description}
                         </p>
                       </div>
-                      <span className="text-gold font-serif text-lg whitespace-nowrap">
+                      <span className="text-gold font-serif text-xs md:text-lg whitespace-nowrap">
                         {photo.year}
                       </span>
                     </div>
@@ -133,6 +154,28 @@ export default function MuseumGallery({
               </FadeInOnScroll>
             ))}
           </div>
+
+          {/* Show more/less button */}
+          {hasMore && (
+            <FadeInOnScroll className="text-center mt-12">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="inline-flex items-center gap-3 bg-gold/20 hover:bg-gold text-gold hover:text-charcoal px-8 py-4 rounded-full transition-all duration-300 font-medium uppercase tracking-wider text-sm group"
+              >
+                {showAll ? (
+                  <>
+                    <Minus size={18} className="group-hover:scale-110 transition-transform" />
+                    Zobraziť menej
+                  </>
+                ) : (
+                  <>
+                    <Plus size={18} className="group-hover:scale-110 transition-transform" />
+                    Načítať viac ({photos.length - initialCount})
+                  </>
+                )}
+              </button>
+            </FadeInOnScroll>
+          )}
         </div>
       </section>
 
