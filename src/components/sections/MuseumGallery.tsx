@@ -204,7 +204,7 @@ export default function MuseumGallery({
               </div>
 
               {/* Caption */}
-              <div className="mt-6 text-center bg-charcoal/90 backdrop-blur-sm rounded-lg p-6 mx-auto max-w-2xl border border-gold/20">
+              <div className="text-center bg-charcoal p-6">
                 <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">
                   {photos[currentIndex].title}
                 </h3>
