@@ -59,6 +59,7 @@
     "contact": "Contact",
     "newsletter": {
       "title": "Newsletter",
+      "description": "Subscribe to our newsletter and never miss an event.",
       "placeholder": "Your email",
       "button": "Subscribe"
     },

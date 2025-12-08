@@ -59,6 +59,7 @@
     "contact": "Kontakt",
     "newsletter": {
       "title": "Novinky",
+      "description": "Prihláste sa na odber noviniek a nezmeškajte žiadne podujatie.",
       "placeholder": "Váš email",
       "button": "Odoberať"
     },
