@@ -204,19 +204,19 @@ export default function MuseumGallery({
               </div>
 
               {/* Caption */}
-              <div className="mt-6 text-center">
+              <div className="mt-6 text-center bg-charcoal/90 backdrop-blur-sm rounded-lg p-6 mx-auto max-w-2xl border border-gold/20">
                 <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">
                   {photos[currentIndex].title}
                 </h3>
-                <p className="text-white/60 text-lg mb-3">
+                <p className="text-white/70 text-lg mb-3">
                   {photos[currentIndex].description}
                 </p>
-                <span className="inline-block bg-gold/20 text-gold px-4 py-1 rounded-full text-sm">
+                <span className="inline-block bg-gold/30 text-gold px-4 py-1 rounded-full text-sm">
                   {photos[currentIndex].year}
                 </span>
                 
                 {/* Counter */}
-                <div className="mt-4 text-white/40 text-sm">
+                <div className="mt-4 text-white/50 text-sm">
                   {currentIndex + 1} / {photos.length}
                 </div>
               </div>
