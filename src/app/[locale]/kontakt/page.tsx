@@ -206,30 +206,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Newsletter */}
-                <div className="bg-slate-castle p-8">
-                  <h3 className="font-serif text-xl text-white mb-4">
-                    {footer("newsletter.title")}
-                  </h3>
-                  <p className="text-white/60 text-sm mb-4">
-                    Prihláste sa na odber noviniek a nezmeškajte žiadne podujatie.
-                  </p>
-                  <form className="flex gap-2">
-                    <input
-                      type="email"
-                      placeholder={footer("newsletter.placeholder")}
-                      className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-gold transition-colors duration-300"
-                    />
-                    <motion.button
-                      type="submit"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="px-6 py-3 bg-gold text-charcoal font-medium hover:bg-gold-dark transition-colors duration-300"
-                    >
-                      {footer("newsletter.button")}
-                    </motion.button>
-                  </form>
-                </div>
               </div>
             </FadeInOnScroll>
           </div>
