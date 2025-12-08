@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
           <ul className="list-disc list-inside space-y-1 mt-2">
             <li>Na prístup k svojim osobným údajom</li>
             <li>Na opravu nesprávnych údajov</li>
-            <li>Na vymazanie údajov („právo byť zabudnutý")</li>
+            <li>Na vymazanie údajov (&bdquo;právo byť zabudnutý&ldquo;)</li>
             <li>Na obmedzenie spracovania</li>
             <li>Na prenosnosť údajov</li>
             <li>Namietať proti spracovaniu</li>
