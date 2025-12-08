@@ -115,25 +115,23 @@ export default function Footer() {
           </div>
 
           {/* Newsletter Column */}
-          <div className="w-full">
+          <div className="w-full max-w-full overflow-hidden">
             <h4 className="font-serif text-lg text-white mb-4 md:mb-6">{t("newsletter.title")}</h4>
             <p className="text-ivory/70 text-sm mb-4 leading-relaxed">
               {t("newsletter.description")}
             </p>
-            <form className="flex flex-col gap-3">
+            <form className="flex flex-col gap-3 w-full">
               <input
                 type="email"
                 placeholder={t("newsletter.placeholder")}
-                className="w-full px-4 py-3 bg-white/5 border border-ivory/20 text-ivory placeholder:text-ivory/40 text-sm focus:outline-none focus:border-gold transition-colors duration-300"
+                className="w-full max-w-full px-4 py-3 bg-white/5 border border-ivory/20 text-ivory placeholder:text-ivory/40 text-sm focus:outline-none focus:border-gold transition-colors duration-300 box-border"
               />
-              <motion.button
+              <button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-3 bg-gold text-charcoal font-medium text-sm uppercase tracking-wider hover:bg-gold-dark transition-colors duration-300"
+                className="w-full max-w-full px-6 py-3 bg-gold text-charcoal font-medium text-sm uppercase tracking-wider hover:bg-gold-dark transition-colors duration-300 box-border"
               >
                 {t("newsletter.button")}
-              </motion.button>
+              </button>
             </form>
           </div>
         </div>
