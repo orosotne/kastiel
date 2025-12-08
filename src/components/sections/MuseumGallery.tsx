@@ -198,29 +198,6 @@ export default function MuseumGallery({
               <X className="text-white" size={20} />
             </button>
 
-            {/* Navigation arrows */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevPhoto();
-              }}
-              className="absolute left-2 md:left-8 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group shadow-lg border border-white/20"
-              aria-label="Predchádzajúca fotka"
-            >
-              <ChevronLeft className="text-white group-hover:text-charcoal" size={24} />
-            </button>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextPhoto();
-              }}
-              className="absolute right-2 md:right-8 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group shadow-lg border border-white/20"
-              aria-label="Nasledujúca fotka"
-            >
-              <ChevronRight className="text-white group-hover:text-charcoal" size={24} />
-            </button>
-
             {/* Photo content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -247,20 +224,44 @@ export default function MuseumGallery({
               </div>
 
               {/* Caption */}
-              <div className="text-center bg-charcoal p-6">
-                <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">
+              <div className="text-center bg-charcoal p-4 md:p-6">
+                <h3 className="font-serif text-xl md:text-3xl text-white mb-2">
                   {photos[currentIndex].title}
                 </h3>
-                <p className="text-white/70 text-lg mb-3">
+                <p className="text-white/70 text-sm md:text-lg mb-3">
                   {photos[currentIndex].description}
                 </p>
-                <span className="inline-block bg-gold/30 text-gold px-4 py-1 rounded-full text-sm">
+                <span className="inline-block bg-gold/30 text-gold px-4 py-1 rounded-full text-xs md:text-sm">
                   {photos[currentIndex].year}
                 </span>
                 
-                {/* Counter */}
-                <div className="mt-4 text-white/50 text-sm">
-                  {currentIndex + 1} / {photos.length}
+                {/* Navigation & Counter */}
+                <div className="flex items-center justify-center gap-6 mt-4">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevPhoto();
+                    }}
+                    className="w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group"
+                    aria-label="Predchádzajúca fotka"
+                  >
+                    <ChevronLeft className="text-white group-hover:text-charcoal" size={24} />
+                  </button>
+                  
+                  <span className="text-white/50 text-sm min-w-[60px]">
+                    {currentIndex + 1} / {photos.length}
+                  </span>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextPhoto();
+                    }}
+                    className="w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group"
+                    aria-label="Nasledujúca fotka"
+                  >
+                    <ChevronRight className="text-white group-hover:text-charcoal" size={24} />
+                  </button>
                 </div>
               </div>
             </motion.div>
