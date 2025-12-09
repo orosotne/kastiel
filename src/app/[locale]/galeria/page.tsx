@@ -24,7 +24,6 @@ const interiorPhotos = [
   "/images/gallery/interior-12.jpg",
   "/images/gallery/interior-13.jpg",
   "/images/gallery/interior-14.jpg",
-  "/images/gallery/interior-15.jpg",
   "/images/gallery/interior-16.jpg",
   "/images/gallery/interior-17.jpg",
   "/images/gallery/interior-18.jpg",
@@ -33,7 +32,6 @@ const interiorPhotos = [
   "/images/gallery/interior-21.jpg",
   "/images/gallery/interior-22.jpg",
   "/images/gallery/interior-23.jpg",
-  "/images/gallery/interior-24.jpg",
   "/images/gallery/interior-25.jpg",
   "/images/gallery/interior-26.jpg",
   "/images/gallery/interior-27.jpg",
@@ -43,6 +41,14 @@ const interiorPhotos = [
   "/images/gallery/interior-31.jpg",
   "/images/gallery/interior-32.jpg",
   "/images/gallery/interior-33.jpg",
+  "/images/gallery/IMG-20251209-WA0013.jpg",
+  "/images/gallery/IMG-20251209-WA0014.jpg",
+  "/images/gallery/IMG-20251209-WA0015.jpg",
+  "/images/gallery/IMG-20251209-WA0016.jpg",
+  "/images/gallery/IMG-20251209-WA0017.jpg",
+  "/images/gallery/IMG-20251209-WA0018.jpg",
+  "/images/gallery/IMG-20251209-WA0019.jpg",
+  "/images/gallery/IMG-20251209-WA0020.jpg",
 ];
 
 const INITIAL_COUNT = 8;
