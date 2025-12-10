@@ -143,6 +143,11 @@
       "phone": "Telefón",
       "email": "Email"
     }
+  },
+  "announcement": {
+    "banner": "DÔLEŽITÉ: Náš projekt nebol podporený. Pokračujeme z vlastných zdrojov.",
+    "title": "Oficiálne stanovisko",
+    "subtitle": "K nepodporeniu projektu Kaštieľ Bošany"
   }
 }
 

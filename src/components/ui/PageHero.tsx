@@ -5,7 +5,7 @@ import Image from "next/image";
 
 interface PageHeroProps {
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   backgroundImage?: string;
 }
 
@@ -19,7 +19,7 @@ export default function PageHero({ title, subtitle, backgroundImage }: PageHeroP
             src={backgroundImage}
             alt={title}
             fill
-            className="object-cover"
+            className="object-cover grayscale"
             priority
           />
         ) : (

@@ -46,13 +46,15 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-[36px] md:top-[44px] left-0 right-0 z-50 transition-all duration-500 
+          before:content-[''] before:absolute before:left-0 before:right-0 before:-top-[36px] before:h-[36px] md:before:-top-[44px] md:before:h-[44px] before:transition-all before:duration-500
+          ${
           isScrolled
-            ? "bg-cream/95 backdrop-blur-md shadow-sm py-4"
-            : "bg-transparent py-6"
+            ? "bg-cream/95 backdrop-blur-md shadow-sm py-4 before:bg-cream/95 before:backdrop-blur-md"
+            : "bg-transparent py-6 before:bg-transparent"
         }`}
       >
-        <div className="container-custom flex items-center justify-between">
+        <div className="container-custom relative flex items-center justify-between">
           {/* Logo */}
           <Link href={`/${locale}`} className="relative z-10">
             <motion.div
@@ -72,8 +74,8 @@ export default function Header() {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -88,7 +90,7 @@ export default function Header() {
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 relative z-10">
             <LanguageSwitcher isScrolled={isScrolled} />
             
             <Link

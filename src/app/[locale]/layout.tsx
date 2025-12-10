@@ -7,6 +7,7 @@ import { locales } from '@/i18n/request';
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AnnouncementBanner from "@/components/layout/AnnouncementBanner";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext"],
@@ -68,6 +69,7 @@ export default async function RootLayout({
     <html lang={locale} className={`${playfair.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <body className="bg-cream text-charcoal font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
+          <AnnouncementBanner />
           <Header />
           <main className="overflow-x-hidden">{children}</main>
           <Footer />
