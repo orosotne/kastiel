@@ -16,6 +16,7 @@ export default function OznameniePage() {
         title="Oficiálne stanovisko"
         subtitle={<>K <span className="text-red-500 font-bold">nepodporeniu</span> projektu Kaštieľ Bošany</>}
         backgroundImage="/images/story-hero.jpeg"
+        grayscale={true}
       />
 
       {/* Intro Section */}

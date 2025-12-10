@@ -7,9 +7,10 @@ interface PageHeroProps {
   title: string;
   subtitle?: React.ReactNode;
   backgroundImage?: string;
+  grayscale?: boolean;
 }
 
-export default function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
+export default function PageHero({ title, subtitle, backgroundImage, grayscale = false }: PageHeroProps) {
   return (
     <section className="relative h-[60vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
       {/* Background */}
@@ -19,13 +20,18 @@ export default function PageHero({ title, subtitle, backgroundImage }: PageHeroP
             src={backgroundImage}
             alt={title}
             fill
-            className="object-cover grayscale"
+            className={`object-cover ${grayscale ? "grayscale" : ""}`}
             priority
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-slate-castle via-slate-castle/90 to-renaissance-green/80" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-charcoal/70" />
+        {grayscale && (
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-charcoal/70" />
+        )}
+        {!grayscale && (
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-transparent to-charcoal/60" />
+        )}
       </div>
 
       {/* Content */}
