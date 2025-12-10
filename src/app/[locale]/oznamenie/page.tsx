@@ -60,8 +60,8 @@ export default function OznameniePage() {
                 <h3 className="font-serif text-xl text-charcoal">O občianskom združení In Integrum</h3>
               </div>
               <p className="text-charcoal/80 leading-relaxed mb-4">
-                Naše občianske združenie bolo založené v roku <strong>2007</strong>. Jeho názov v latinčine znamená 
-                <em> „znovuzrodenie"</em> alebo <em>„návrat do pôvodného stavu"</em>. Už <strong>sedemnásty rok</strong> sa 
+                Naše občianske združenie bolo založené v roku <strong>2007</strong>. Jeho názov v latinčine znamená{" "}
+                <em>&bdquo;znovuzrodenie&ldquo;</em> alebo <em>&bdquo;návrat do pôvodného stavu&ldquo;</em>. Už <strong>sedemnásty rok</strong> sa 
                 kontinuálne venujeme obnove národnej kultúrnej pamiatky – Renesančného kaštieľa v Bošanoch.
               </p>
             </div>
@@ -93,10 +93,10 @@ export default function OznameniePage() {
 
               <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-charcoal/10 my-8">
                 <p className="text-charcoal/80 leading-relaxed italic font-serif text-lg">
-                  „Zároveň si dovoľujeme deklarovať, že v našej činnosti budeme pokračovať aj naďalej. 
+                  &bdquo;Zároveň si dovoľujeme deklarovať, že v našej činnosti budeme pokračovať aj naďalej. 
                   Obnova kaštieľa je pre nás dlhodobým a už i morálnym záväzkom samým pred sebou a vôbec 
                   nie zdrojom príjmov. Tento náš morálny aspekt dotiahnuť dielo dokonca a nielen zvonku 
-                  ale i zvnútra, presahuje jednotlivé grantové výzvy, či akékoľvek administratívne rozhodnutia."
+                  ale i zvnútra, presahuje jednotlivé grantové výzvy, či akékoľvek administratívne rozhodnutia.&ldquo;
                 </p>
               </div>
 
@@ -169,11 +169,11 @@ export default function OznameniePage() {
           <FadeInOnScroll delay={0.1}>
             <div className="bg-cream p-8 rounded-xl">
               <p className="text-charcoal/80 leading-relaxed font-serif italic text-lg text-center">
-                „Zámerom tohto stanoviska nie je opätovne kritizovať ani už viacej spochybňovať prijaté rozhodnutia. 
+                &bdquo;Zámerom tohto stanoviska nie je opätovne kritizovať ani už viacej spochybňovať prijaté rozhodnutia. 
                 Našim cieľom je skôr už takto ticho, s úctou a pokorou poukázať na mieru zodpovednosti do budúcna. 
                 Práve vaše rozhodnutia majú schopnosť nielen prideľovať financie, ale aj spoluurčovať, či konkrétne 
                 diela s dlhodobým verejným významom dostanú šancu pokračovať, alebo zostanú odkázané výlučne na 
-                osobné obete jednotlivcov."
+                osobné obete jednotlivcov.&ldquo;
               </p>
             </div>
           </FadeInOnScroll>
