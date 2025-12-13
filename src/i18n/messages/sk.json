@@ -9,7 +9,9 @@
     "weddings": "Svadby",
     "gallery": "Galéria",
     "contact": "Kontakt",
-    "reserve": "Rezervovať"
+    "reserve": "Rezervovať",
+    "open_menu": "Otvoriť menu",
+    "close_menu": "Zavrieť menu"
   },
   "hero": {
     "title": "In Integrum",
@@ -148,6 +150,12 @@
     "banner": "DÔLEŽITÉ: Náš projekt nebol podporený. Pokračujeme z vlastných zdrojov.",
     "title": "Oficiálne stanovisko",
     "subtitle": "K nepodporeniu projektu Kaštieľ Bošany"
+  },
+  "cookies": {
+    "text": "Tento web používa cookies na zlepšenie vášho zážitku.",
+    "more_info": "Viac informácií",
+    "accept": "Súhlasím",
+    "close": "Zavrieť"
   }
 }
 

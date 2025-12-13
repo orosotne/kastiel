@@ -9,7 +9,9 @@
     "weddings": "Hochzeiten",
     "gallery": "Galerie",
     "contact": "Kontakt",
-    "reserve": "Reservieren"
+    "reserve": "Reservieren",
+    "open_menu": "Menü öffnen",
+    "close_menu": "Menü schließen"
   },
   "hero": {
     "title": "In Integrum",
@@ -143,6 +145,12 @@
       "phone": "Telefon",
       "email": "E-Mail"
     }
+  },
+  "cookies": {
+    "text": "Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern.",
+    "more_info": "Mehr Info",
+    "accept": "Akzeptieren",
+    "close": "Schließen"
   }
 }
 
