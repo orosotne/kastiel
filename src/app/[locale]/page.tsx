@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
+import StructuredData from "@/components/StructuredData";
 
 // Lazy load sections below the fold for better initial load
 const PhoenixSection = dynamic(() => import("@/components/sections/PhoenixSection"), {
@@ -21,6 +22,7 @@ const ParkSection = dynamic(() => import("@/components/sections/ParkSection"), {
 export default function HomePage() {
   return (
     <>
+      <StructuredData />
       <HeroSection />
       <PhoenixSection />
       <MediaSection />

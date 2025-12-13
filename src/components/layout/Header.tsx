@@ -8,28 +8,14 @@ import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useScroll } from "@/hooks/useScroll";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const isScrolled = useScroll(50);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations("navigation");
   const locale = useLocale();
   const pathname = usePathname();
-
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -112,7 +98,9 @@ export default function Header() {
               className={`lg:hidden p-2 transition-colors duration-300 ${
                 isScrolled ? "text-charcoal" : "text-white"
               }`}
-              aria-label="Menu"
+              aria-label={isMenuOpen ? t("close_menu") : t("open_menu")}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -129,6 +117,7 @@ export default function Header() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-slate-castle"
+            id="mobile-menu"
           >
             <motion.nav
               initial={{ opacity: 0, y: 20 }}

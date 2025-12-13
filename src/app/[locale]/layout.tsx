@@ -8,6 +8,8 @@ import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AnnouncementBanner from "@/components/layout/AnnouncementBanner";
+import CookieConsent from "@/components/layout/CookieConsent";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext"],
@@ -73,6 +75,8 @@ export default async function RootLayout({
           <Header />
           <main className="overflow-x-hidden">{children}</main>
           <Footer />
+          <CookieConsent />
+          <ScrollToTop />
         </NextIntlClientProvider>
       </body>
     </html>
