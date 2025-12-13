@@ -1,18 +1,26 @@
 "use client";
 
+import { memo, useMemo, useRef, ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode } from "react";
+
+const DIRECTIONS = {
+  up: { y: 40, x: 0 },
+  down: { y: -40, x: 0 },
+  left: { y: 0, x: 40 },
+  right: { y: 0, x: -40 },
+  none: { y: 0, x: 0 },
+} as const;
 
 interface FadeInOnScrollProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "down" | "left" | "right" | "none";
+  direction?: keyof typeof DIRECTIONS;
   duration?: number;
   once?: boolean;
 }
 
-export default function FadeInOnScroll({
+const FadeInOnScroll = memo(function FadeInOnScroll({
   children,
   className = "",
   delay = 0,
@@ -23,38 +31,33 @@ export default function FadeInOnScroll({
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: "-50px" });
 
-  const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
-    none: { y: 0, x: 0 },
-  };
+  const dir = DIRECTIONS[direction];
+
+  const transition = useMemo(() => ({
+    duration,
+    delay,
+    ease: [0.25, 0.1, 0.25, 1],
+  }), [duration, delay]);
 
   return (
     <motion.div
       ref={ref}
-      initial={{
-        opacity: 0,
-        y: directions[direction].y,
-        x: directions[direction].x,
-      }}
+      initial={{ opacity: 0, y: dir.y, x: dir.x }}
       animate={{
         opacity: isInView ? 1 : 0,
-        y: isInView ? 0 : directions[direction].y,
-        x: isInView ? 0 : directions[direction].x,
+        y: isInView ? 0 : dir.y,
+        x: isInView ? 0 : dir.x,
       }}
-      transition={{
-        duration,
-        delay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
+      transition={transition}
       className={className}
+      style={{ willChange: "opacity, transform" }}
     >
       {children}
     </motion.div>
   );
-}
+});
+
+export default FadeInOnScroll;
 
 
 

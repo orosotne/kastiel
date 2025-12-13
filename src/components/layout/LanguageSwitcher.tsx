@@ -1,8 +1,8 @@
 "use client";
 
+import { memo, useState, useCallback } from "react";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -10,13 +10,13 @@ const languages = [
   { code: "sk", label: "SK", name: "Slovenčina" },
   { code: "en", label: "EN", name: "English" },
   { code: "de", label: "DE", name: "Deutsch" },
-];
+] as const;
 
 interface LanguageSwitcherProps {
   isScrolled?: boolean;
 }
 
-export default function LanguageSwitcher({ isScrolled = true }: LanguageSwitcherProps) {
+const LanguageSwitcher = memo(function LanguageSwitcher({ isScrolled = true }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
   const locale = useLocale();
   const router = useRouter();
@@ -24,12 +24,12 @@ export default function LanguageSwitcher({ isScrolled = true }: LanguageSwitcher
 
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
 
-  const switchLocale = (newLocale: string) => {
+  const switchLocale = useCallback((newLocale: string) => {
     const segments = pathname.split("/");
     segments[1] = newLocale;
     router.push(segments.join("/"));
     setIsOpen(false);
-  };
+  }, [pathname, router]);
 
   return (
     <div className="relative">
@@ -81,7 +81,6 @@ export default function LanguageSwitcher({ isScrolled = true }: LanguageSwitcher
       </AnimatePresence>
     </div>
   );
-}
+});
 
-
-
+export default LanguageSwitcher;

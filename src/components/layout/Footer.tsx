@@ -1,21 +1,21 @@
 "use client";
 
+import { memo, useMemo } from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "framer-motion";
 import { Instagram, Facebook, Mail, Phone, MapPin, Building2 } from "lucide-react";
 
-export default function Footer() {
+const Footer = memo(function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("navigation");
   const locale = useLocale();
 
-  const navLinks = [
+  const navLinks = useMemo(() => [
     { href: `/${locale}/pribeh`, label: nav("story") },
     { href: `/${locale}/svadby`, label: nav("weddings") },
     { href: `/${locale}/galeria`, label: nav("gallery") },
     { href: `/${locale}/kontakt`, label: nav("contact") },
-  ];
+  ], [locale, nav]);
 
   return (
     <footer className="bg-slate-castle text-ivory">
@@ -152,4 +152,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});
+
+export default Footer;

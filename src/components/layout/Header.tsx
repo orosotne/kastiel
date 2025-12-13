@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -17,10 +17,17 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -32,13 +39,13 @@ export default function Header() {
     }
   }, [isMenuOpen]);
 
-  const navLinks = [
+  const navLinks = useMemo(() => [
     { href: `/${locale}`, label: t("home") },
     { href: `/${locale}/pribeh`, label: t("story") },
     { href: `/${locale}/svadby`, label: t("weddings") },
     { href: `/${locale}/galeria`, label: t("gallery") },
     { href: `/${locale}/kontakt`, label: t("contact") },
-  ];
+  ], [locale, t]);
 
   return (
     <>
@@ -56,22 +63,17 @@ export default function Header() {
       >
         <div className="container-custom relative flex items-center justify-between">
           {/* Logo */}
-          <Link href={`/${locale}`} className="relative z-10">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="relative"
-            >
-              <Image
-                src="/kastiel-bosany-logo.svg"
-                alt="Kaštieľ Bošany - In Integrum"
-                width={240}
-                height={80}
-                className={`h-16 md:h-[72px] w-auto transition-all duration-300 ${
-                  isScrolled ? "brightness-0" : "brightness-0 invert"
-                }`}
-                priority
-              />
-            </motion.div>
+          <Link href={`/${locale}`} className="relative z-10 block hover:scale-[1.02] transition-transform duration-300">
+            <Image
+              src="/kastiel-bosany-logo.svg"
+              alt="Kaštieľ Bošany - In Integrum"
+              width={240}
+              height={80}
+              className={`h-16 md:h-[72px] w-auto transition-all duration-300 ${
+                isScrolled ? "brightness-0" : "brightness-0 invert"
+              }`}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation - Centered */}
