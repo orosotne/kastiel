@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, ExternalLink, Quote } from "lucide-react";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
@@ -28,13 +29,13 @@ const mediaArticles = [
   },
   { 
     name: "TopSlovensko", 
-    logo: "/images/media/topslovensko.png", 
+    logo: "/images/media/topslovensko.webp", 
     url: "https://www.topslovensko.sk/detail/kastiel-bossanyiovcov-bosany/",
     title: "Kaštieľ Bossányiovcov je skutočným klenotom architektúry"
   },
   { 
     name: "Baťovany.sk", 
-    logo: "/images/media/Batovany_SK_LOGO.png", 
+    logo: "/images/media/Batovany_SK_LOGO.webp", 
     url: "https://www.batovany.sk/nase-kastiele-jeden-kastiel-nestaci-bosany-zazili-aj-navstevu-marie-terezie/",
     title: "Naše kaštiele: Jeden kaštieľ nestačí. Bošany zažili aj návštevu Márie Terézie"
   },
@@ -86,6 +87,7 @@ const videos = [
 const useTextLogos = false;
 
 export default function MediaSection() {
+  const t = useTranslations("media");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [activeQuote, setActiveQuote] = useState(0);
 
@@ -97,12 +99,12 @@ export default function MediaSection() {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[1px] bg-gold" />
             <span className="text-sm uppercase tracking-[0.2em] text-gold">
-              Press & Media
+              {t("label")}
             </span>
             <div className="w-12 h-[1px] bg-gold" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-charcoal">
-            Hovoria o nás
+            {t("title")}
           </h2>
         </FadeInOnScroll>
 
@@ -139,7 +141,7 @@ export default function MediaSection() {
                       ? "bg-gold scale-110"
                       : "bg-charcoal/20 hover:bg-charcoal/40"
                   }`}
-                  aria-label={`Citát ${index + 1}`}
+                  aria-label={`${t("quote")} ${index + 1}`}
                 />
               ))}
             </div>
@@ -149,7 +151,7 @@ export default function MediaSection() {
         {/* Media Articles */}
         <FadeInOnScroll delay={0.2} className="mb-20">
           <p className="text-center text-charcoal/50 text-sm uppercase tracking-wider mb-8">
-            Písali o nás
+            {t("articles")}
           </p>
           
           {useTextLogos ? (
@@ -203,7 +205,7 @@ export default function MediaSection() {
         {/* Video Section */}
         <FadeInOnScroll delay={0.3}>
           <p className="text-center text-charcoal/50 text-sm uppercase tracking-wider mb-8">
-            Video reportáže
+            {t("videos")}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {videos.map((video, index) => (

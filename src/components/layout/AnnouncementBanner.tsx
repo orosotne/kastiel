@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AlertTriangle, ChevronRight } from "lucide-react";
 
 export default function AnnouncementBanner() {
   const locale = useLocale();
+  const t = useTranslations("announcement");
 
   return (
     <Link
@@ -16,9 +17,8 @@ export default function AnnouncementBanner() {
         <div className="flex items-center justify-center gap-2 md:gap-3 text-white text-xs md:text-sm">
           <AlertTriangle size={14} className="flex-shrink-0 hidden sm:block" />
           <span className="font-medium text-center">
-            <span className="uppercase tracking-wider">Dôležité:</span>{" "}
-            <span className="hidden sm:inline">Náš projekt nebol podporený. Pokračujeme z vlastných zdrojov.</span>
-            <span className="sm:hidden">Projekt nepodporený štátom</span>
+            <span className="hidden sm:inline">{t("banner")}</span>
+            <span className="sm:hidden">{t("banner_short")}</span>
           </span>
           <ChevronRight size={14} className="flex-shrink-0" />
         </div>

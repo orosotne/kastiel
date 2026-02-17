@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
   const sections = [
     {
       icon: Building2,
-      title: "Prevádzkovateľ",
+      title: t("operator"),
       content: (
         <div className="space-y-2">
           <p><strong>Názov:</strong> IN INTEGRUM</p>
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
     },
     {
       icon: Database,
-      title: "Aké údaje zbierame",
+      title: t("data_collected"),
       content: (
         <ul className="list-disc list-inside space-y-2">
           <li>Meno a priezvisko (pri kontaktnom formulári)</li>
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
     },
     {
       icon: Shield,
-      title: "Účel spracovania",
+      title: t("purpose"),
       content: (
         <ul className="list-disc list-inside space-y-2">
           <li>Odpoveď na vaše dopyty a otázky</li>
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
     },
     {
       icon: Cookie,
-      title: "Cookies",
+      title: t("cookies_title"),
       content: (
         <div className="space-y-2">
           <p>Naša webová stránka používa cookies pre:</p>
@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
     },
     {
       icon: UserCheck,
-      title: "Vaše práva",
+      title: t("your_rights"),
       content: (
         <div className="space-y-2">
           <p>Podľa GDPR máte právo:</p>
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
     },
     {
       icon: Mail,
-      title: "Kontakt",
+      title: t("contact"),
       content: (
         <div className="space-y-2">
           <p>Pre uplatnenie vašich práv alebo otázky ohľadom ochrany osobných údajov nás kontaktujte:</p>
@@ -99,9 +99,9 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <PageHero
-        title="Ochrana osobných údajov"
-        subtitle="GDPR a zásady ochrany súkromia"
-        backgroundImage="/images/story-hero.jpeg"
+        title={t("hero_title")}
+        subtitle={t("hero_subtitle")}
+        backgroundImage="/images/story-hero.webp"
       />
 
       <section className="py-24 md:py-32 bg-cream">
@@ -109,9 +109,7 @@ export default function PrivacyPolicyPage() {
           <FadeInOnScroll>
             <div className="prose prose-lg max-w-none mb-12">
               <p className="text-charcoal/70 text-lg leading-relaxed">
-                Ochrana vašich osobných údajov je pre nás dôležitá. Táto stránka vysvetľuje, 
-                ako zhromažďujeme, používame a chránime vaše osobné údaje v súlade s nariadením 
-                GDPR (General Data Protection Regulation).
+                {t("intro")}
               </p>
             </div>
           </FadeInOnScroll>
@@ -144,7 +142,7 @@ export default function PrivacyPolicyPage() {
           <FadeInOnScroll delay={0.6}>
             <div className="mt-12 p-6 bg-gold/10 rounded-xl border border-gold/20">
               <p className="text-charcoal/70 text-sm text-center">
-                Posledná aktualizácia: December 2024
+                {t("last_updated")}
               </p>
             </div>
           </FadeInOnScroll>

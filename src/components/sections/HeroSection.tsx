@@ -27,7 +27,7 @@ export default function HeroSection() {
         {/* Poster image ako fallback */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/Hero_image.jpeg')" }}
+          style={{ backgroundImage: "url('/images/Hero_image.webp')" }}
         />
         
         {/* Video sa renderuje len po mount (client-side) */}

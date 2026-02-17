@@ -10,6 +10,8 @@ import { Heart, Users, Calendar, Send, X, ChevronLeft, ChevronRight } from "luci
 
 export default function WeddingsPage() {
   const t = useTranslations("weddings");
+  const wp = useTranslations("weddings_page");
+  const c = useTranslations("common");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,8 +54,6 @@ export default function WeddingsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
   };
 
   const handleChange = (
@@ -67,7 +67,7 @@ export default function WeddingsPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/wedding-hero.png"
+        backgroundImage="/images/wedding-hero.webp"
       />
 
       {/* Venue Section */}
@@ -79,7 +79,7 @@ export default function WeddingsPage() {
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-[1px] bg-gold" />
                   <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                    Venue
+                    {wp("venue_label")}
                   </span>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
@@ -95,19 +95,19 @@ export default function WeddingsPage() {
                     <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Heart className="text-gold" size={24} />
                     </div>
-                    <span className="text-sm text-charcoal/60">Romantika</span>
+                    <span className="text-sm text-charcoal/60">{wp("romance")}</span>
                   </div>
                   <div className="text-center">
                     <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Users className="text-gold" size={24} />
                     </div>
-                    <span className="text-sm text-charcoal/60">Do 150 hostí</span>
+                    <span className="text-sm text-charcoal/60">{wp("guests_count")}</span>
                   </div>
                   <div className="text-center">
                     <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Calendar className="text-gold" size={24} />
                     </div>
-                    <span className="text-sm text-charcoal/60">Celoročne</span>
+                    <span className="text-sm text-charcoal/60">{wp("year_round")}</span>
                   </div>
                 </div>
               </div>
@@ -117,8 +117,8 @@ export default function WeddingsPage() {
               <div className="relative">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src="/images/wedding-venue.jpg"
-                    alt="Svadobný priestor"
+                    src="/images/wedding-venue.webp"
+                    alt={wp("venue_alt")}
                     fill
                     className="object-cover"
                   />
@@ -135,7 +135,7 @@ export default function WeddingsPage() {
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
-              Galéria svadieb
+              {wp("gallery_title")}
             </h2>
           </FadeInOnScroll>
 
@@ -149,14 +149,14 @@ export default function WeddingsPage() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Image
-                    src={`/images/weddings/wedding-${i}.jpg`}
-                    alt={`Svadba ${i}`}
+                    src={`/images/weddings/wedding-${i}.webp`}
+                    alt={`${wp("wedding_photo")} ${i}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-center justify-center">
                     <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium tracking-wide">
-                      Zväčšiť
+                      {c("zoom")}
                     </span>
                   </div>
                 </motion.div>
@@ -172,7 +172,7 @@ export default function WeddingsPage() {
         {/* Left Alpaca - Boška */}
         <div className="hidden md:block absolute -left-8 lg:-left-4 bottom-0 w-[280px] lg:w-[400px] xl:w-[480px] h-[380px] lg:h-[500px] xl:h-[580px] z-20 pointer-events-none">
           <Image
-            src="/images/alpaca-boska.png"
+            src="/images/alpaca-boska.webp"
             alt="Alpaka Boška"
             fill
             className="object-contain object-bottom drop-shadow-2xl"
@@ -183,7 +183,7 @@ export default function WeddingsPage() {
         {/* Right Alpaca - Rišo */}
         <div className="hidden md:block absolute -right-8 lg:-right-4 bottom-0 w-[280px] lg:w-[400px] xl:w-[480px] h-[380px] lg:h-[500px] xl:h-[580px] z-20 pointer-events-none">
           <Image
-            src="/images/alpaca-riso.png"
+            src="/images/alpaca-riso.webp"
             alt="Alpaka Rišo"
             fill
             className="object-contain object-bottom drop-shadow-2xl"
@@ -195,7 +195,7 @@ export default function WeddingsPage() {
         <div className="md:hidden flex justify-between mb-4">
           <div className="relative w-[50%] h-[220px] -ml-12">
             <Image
-              src="/images/alpaca-boska.png"
+              src="/images/alpaca-boska.webp"
               alt="Alpaka Boška"
               fill
               className="object-contain object-left drop-shadow-xl"
@@ -204,7 +204,7 @@ export default function WeddingsPage() {
           </div>
           <div className="relative w-[50%] h-[220px] -mr-12">
             <Image
-              src="/images/alpaca-riso.png"
+              src="/images/alpaca-riso.webp"
               alt="Alpaka Rišo"
               fill
               className="object-contain object-right drop-shadow-xl"
@@ -220,7 +220,7 @@ export default function WeddingsPage() {
               <div className="flex items-center justify-center gap-4 mb-4">
                 <div className="w-12 h-[1px] bg-white/40" />
                 <span className="text-sm uppercase tracking-[0.2em] text-white/70">
-                  Naši maskoti
+                  {wp("mascots_label")}
                 </span>
                 <div className="w-12 h-[1px] bg-white/40" />
               </div>
@@ -238,49 +238,49 @@ export default function WeddingsPage() {
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🦙</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Boška</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("boska")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🦙</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Rišo</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("riso")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🐟</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Kapry</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("carp")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🐰</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Zajace</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("rabbits")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🐔</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Sliepky</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("chickens")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🪿</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Husi</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("geese")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🦢</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Labute</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("swans")}</span>
                 </div>
                 <div className="text-center w-[60px] md:w-auto">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-1 md:mb-2 backdrop-blur-sm">
                     <span className="text-base md:text-xl">🐕</span>
                   </div>
-                  <span className="text-white font-medium text-xs md:text-sm">Pes</span>
+                  <span className="text-white font-medium text-xs md:text-sm">{wp("dog")}</span>
                 </div>
               </div>
             </div>
@@ -410,7 +410,7 @@ export default function WeddingsPage() {
             <button
               onClick={closeLightbox}
               className="absolute top-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label="Zavrieť"
+              aria-label={c("close")}
             >
               <X className="text-white" size={24} />
             </button>
@@ -422,7 +422,7 @@ export default function WeddingsPage() {
                 prevImage();
               }}
               className="absolute left-4 md:left-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label="Predchádzajúci"
+              aria-label={c("previous")}
             >
               <ChevronLeft className="text-white" size={28} />
             </button>
@@ -434,7 +434,7 @@ export default function WeddingsPage() {
                 nextImage();
               }}
               className="absolute right-4 md:right-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label="Nasledujúci"
+              aria-label={c("next")}
             >
               <ChevronRight className="text-white" size={28} />
             </button>
@@ -450,8 +450,8 @@ export default function WeddingsPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={`/images/weddings/wedding-${currentImage + 1}.jpg`}
-                alt={`Svadba ${currentImage + 1}`}
+                src={`/images/weddings/wedding-${currentImage + 1}.webp`}
+                alt={`${wp("wedding_photo")} ${currentImage + 1}`}
                 fill
                 className="object-contain"
                 sizes="90vw"
@@ -478,7 +478,7 @@ export default function WeddingsPage() {
                       ? "bg-gold w-6"
                       : "bg-white/30 hover:bg-white/50"
                   }`}
-                  aria-label={`Obrázok ${i}`}
+                  aria-label={`${c("image")} ${i}`}
                 />
               ))}
             </div>

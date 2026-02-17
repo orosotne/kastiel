@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
-
+  const locale = useLocale();
   const t = useTranslations("cookies");
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function CookieConsent() {
           <div className="text-sm md:text-base text-center md:text-left">
             <p>
               {t("text")}{" "}
-              <Link href="/privacy-policy" className="underline hover:text-gold transition-colors">
+              <Link href={`/${locale}/privacy-policy`} className="underline hover:text-gold transition-colors">
                 {t("more_info")}
               </Link>.
             </p>

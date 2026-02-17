@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
 import "../globals.css";
@@ -23,26 +23,44 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "In Integrum – Kaštieľ Bošany",
-  description: "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života. Svadby, konferencie, galéria a kultúrne podujatia.",
-  keywords: ["kaštieľ", "Bošany", "svadby", "konferencie", "galéria", "renesancia", "história"],
-  authors: [{ name: "In Integrum" }],
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/icon.svg",
-  },
-  manifest: "/site.webmanifest",
-  openGraph: {
-    title: "In Integrum – Kaštieľ Bošany",
-    description: "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života.",
-    type: "website",
-    locale: "sk_SK",
-  },
+const localeToOg: Record<string, string> = {
+  sk: "sk_SK",
+  en: "en_US",
+  de: "de_DE",
 };
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: ["kaštieľ", "Bošany", "castle", "weddings", "conferences", "gallery", "renaissance", "history"],
+    authors: [{ name: "In Integrum" }],
+    icons: {
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/icon.svg", type: "image/svg+xml" },
+      ],
+      apple: "/icon.svg",
+    },
+    manifest: "/site.webmanifest",
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      type: "website",
+      locale: localeToOg[locale] || "sk_SK",
+      images: [
+        {
+          url: "/images/Hero_image.webp",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -71,9 +89,15 @@ export default async function RootLayout({
     <html lang={locale} className={`${playfair.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <body className="bg-cream text-charcoal font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-6 focus:py-3 focus:text-sm focus:font-medium"
+          >
+            Skip to main content
+          </a>
           <AnnouncementBanner />
           <Header />
-          <main className="overflow-x-hidden">{children}</main>
+          <main id="main-content" className="overflow-x-hidden">{children}</main>
           <Footer />
           <CookieConsent />
           <ScrollToTop />

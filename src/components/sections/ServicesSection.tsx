@@ -15,13 +15,13 @@ export default function ServicesSection() {
     {
       key: "interior",
       href: `/${locale}/galeria`,
-      image: "/images/gallery/interior-1.jpeg",
+      image: "/images/gallery/interior/interior-1.webp",
       icon: Camera,
     },
     {
       key: "exterior",
       href: `/${locale}/svadby`,
-      image: "/images/wedding-hero.png",
+      image: "/images/wedding-hero.webp",
       icon: Heart,
     },
   ];

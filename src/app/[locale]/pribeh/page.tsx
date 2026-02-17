@@ -13,61 +13,61 @@ import { X, ChevronLeft, ChevronRight, Landmark, Palette, Shield, Castle, ImageI
 // Historické fotky pre múzejnú galériu
 const historyPhotos = [
   {
-    src: "/images/history/history-1.png",
+    src: "/images/history/history-1.webp",
     title: "Pohľadnica Nagy-Bossany",
     year: "okolo 1905",
     description: "Vzácna pohľadnica s celkovým pohľadom na kaštieľ v zimnom období",
   },
   {
-    src: "/images/history/history-2.png",
+    src: "/images/history/history-2.webp",
     title: "Letecký pohľad",
     year: "okolo 1930",
     description: "Vyvýšený pohľad na kaštieľ zo zadnej strany s charakteristickým cimburím",
   },
   {
-    src: "/images/history/history-3.png",
+    src: "/images/history/history-3.webp",
     title: "Panoráma s dedinou",
     year: "okolo 1925",
     description: "Kaštieľ s okolitými hospodárskymi budovami a dedinou v pozadí",
   },
   {
-    src: "/images/history/history-4.png",
+    src: "/images/history/history-4.webp",
     title: "Bočná fasáda",
     year: "okolo 1955",
     description: "Pohľad na atikové múry s dekoratívnym cimburím a plotom v popredí",
   },
   {
-    src: "/images/history/history-5.png",
+    src: "/images/history/history-5.webp",
     title: "Vstup do parku",
     year: "okolo 1910",
     description: "Pôvodná vstupná brána do kaštieľneho parku s kamennými piliermi",
   },
   {
-    src: "/images/history/history-6.png",
+    src: "/images/history/history-6.webp",
     title: "Päťboký bastión",
     year: "okolo 1965",
     description: "Renesančný bastión s viditeľnými prasklinami pred rekonštrukciou",
   },
   {
-    src: "/images/history/history-7.png",
+    src: "/images/history/history-7.webp",
     title: "Severozápadné krídlo",
     year: "okolo 1975",
     description: "Zadná strana kaštieľa so sýpkovými otvormi z 20. storočia",
   },
   {
-    src: "/images/history/history-8.png",
+    src: "/images/history/history-8.webp",
     title: "Vnútorné nádvorie",
     year: "okolo 1975",
     description: "Pohľad na nádvorie s opadanou omietkou a pôvodnou strechou",
   },
   {
-    src: "/images/history/history-9.png",
+    src: "/images/history/history-9.webp",
     title: "Historický krov",
     year: "okolo 1975",
     description: "Pôvodná drevená krovová konštrukcia z obdobia historizmu",
   },
   {
-    src: "/images/history/history-10.png",
+    src: "/images/history/history-10.webp",
     title: "Rekonštrukcia bastiónu",
     year: "okolo 1980",
     description: "Záchranné stavebné práce na obnove nárožného bastiónu",
@@ -189,9 +189,9 @@ const highlights = [
 // Majitelia kaštieľa
 const owners = [
   { period: "12. stor.", name: "Nitrianska kapitula", desc: "Pôvodný vlastník obce Bošany", hasImage: false, image: "" },
-  { period: "13.-18. stor.", name: "Rod Bošániovcov", desc: "Hlavná vetva vlastníkov kaštieľa", hasImage: true, image: "/images/bosaniovci.png" },
+  { period: "13.-18. stor.", name: "Rod Bošániovcov", desc: "Hlavná vetva vlastníkov kaštieľa", hasImage: true, image: "/images/bosaniovci.webp" },
   { period: "od 1710", name: "Ruttkayovci", desc: "Po predaji vdovou Annou Esterházyovou", hasImage: false, image: "" },
-  { period: "1864", name: "Adolf Schmitt", desc: "Priemyselník, odkúpil kaštieľ", hasImage: true, image: "/images/schmitt.jpg" },
+  { period: "1864", name: "Adolf Schmitt", desc: "Priemyselník, odkúpil kaštieľ", hasImage: true, image: "/images/schmitt.webp" },
   { period: "1865", name: "Július Bischofshausen", desc: "Barón, kúpil časť majetku", hasImage: false, image: "" },
   { period: "1906-1944", name: "Ladislav Salzberger", desc: "Posledný významný vlastník veľkostatku", hasImage: false, image: "" },
 ];
@@ -239,7 +239,7 @@ export default function StoryPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/story-hero.jpeg"
+        backgroundImage="/images/story-hero.webp"
       />
 
       {/* Historical Photos Museum Gallery */}
@@ -406,7 +406,7 @@ export default function StoryPage() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Image
-                    src={`/images/gallery/analysis-${i}.png`}
+                    src={`/images/gallery/analysis-${i}.webp`}
                     alt={`Analytická sonda ${i}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -563,7 +563,7 @@ export default function StoryPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={`/images/gallery/analysis-${currentImage + 1}.png`}
+                src={`/images/gallery/analysis-${currentImage + 1}.webp`}
                 alt={`Analytická sonda ${currentImage + 1}`}
                 fill
                 className="object-contain"

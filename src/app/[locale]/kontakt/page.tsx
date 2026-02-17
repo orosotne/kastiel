@@ -20,7 +20,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
   };
 
   const handleChange = (
@@ -34,7 +33,7 @@ export default function ContactPage() {
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
-        backgroundImage="/images/contact-hero.jpeg"
+        backgroundImage="/images/contact-hero.webp"
       />
 
       <section className="py-24 md:py-32 bg-cream">
@@ -44,7 +43,7 @@ export default function ContactPage() {
             <FadeInOnScroll direction="left">
               <div className="bg-white p-8 md:p-12 shadow-lg">
                 <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-8">
-                  Napíšte nám
+                  {t("form.title")}
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -121,7 +120,7 @@ export default function ContactPage() {
               <div className="space-y-8">
                 <div>
                   <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-8">
-                    Kontaktné údaje
+                    {t("info.title")}
                   </h2>
 
                   <div className="space-y-6">
@@ -181,11 +180,11 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-charcoal mb-1">
-                          Otváracie hodiny
+                          {t("info.hours")}
                         </h4>
                         <p className="text-charcoal/60">
-                          Po - Ne: 9:00 - 18:00<br />
-                          (alebo podľa dohody)
+                          {t("info.hours_detail")}<br />
+                          {t("info.hours_note")}
                         </p>
                       </div>
                     </div>
@@ -195,7 +194,7 @@ export default function ContactPage() {
                 {/* Map Placeholder */}
                 <div className="relative aspect-video bg-slate-castle/10 overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641.0!2d18.15!3d48.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQm_FoWFueQ!5e0!3m2!1ssk!2ssk!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641.0!2d18.2461!3d48.5819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b3e8b1f5d5c3d%3A0x4b5e8e3a5c8d5e3a!2zS2HFoXRpZcS-IEJvxaFhbnk!5e0!3m2!1ssk!2ssk!4v1702000000000"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

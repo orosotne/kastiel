@@ -23,7 +23,10 @@
     "title": "17 Jahre Widerstand und Wiederaufbau",
     "description": "Ziehen Sie und enthüllen Sie die Rettungsgeschichte.",
     "before": "Vor der Restaurierung",
-    "after": "Nach der Restaurierung"
+    "after": "Nach der Restaurierung",
+    "previous": "Vorheriges",
+    "next": "Nächstes",
+    "main_facade": "Hauptfassade"
   },
   "chronicle": {
     "title": "Wo Maria Theresia schlief",
@@ -48,7 +51,9 @@
     }
   },
   "park": {
+    "label": "Anwesen",
     "title": "Leben im Park",
+    "alt": "Alpakas im Schlosspark",
     "description": "Wir sind kein Museum hinter Glas. Unser Park ist eine Promenade für die Öffentlichkeit und Heimat unserer unkonventionellen Bewohner.",
     "cellar": {
       "title": "Weinkeller",
@@ -58,6 +63,7 @@
   "footer": {
     "motto": "Wo Geschichte nicht konserviert, sondern zum Leben erweckt wird.",
     "navigation": "Navigation",
+    "organization": "Bürgervereinigung",
     "contact": "Kontakt",
     "newsletter": {
       "title": "Newsletter",
@@ -134,6 +140,7 @@
       "subtitle": "Nehmen Sie Kontakt mit uns auf"
     },
     "form": {
+      "title": "Schreiben Sie uns",
       "name": "Ihr Name",
       "email": "E-Mail",
       "subject": "Betreff",
@@ -141,16 +148,93 @@
       "submit": "Nachricht senden"
     },
     "info": {
+      "title": "Kontaktdaten",
       "address": "Adresse",
       "phone": "Telefon",
-      "email": "E-Mail"
+      "email": "E-Mail",
+      "hours": "Öffnungszeiten",
+      "hours_detail": "Mo - So: 9:00 - 18:00",
+      "hours_note": "(oder nach Vereinbarung)"
     }
+  },
+  "media": {
+    "label": "Presse & Medien",
+    "title": "Sie sprechen über uns",
+    "articles": "Über uns geschrieben",
+    "videos": "Videoreportagen",
+    "quote": "Zitat",
+    "previous": "Vorheriges",
+    "next": "Nächstes"
+  },
+  "common": {
+    "close": "Schließen",
+    "previous": "Vorheriges",
+    "next": "Nächstes",
+    "show_all": "Alle Fotos anzeigen",
+    "show_less": "Weniger anzeigen",
+    "zoom": "Vergrößern",
+    "image": "Bild",
+    "back_to_top": "Nach oben",
+    "scroll_hint": "Scrollen Sie, um die gesamte Geschichte zu sehen",
+    "castle_interior": "Schloss-Interieur",
+    "castle_exterior": "Schloss-Außenbereich",
+    "castle_detail": "Schloss-Detail",
+    "privacy_policy": "Datenschutz",
+    "page_not_found": "Seite nicht gefunden",
+    "page_not_found_desc": "Entschuldigung, die angeforderte Seite existiert nicht oder wurde verschoben.",
+    "back_home": "Zurück zur Startseite",
+    "error_title": "Ein Fehler ist aufgetreten",
+    "error_desc": "Es tut uns leid, etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "try_again": "Erneut versuchen"
   },
   "cookies": {
     "text": "Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern.",
     "more_info": "Mehr Info",
     "accept": "Akzeptieren",
     "close": "Schließen"
+  },
+  "privacy": {
+    "hero_title": "Datenschutz",
+    "hero_subtitle": "DSGVO und Datenschutzgrundsätze",
+    "intro": "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Seite erklärt, wie wir Ihre persönlichen Daten gemäß der DSGVO (Datenschutz-Grundverordnung) erfassen, verwenden und schützen.",
+    "operator": "Verantwortlicher",
+    "data_collected": "Welche Daten wir erfassen",
+    "purpose": "Zweck der Verarbeitung",
+    "cookies_title": "Cookies",
+    "your_rights": "Ihre Rechte",
+    "contact": "Kontakt",
+    "last_updated": "Letzte Aktualisierung: Dezember 2024"
+  },
+  "gallery_page": {
+    "label": "Fotogalerie",
+    "title": "Schlossräume",
+    "description": "Entdecken Sie die Schönheit des Renaissance-Schlosses durch die Linse. Innenräume, Außenbereiche und die Atmosphäre der Geschichte.",
+    "tab_interior": "Innenräume",
+    "tab_exterior": "Außenbereiche"
+  },
+  "weddings_page": {
+    "venue_label": "Veranstaltungsort",
+    "romance": "Romantik",
+    "guests_count": "Bis zu 150 Gäste",
+    "year_round": "Ganzjährig",
+    "venue_alt": "Hochzeitsort",
+    "gallery_title": "Hochzeitsgalerie",
+    "wedding_photo": "Hochzeitsfoto",
+    "mascots_label": "Unsere Maskottchen",
+    "boska": "Boška",
+    "riso": "Rišo",
+    "carp": "Koi-Fische",
+    "rabbits": "Kaninchen",
+    "chickens": "Hühner",
+    "geese": "Gänse",
+    "swans": "Schwäne",
+    "dog": "Hund"
+  },
+  "announcement": {
+    "banner": "WICHTIG: Unser Projekt wurde nicht unterstützt. Wir fahren mit privater Finanzierung fort.",
+    "banner_short": "Projekt staatlich nicht gefördert",
+    "title": "Offizielle Stellungnahme",
+    "subtitle": "Zur Ablehnung des Projekts Kaštieľ Bošany"
   }
 }
 

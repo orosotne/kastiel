@@ -1,22 +1,28 @@
 import Script from "next/script";
 
 export default function StructuredData() {
+  const siteUrl = "https://kastiel-martin-miskejes-projects.vercel.app";
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LandmarksOrHistoricalBuildings",
     "name": "Kaštieľ Bošany",
     "alternateName": "In Integrum – Kaštieľ Bošany",
-    "description": "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života.",
-    "url": "https://kastielbosany.sk", // Assuming this is the domain, update if known
+    "description": "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života. Svadby, konferencie, galéria a kultúrne podujatia.",
+    "url": siteUrl,
+    "telephone": "+421907726726",
+    "email": "jmiskeje@gmail.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "SNP 113/1",
       "addressLocality": "Bošany",
+      "postalCode": "956 18",
       "addressCountry": "SK"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "48.5833", // Approximate coordinates for Bošany
-      "longitude": "18.2500"
+      "latitude": "48.5819",
+      "longitude": "18.2461"
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -29,12 +35,12 @@ export default function StructuredData() {
         "Saturday",
         "Sunday"
       ],
-      "opens": "10:00",
+      "opens": "09:00",
       "closes": "18:00"
     },
     "image": [
-       "https://kastielbosany.sk/images/hero-poster.jpg",
-       "https://kastielbosany.sk/images/castle-after.jpg"
+      `${siteUrl}/images/story-hero.webp`,
+      `${siteUrl}/images/castle-after.webp`
     ]
   };
 

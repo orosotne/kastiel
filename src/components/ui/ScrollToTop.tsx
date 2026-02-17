@@ -2,10 +2,12 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useScroll } from "@/hooks/useScroll";
 
 export default function ScrollToTop() {
-  const isScrolled = useScroll(400); // Show after 400px
+  const isScrolled = useScroll(400);
+  const t = useTranslations("common");
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -22,8 +24,8 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 z-40 p-3 bg-gold text-charcoal rounded-full shadow-lg hover:bg-gold-dark transition-colors"
-          aria-label="Scroll to top"
+          className="fixed bottom-8 right-6 z-40 p-3 bg-gold text-charcoal rounded-full shadow-lg hover:bg-gold-dark transition-colors"
+          aria-label={t("back_to_top")}
         >
           <ArrowUp size={24} />
         </motion.button>

@@ -21,10 +21,10 @@ export default function GlobalError({
           fontFamily: "system-ui, sans-serif"
         }}>
           <h1 style={{ fontSize: "2rem", color: "#2C3E50", marginBottom: "1rem" }}>
-            Nastala chyba
+            Error / Chyba
           </h1>
           <p style={{ color: "#2C3E50", opacity: 0.6, marginBottom: "2rem" }}>
-            Ospravedlňujeme sa, niečo sa pokazilo.
+            Something went wrong. / Niečo sa pokazilo.
           </p>
           <button
             onClick={() => reset()}
@@ -39,19 +39,10 @@ export default function GlobalError({
               letterSpacing: "0.1em"
             }}
           >
-            Skúsiť znova
+            Try again / Skúsiť znova
           </button>
         </div>
       </body>
     </html>
   );
 }
-
-
-
-
-
-
-
-
-

@@ -23,7 +23,10 @@
     "title": "17 rokov vzdoru a obnovy",
     "description": "Potiahnite a odhaľte príbeh záchrany.",
     "before": "Pred obnovou",
-    "after": "Po obnove"
+    "after": "Po obnove",
+    "previous": "Predchádzajúce",
+    "next": "Nasledujúce",
+    "main_facade": "Hlavná fasáda"
   },
   "chronicle": {
     "title": "Kde spala Mária Terézia",
@@ -48,7 +51,9 @@
     }
   },
   "park": {
+    "label": "Panstvo",
     "title": "Život v parku",
+    "alt": "Alpaky v parku kaštieľa",
     "description": "Nie sme múzeum za sklom. Náš park je korzom pre verejnosť a domovom pre našich netradičných obyvateľov.",
     "cellar": {
       "title": "Vínna pivnica",
@@ -58,6 +63,7 @@
   "footer": {
     "motto": "Kde sa história nekonzervuje, ale vracia do života.",
     "navigation": "Navigácia",
+    "organization": "Občianske združenie",
     "contact": "Kontakt",
     "newsletter": {
       "title": "Novinky",
@@ -134,6 +140,7 @@
       "subtitle": "Spojte sa s nami"
     },
     "form": {
+      "title": "Napíšte nám",
       "name": "Vaše meno",
       "email": "Email",
       "subject": "Predmet",
@@ -141,21 +148,93 @@
       "submit": "Odoslať správu"
     },
     "info": {
+      "title": "Kontaktné údaje",
       "address": "Adresa",
       "phone": "Telefón",
-      "email": "Email"
+      "email": "Email",
+      "hours": "Otváracie hodiny",
+      "hours_detail": "Po - Ne: 9:00 - 18:00",
+      "hours_note": "(alebo podľa dohody)"
     }
+  },
+  "media": {
+    "label": "Press & Média",
+    "title": "Hovoria o nás",
+    "articles": "Písali o nás",
+    "videos": "Video reportáže",
+    "quote": "Citát",
+    "previous": "Predchádzajúce",
+    "next": "Nasledujúce"
   },
   "announcement": {
     "banner": "DÔLEŽITÉ: Náš projekt nebol podporený. Pokračujeme z vlastných zdrojov.",
+    "banner_short": "Projekt nepodporený štátom",
     "title": "Oficiálne stanovisko",
     "subtitle": "K nepodporeniu projektu Kaštieľ Bošany"
+  },
+  "common": {
+    "close": "Zavrieť",
+    "previous": "Predchádzajúci",
+    "next": "Nasledujúci",
+    "show_all": "Zobraziť všetky fotky",
+    "show_less": "Zobraziť menej",
+    "zoom": "Zväčšiť",
+    "image": "Obrázok",
+    "back_to_top": "Naspäť hore",
+    "scroll_hint": "Scrollujte pre zobrazenie celej histórie",
+    "castle_interior": "Interiér kaštieľa",
+    "castle_exterior": "Exteriér kaštieľa",
+    "castle_detail": "Detail kaštieľa",
+    "privacy_policy": "Ochrana osobných údajov",
+    "page_not_found": "Stránka nenájdená",
+    "page_not_found_desc": "Ospravedlňujeme sa, ale požadovaná stránka neexistuje alebo bola presunutá.",
+    "back_home": "Späť na úvod",
+    "error_title": "Nastala chyba",
+    "error_desc": "Ospravedlňujeme sa, niečo sa pokazilo. Skúste to prosím znova.",
+    "try_again": "Skúsiť znova"
   },
   "cookies": {
     "text": "Tento web používa cookies na zlepšenie vášho zážitku.",
     "more_info": "Viac informácií",
     "accept": "Súhlasím",
     "close": "Zavrieť"
+  },
+  "privacy": {
+    "hero_title": "Ochrana osobných údajov",
+    "hero_subtitle": "GDPR a zásady ochrany súkromia",
+    "intro": "Ochrana vašich osobných údajov je pre nás dôležitá. Táto stránka vysvetľuje, ako zhromažďujeme, používame a chránime vaše osobné údaje v súlade s nariadením GDPR (General Data Protection Regulation).",
+    "operator": "Prevádzkovateľ",
+    "data_collected": "Aké údaje zbierame",
+    "purpose": "Účel spracovania",
+    "cookies_title": "Cookies",
+    "your_rights": "Vaše práva",
+    "contact": "Kontakt",
+    "last_updated": "Posledná aktualizácia: December 2024"
+  },
+  "gallery_page": {
+    "label": "Fotogaléria",
+    "title": "Priestory kaštieľa",
+    "description": "Objavte krásu renesančného kaštieľa cez objektív. Interiéry, exteriéry a atmosféra histórie.",
+    "tab_interior": "Vnútorné priestory",
+    "tab_exterior": "Vonkajšie priestory"
+  },
+  "weddings_page": {
+    "venue_label": "Miesto konania",
+    "romance": "Romantika",
+    "guests_count": "Do 150 hostí",
+    "year_round": "Celoročne",
+    "venue_alt": "Svadobný priestor",
+    "gallery_title": "Galéria svadieb",
+    "wedding_photo": "Svadobná fotografia",
+    "mascots_label": "Naši maskoti",
+    "boska": "Boška",
+    "riso": "Rišo",
+    "carp": "Kapry",
+    "rabbits": "Zajace",
+    "chickens": "Sliepky",
+    "geese": "Husi",
+    "swans": "Labute",
+    "dog": "Pes"
   }
 }
 

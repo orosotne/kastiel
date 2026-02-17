@@ -23,7 +23,10 @@
     "title": "17 years of resilience and restoration",
     "description": "Drag and reveal the story of rescue.",
     "before": "Before restoration",
-    "after": "After restoration"
+    "after": "After restoration",
+    "previous": "Previous",
+    "next": "Next",
+    "main_facade": "Main facade"
   },
   "chronicle": {
     "title": "Where Maria Theresa Slept",
@@ -48,7 +51,9 @@
     }
   },
   "park": {
+    "label": "Estate",
     "title": "Life in the Park",
+    "alt": "Alpacas in the castle park",
     "description": "We are not a museum behind glass. Our park is a promenade for the public and home to our unconventional residents.",
     "cellar": {
       "title": "Wine Cellar",
@@ -58,6 +63,7 @@
   "footer": {
     "motto": "Where history is not preserved, but brought back to life.",
     "navigation": "Navigation",
+    "organization": "Civic Association",
     "contact": "Contact",
     "newsletter": {
       "title": "Newsletter",
@@ -134,6 +140,7 @@
       "subtitle": "Get in touch with us"
     },
     "form": {
+      "title": "Write to us",
       "name": "Your name",
       "email": "Email",
       "subject": "Subject",
@@ -141,16 +148,93 @@
       "submit": "Send message"
     },
     "info": {
+      "title": "Contact details",
       "address": "Address",
       "phone": "Phone",
-      "email": "Email"
+      "email": "Email",
+      "hours": "Opening hours",
+      "hours_detail": "Mon - Sun: 9:00 - 18:00",
+      "hours_note": "(or by appointment)"
     }
+  },
+  "media": {
+    "label": "Press & Media",
+    "title": "They talk about us",
+    "articles": "Written about us",
+    "videos": "Video reports",
+    "quote": "Quote",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "common": {
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "show_all": "Show all photos",
+    "show_less": "Show less",
+    "zoom": "Zoom in",
+    "image": "Image",
+    "back_to_top": "Back to top",
+    "scroll_hint": "Scroll to see the full history",
+    "castle_interior": "Castle interior",
+    "castle_exterior": "Castle exterior",
+    "castle_detail": "Castle detail",
+    "privacy_policy": "Privacy Policy",
+    "page_not_found": "Page not found",
+    "page_not_found_desc": "We are sorry, but the requested page does not exist or has been moved.",
+    "back_home": "Back to homepage",
+    "error_title": "An error occurred",
+    "error_desc": "We are sorry, something went wrong. Please try again.",
+    "try_again": "Try again"
   },
   "cookies": {
     "text": "This website uses cookies to enhance your experience.",
     "more_info": "More info",
     "accept": "Accept",
     "close": "Close"
+  },
+  "privacy": {
+    "hero_title": "Privacy Policy",
+    "hero_subtitle": "GDPR and privacy protection principles",
+    "intro": "Protecting your personal data is important to us. This page explains how we collect, use, and protect your personal data in accordance with the GDPR (General Data Protection Regulation).",
+    "operator": "Data Controller",
+    "data_collected": "What data we collect",
+    "purpose": "Purpose of processing",
+    "cookies_title": "Cookies",
+    "your_rights": "Your rights",
+    "contact": "Contact",
+    "last_updated": "Last updated: December 2024"
+  },
+  "gallery_page": {
+    "label": "Photo Gallery",
+    "title": "Castle Spaces",
+    "description": "Discover the beauty of the Renaissance castle through the lens. Interiors, exteriors and the atmosphere of history.",
+    "tab_interior": "Interior Spaces",
+    "tab_exterior": "Exterior Spaces"
+  },
+  "weddings_page": {
+    "venue_label": "Venue",
+    "romance": "Romance",
+    "guests_count": "Up to 150 guests",
+    "year_round": "Year-round",
+    "venue_alt": "Wedding venue",
+    "gallery_title": "Wedding Gallery",
+    "wedding_photo": "Wedding photo",
+    "mascots_label": "Our mascots",
+    "boska": "Boška",
+    "riso": "Rišo",
+    "carp": "Koi fish",
+    "rabbits": "Rabbits",
+    "chickens": "Chickens",
+    "geese": "Geese",
+    "swans": "Swans",
+    "dog": "Dog"
+  },
+  "announcement": {
+    "banner": "IMPORTANT: Our project was not supported. We continue with private funding.",
+    "banner_short": "Project not state-funded",
+    "title": "Official Statement",
+    "subtitle": "Regarding the rejection of the Kaštieľ Bošany project"
   }
 }
 

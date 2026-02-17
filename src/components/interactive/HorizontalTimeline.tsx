@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -50,6 +51,7 @@ export default function HorizontalTimeline({
   title,
   subtitle,
 }: HorizontalTimelineProps) {
+  const t = useTranslations("common");
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -95,7 +97,7 @@ export default function HorizontalTimeline({
         className={`hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg items-center justify-center transition-all duration-300 ${
           canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
-        aria-label="Scroll left"
+        aria-label={t("previous")}
       >
         <ChevronLeft size={20} />
       </button>
@@ -105,7 +107,7 @@ export default function HorizontalTimeline({
         className={`hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white/90 hover:bg-gold text-charcoal hover:text-white rounded-full shadow-lg items-center justify-center transition-all duration-300 ${
           canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
-        aria-label="Scroll right"
+        aria-label={t("next")}
       >
         <ChevronRight size={20} />
       </button>
@@ -175,7 +177,7 @@ export default function HorizontalTimeline({
       <div className="flex justify-center mt-6 gap-2">
         <span className="text-charcoal/40 text-sm flex items-center gap-2">
           <ChevronLeft size={16} />
-          Scrollujte pre zobrazenie celej histórie
+          {t("scroll_hint")}
           <ChevronRight size={16} />
         </span>
       </div>

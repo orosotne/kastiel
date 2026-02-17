@@ -9,21 +9,14 @@ import BeforeAfterSlider from "@/components/interactive/BeforeAfterSlider";
 
 // Konfigurácia - páry obrázkov pred/po
 // Pridajte ďalšie páry keď nahráte obrázky do public/images/phoenix/
-// Formát: before-X.jpeg a after-X.jpeg
+// Formát: before-X.webp a after-X.webp
 const beforeAfterPairs = [
   {
     id: 1,
-    before: "/images/phoenix/before-1.jpeg",
-    after: "/images/phoenix/after-1.jpeg",
-    title: "Hlavná fasáda",
+    before: "/images/phoenix/before-1.webp",
+    after: "/images/phoenix/after-1.webp",
+    titleKey: "main_facade",
   },
-  // Odkomentujte keď nahráte after-2.jpeg:
-  // {
-  //   id: 2,
-  //   before: "/images/phoenix/before-2.jpeg",
-  //   after: "/images/phoenix/after-2.jpeg",
-  //   title: "Nádvorie",
-  // },
 ];
 
 export default function PhoenixSection() {
@@ -78,7 +71,7 @@ export default function PhoenixSection() {
             <button
               onClick={prevSlide}
               className="w-12 h-12 bg-white hover:bg-gold text-charcoal hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group"
-              aria-label="Predchádzajúce"
+              aria-label={t("previous")}
             >
               <ArrowLeft size={24} className="group-hover:scale-110 transition-transform" />
             </button>
@@ -103,7 +96,7 @@ export default function PhoenixSection() {
             <button
               onClick={nextSlide}
               className="w-12 h-12 bg-white hover:bg-gold text-charcoal hover:text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group"
-              aria-label="Nasledujúce"
+              aria-label={t("next")}
             >
               <ArrowRight size={24} className="group-hover:scale-110 transition-transform" />
             </button>
@@ -116,7 +109,7 @@ export default function PhoenixSection() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mt-4 text-charcoal/60 font-medium"
           >
-            {beforeAfterPairs[activeIndex].title}
+            {t(beforeAfterPairs[activeIndex].titleKey)}
           </motion.p>
 
           {/* Counter */}

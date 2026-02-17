@@ -15,7 +15,7 @@ export default function OznameniePage() {
       <PageHero
         title="Oficiálne stanovisko"
         subtitle={<>K <span className="text-red-500 font-bold">nepodporeniu</span> projektu Kaštieľ Bošany</>}
-        backgroundImage="/images/story-hero.jpeg"
+        backgroundImage="/images/story-hero.webp"
         grayscale={true}
       />
 
@@ -253,7 +253,7 @@ export default function OznameniePage() {
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src="/images/zamietnutie-mcrs-2.jpg"
+                src="/images/zamietnutie-mcrs-2.webp"
                 alt="Zamietavé stanovisko MCRS"
                 width={1200}
                 height={1600}

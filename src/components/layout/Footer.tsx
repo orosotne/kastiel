@@ -8,6 +8,7 @@ import { Instagram, Facebook, Mail, Phone, MapPin, Building2 } from "lucide-reac
 const Footer = memo(function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("navigation");
+  const common = useTranslations("common");
   const locale = useLocale();
 
   const navLinks = useMemo(() => [
@@ -76,7 +77,7 @@ const Footer = memo(function Footer() {
 
           {/* Občianske združenie Column */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-6">Občianske združenie</h4>
+            <h4 className="font-serif text-lg text-white mb-6">{t("organization")}</h4>
             <ul className="space-y-4 text-ivory/70 text-sm">
               <li className="flex items-start gap-3">
                 <Building2 size={18} className="text-gold mt-0.5 flex-shrink-0" />
@@ -145,7 +146,7 @@ const Footer = memo(function Footer() {
           </p>
           <div className="flex gap-6 text-ivory/50 text-xs">
             <Link href={`/${locale}/privacy-policy`} className="hover:text-gold transition-colors duration-300">
-              Privacy Policy
+              {common("privacy_policy")}
             </Link>
           </div>
         </div>

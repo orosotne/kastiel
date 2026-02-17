@@ -4,11 +4,17 @@ export function useScroll(threshold = 50) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > threshold);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > threshold);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    // Initial check
     handleScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });

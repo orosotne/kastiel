@@ -73,8 +73,8 @@ export default function ChronicleSection() {
             <div className="relative">
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
-                  src="/images/chronicle-detail.jpeg"
-                  alt="Detail kaštieľa"
+                  src="/images/chronicle-detail.webp"
+                  alt={t("title")}
                   fill
                   className="object-cover"
                 />

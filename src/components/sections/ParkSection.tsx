@@ -17,8 +17,8 @@ export default function ParkSection() {
             <FadeInOnScroll direction="left">
               <div className="relative aspect-video overflow-hidden">
                 <Image
-                  src="/images/park-alpacas.jpeg"
-                  alt="Alpaky v parku"
+                  src="/images/park-alpacas.webp"
+                  alt={t("alt")}
                   fill
                   className="object-cover"
                 />
@@ -31,7 +31,7 @@ export default function ParkSection() {
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-[1px] bg-gold" />
                   <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                    Estate
+                    {t("label")}
                   </span>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
