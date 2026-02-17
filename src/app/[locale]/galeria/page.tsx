@@ -209,13 +209,11 @@ export default function GalleryPage() {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {displayedPhotos.map((photo, i) => (
                   <FadeInOnScroll key={photo} delay={Math.min(i * 0.05, 0.3)}>
-                    <motion.div
-                      className={`relative overflow-hidden group cursor-pointer ${
+                    <div
+                      className={`relative overflow-hidden group cursor-pointer transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] ${
                         i === 0 || i === 5 ? "md:col-span-2 md:row-span-2" : ""
                       }`}
                       onClick={() => openLightbox(i)}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
                     >
                       <div className="relative aspect-square">
                         <Image
@@ -223,6 +221,7 @@ export default function GalleryPage() {
                           alt={`${altPrefix} ${i + 1}`}
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         />
                         <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors duration-300 flex items-center justify-center">
                           <ZoomIn
@@ -231,7 +230,7 @@ export default function GalleryPage() {
                           />
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   </FadeInOnScroll>
                 ))}
               </div>
@@ -239,25 +238,21 @@ export default function GalleryPage() {
               {/* Show More / Show Less Button */}
               <div className="text-center mt-12">
                 {!showAll && allPhotos.length > INITIAL_COUNT && (
-                  <motion.button
+                  <button
                     onClick={() => setShowAll(true)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-charcoal font-medium uppercase tracking-wider text-sm hover:bg-gold-dark transition-colors duration-300"
+                    className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-charcoal font-medium uppercase tracking-wider text-sm hover:bg-gold-dark transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {c("show_all")} ({allPhotos.length})
-                  </motion.button>
+                  </button>
                 )}
 
                 {showAll && (
-                  <motion.button
+                  <button
                     onClick={() => setShowAll(false)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-2 px-8 py-3 border-2 border-charcoal/30 text-charcoal font-medium uppercase tracking-wider text-sm hover:bg-charcoal/5 transition-colors duration-300"
+                    className="inline-flex items-center gap-2 px-8 py-3 border-2 border-charcoal/30 text-charcoal font-medium uppercase tracking-wider text-sm hover:bg-charcoal/5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {c("show_less")}
-                  </motion.button>
+                  </button>
                 )}
               </div>
             </motion.div>
@@ -266,75 +261,64 @@ export default function GalleryPage() {
       </section>
 
       {/* Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxOpen && (
-          <motion.div
-            ref={lightboxRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+      {lightboxOpen && (
+        <div
+          ref={lightboxRef}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center animate-fade-in"
+          onClick={closeLightbox}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
             onClick={closeLightbox}
-            onKeyDown={handleKeyDown}
-            tabIndex={0}
-            role="dialog"
-            aria-modal="true"
+            className="absolute top-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
+            aria-label={c("close")}
           >
-            <button
-              onClick={closeLightbox}
-              className="absolute top-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label={c("close")}
-            >
-              <X className="text-white" size={24} />
-            </button>
+            <X className="text-white" size={24} />
+          </button>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevImage();
-              }}
-              className="absolute left-4 md:left-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label={c("previous")}
-            >
-              <ChevronLeft className="text-white" size={28} />
-            </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-4 md:left-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
+            aria-label={c("previous")}
+          >
+            <ChevronLeft className="text-white" size={28} />
+          </button>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextImage();
-              }}
-              className="absolute right-4 md:right-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label={c("next")}
-            >
-              <ChevronRight className="text-white" size={28} />
-            </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-4 md:right-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
+            aria-label={c("next")}
+          >
+            <ChevronRight className="text-white" size={28} />
+          </button>
 
-            <motion.div
-              key={currentImage}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-[90vw] h-[85vh] flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={allPhotos[currentImage]}
-                alt={`${altPrefix} ${currentImage + 1}`}
-                fill
-                className="object-contain"
-                sizes="90vw"
-                priority
-              />
-            </motion.div>
+          <div
+            className="relative w-[90vw] h-[85vh] flex items-center justify-center transition-opacity duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={allPhotos[currentImage]}
+              alt={`${altPrefix} ${currentImage + 1}`}
+              fill
+              className="object-contain"
+              sizes="90vw"
+            />
+          </div>
 
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium tracking-wider">
-              {currentImage + 1} / {allPhotos.length}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium tracking-wider">
+            {currentImage + 1} / {allPhotos.length}
+          </div>
+        </div>
+      )}
     </>
   );
 }
