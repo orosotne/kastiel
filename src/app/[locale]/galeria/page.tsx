@@ -56,7 +56,6 @@ const exteriorPhotos = [
   "/images/gallery/exterior/exterior-21.webp",
   "/images/gallery/exterior/exterior-22.webp",
   "/images/gallery/exterior/exterior-23.webp",
-  "/images/gallery/exterior/exterior-24.webp",
   "/images/gallery/exterior/exterior-25.webp",
   "/images/gallery/exterior/exterior-26.webp",
   "/images/gallery/exterior/exterior-27.webp",
