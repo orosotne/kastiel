@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,7 +28,6 @@ const interiorPhotos = [
   "/images/gallery/interior/interior-17.webp",
   "/images/gallery/interior/interior-18.webp",
   "/images/gallery/interior/interior-19.webp",
-  "/images/gallery/interior/interior-20.webp",
   "/images/gallery/interior/interior-21.webp",
   "/images/gallery/interior/interior-22.webp",
   "/images/gallery/interior/interior-23.webp",
@@ -88,6 +87,8 @@ export default function GalleryPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
+  const lightboxRef = useRef<HTMLDivElement>(null);
+
   const showAll = activeTab === "interior" ? showAllInterior : showAllExterior;
   const setShowAll = activeTab === "interior" ? setShowAllInterior : setShowAllExterior;
 
@@ -126,6 +127,12 @@ export default function GalleryPage() {
     },
     [closeLightbox, nextImage, prevImage]
   );
+
+  useEffect(() => {
+    if (lightboxOpen && lightboxRef.current) {
+      lightboxRef.current.focus();
+    }
+  }, [lightboxOpen]);
 
   const handleTabChange = useCallback((tab: TabKey) => {
     setActiveTab(tab);
@@ -262,6 +269,7 @@ export default function GalleryPage() {
       <AnimatePresence>
         {lightboxOpen && (
           <motion.div
+            ref={lightboxRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
