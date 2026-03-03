@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
+import { debugLog } from '@/lib/debug';
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -30,11 +31,22 @@ const localeToOg: Record<string, string> = {
 };
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  // #region agent log
+  debugLog({ location: 'layout.tsx:generateMetadata', message: 'generateMetadata called', data: { locale }, hypothesisId: 'H1' });
+  // #endregion
   const t = await getTranslations({ locale, namespace: "metadata" });
+  const title = t("title");
+  const description = t("description");
+  // #region agent log
+  debugLog({ location: 'layout.tsx:generateMetadata', message: 'translations loaded', data: { locale, title, descriptionLength: description?.length }, hypothesisId: 'H2' });
+  // #endregion
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rkb.sk';
 
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL(siteUrl),
+    title,
+    description,
     keywords: ["kaštieľ", "Bošany", "castle", "weddings", "conferences", "gallery", "renaissance", "history"],
     authors: [{ name: "Renesančný kaštieľ Bošany" }],
     icons: {
@@ -75,7 +87,11 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  // #region agent log
+  debugLog({ location: 'layout.tsx:RootLayout', message: 'RootLayout render start', data: { locale, localesValid: locales.includes(locale as any) }, hypothesisId: 'H1' });
+  // #endregion
   if (!locales.includes(locale as any)) {
+    debugLog({ location: 'layout.tsx:RootLayout', message: 'locale not found, calling notFound', data: { locale }, hypothesisId: 'H1' });
     notFound();
   }
 
@@ -83,6 +99,10 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const msgKeys = typeof messages === 'object' ? Object.keys(messages).length : 0;
+  // #region agent log
+  debugLog({ location: 'layout.tsx:RootLayout', message: 'messages loaded', data: { locale, messageNamespaceCount: msgKeys }, hypothesisId: 'H2' });
+  // #endregion
 
   return (
     <html lang={locale} className={`${playfair.variable} ${montserrat.variable}`} suppressHydrationWarning>

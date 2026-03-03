@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { debugLog } from "@/lib/debug";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
@@ -17,6 +18,11 @@ export default function Header() {
   const locale = useLocale();
   const pathname = usePathname();
 
+  // #region agent log
+  useEffect(() => {
+    debugLog({ location: 'Header.tsx', message: 'Header mounted', data: { locale, pathname }, hypothesisId: 'H3' });
+  }, []);
+  // #endregion
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";

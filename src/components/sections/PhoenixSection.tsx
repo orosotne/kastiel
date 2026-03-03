@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { debugLog } from "@/lib/debug";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -22,6 +23,9 @@ const beforeAfterPairs = [
 export default function PhoenixSection() {
   const t = useTranslations("phoenix");
   const [activeIndex, setActiveIndex] = useState(0);
+  // #region agent log
+  useEffect(() => { debugLog({ location: 'PhoenixSection.tsx', message: 'PhoenixSection mounted', data: { section: 'phoenix' }, hypothesisId: 'H4' }); }, []);
+  // #endregion
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev + 1) % beforeAfterPairs.length);
