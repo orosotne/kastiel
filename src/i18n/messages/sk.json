@@ -88,13 +88,18 @@
     }
   },
   "weddings": {
+    "metadata": {
+      "title": "Svadby v Kaštieli Bošany | Svadobný priestor Partizánske",
+      "description": "Svadby a svadobné hostiny v Renesančnom kaštieli Bošany pri Partizánskom. Unikátny svadobný priestor v okrese Partizánske – polygonálne veže, renesančný park, kapacita do 150 hostí."
+    },
     "hero": {
-      "title": "Svadby & Oslavy",
-      "subtitle": "Váš veľký deň v renesančnom štýle"
+      "title": "Svadby v Kaštieli Bošany",
+      "subtitle": "Váš veľký deň v renesančnom štýle – svadobný priestor Bošany pri Partizánskom"
     },
     "venue": {
-      "title": "Svadba pod vežami",
-      "description": "Polygonálne veže, renesančný park a atmosféra, ktorú nenájdete nikde inde."
+      "title": "Svadba pod vežami – Kaštieľ Bošany",
+      "description": "Renesančný kaštieľ Bošany ponúka unikátny svadobný priestor pri Partizánskom. Polygonálne veže, historický park a atmosféru, ktorú nenájdete nikde inde v regióne.",
+      "location_note": "Ideálne pre svadby z Partizánskeho, Topoľčian, Prievidze a celého regiónu Horné Nitra. Kaštieľ Bošany – dostupný za 15 minút z Partizánskeho."
     },
     "mascots": {
       "title": "Naši obyvatelia",

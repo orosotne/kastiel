@@ -88,13 +88,18 @@
     }
   },
   "weddings": {
+    "metadata": {
+      "title": "Hochzeiten im Schloss Bošany | Hochzeitslocation Partizánske",
+      "description": "Hochzeiten und Hochzeitsempfänge im Renaissanceschloss Bošany bei Partizánske. Einzigartiger Hochzeitsort im Bezirk Partizánske – polygonale Türme, Renaissance-Park, Kapazität bis 150 Gäste."
+    },
     "hero": {
-      "title": "Hochzeiten & Feiern",
-      "subtitle": "Ihr großer Tag im Renaissance-Stil"
+      "title": "Hochzeiten im Schloss Bošany",
+      "subtitle": "Ihr großer Tag im Renaissance-Stil – Hochzeitslocation Bošany bei Partizánske"
     },
     "venue": {
-      "title": "Hochzeit unter den Türmen",
-      "description": "Polygonale Türme, Renaissance-Park und eine Atmosphäre, die Sie nirgendwo sonst finden."
+      "title": "Hochzeit unter den Türmen – Schloss Bošany",
+      "description": "Renaissanceschloss Bošany bietet eine einzigartige Hochzeitslocation bei Partizánske. Polygonale Türme, historischer Park und eine Atmosphäre, die Sie nirgendwo sonst in der Region finden.",
+      "location_note": "Ideal für Hochzeiten aus Partizánske, Topoľčany, Prievidza und der gesamten Region Horné Nitra. Schloss Bošany - 15 Minuten von Partizánske."
     },
     "mascots": {
       "title": "Unsere Bewohner",

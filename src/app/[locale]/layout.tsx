@@ -47,7 +47,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     metadataBase: new URL(siteUrl),
     title,
     description,
-    keywords: ["kaštieľ", "Bošany", "castle", "weddings", "conferences", "gallery", "renaissance", "history"],
+    keywords: ["kaštieľ Bošany", "Bošany", "Partizánske", "svadby Bošany", "svadby Partizánske", "castle", "weddings", "conferences", "gallery", "renaissance", "history", "Horné Nitra"],
     authors: [{ name: "Renesančný kaštieľ Bošany" }],
     icons: {
       icon: [

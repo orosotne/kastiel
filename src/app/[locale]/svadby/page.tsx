@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
+import BreadcrumbStructuredData from "@/components/BreadcrumbStructuredData";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
@@ -12,6 +13,8 @@ export default function WeddingsPage() {
   const t = useTranslations("weddings");
   const wp = useTranslations("weddings_page");
   const c = useTranslations("common");
+  const nav = useTranslations("navigation");
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -64,6 +67,13 @@ export default function WeddingsPage() {
 
   return (
     <>
+      <BreadcrumbStructuredData
+        locale={locale}
+        items={[
+          { name: nav("home"), path: "" },
+          { name: nav("weddings"), path: "/svadby" },
+        ]}
+      />
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
@@ -87,6 +97,9 @@ export default function WeddingsPage() {
                 </h2>
                 <p className="text-charcoal/70 text-lg leading-relaxed">
                   {t("venue.description")}
+                </p>
+                <p className="text-charcoal/60 text-base">
+                  {t("venue.location_note")}
                 </p>
 
                 {/* Features */}

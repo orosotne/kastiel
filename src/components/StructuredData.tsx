@@ -95,8 +95,37 @@ export default async function StructuredData() {
       "@type": "PostalAddress",
       streetAddress: "SNP 113/1",
       addressLocality: "Bošany",
+      addressRegion: "Trenčiansky kraj",
       postalCode: "956 18",
       addressCountry: "SK",
+    },
+    areaServed: [
+      { "@type": "City", name: "Bošany" },
+      { "@type": "City", name: "Partizánske" },
+      { "@type": "City", name: "Topoľčany" },
+      { "@type": "City", name: "Prievidza" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Služby kaštieľa",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Svadby" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Konferencie" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Galéria" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Kultúrne podujatia" },
+        },
+      ],
     },
     geo: {
       "@type": "GeoCoordinates",

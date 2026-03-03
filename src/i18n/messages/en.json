@@ -88,13 +88,18 @@
     }
   },
   "weddings": {
+    "metadata": {
+      "title": "Weddings at Bošany Castle | Wedding Venue Partizánske",
+      "description": "Weddings and wedding receptions at Renaissance Castle Bošany near Partizánske. Unique wedding venue in the Partizánske district - polygonal towers, Renaissance park, capacity up to 150 guests."
+    },
     "hero": {
-      "title": "Weddings & Celebrations",
-      "subtitle": "Your big day in Renaissance style"
+      "title": "Weddings at Bošany Castle",
+      "subtitle": "Your big day in Renaissance style - wedding venue Bošany near Partizánske"
     },
     "venue": {
-      "title": "Wedding under the towers",
-      "description": "Polygonal towers, Renaissance park and an atmosphere you won't find anywhere else."
+      "title": "Wedding under the towers - Bošany Castle",
+      "description": "Renaissance Castle Bošany offers a unique wedding venue near Partizánske. Polygonal towers, historic park and an atmosphere you won't find anywhere else in the region.",
+      "location_note": "Ideal for weddings from Partizánske, Topoľčany, Prievidza and the entire Upper Nitra region. Castle Bošany - 15 minutes from Partizánske."
     },
     "mascots": {
       "title": "Our residents",
