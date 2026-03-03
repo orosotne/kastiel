@@ -7,7 +7,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "LandmarksOrHistoricalBuildings",
     "name": "Kaštieľ Bošany",
-    "alternateName": "In Integrum – Kaštieľ Bošany",
+    "alternateName": "Renesančný kaštieľ Bošany",
     "description": "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života. Svadby, konferencie, galéria a kultúrne podujatia.",
     "url": siteUrl,
     "telephone": "+421907726726",

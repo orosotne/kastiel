@@ -1,4 +1,4 @@
-# In Integrum – Kaštieľ Bošany
+# Renesančný kaštieľ Bošany
 
 Webová prezentácia renesančného kaštieľa Bošany.
 
@@ -97,7 +97,7 @@ Do `public/images/` pridajte:
 
 ## Licencia
 
-© 2025 In Integrum. Všetky práva vyhradené.
+© 2025 Renesančný kaštieľ Bošany. Všetky práva vyhradené.
 
 
 

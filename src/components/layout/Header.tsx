@@ -52,7 +52,7 @@ export default function Header() {
           <Link href={`/${locale}`} className="relative z-10 block hover:scale-[1.02] transition-transform duration-300">
             <Image
               src="/kastiel-bosany-logo.svg"
-              alt="Kaštieľ Bošany - In Integrum"
+              alt="Renesančný kaštieľ Bošany"
               width={240}
               height={80}
               className={`h-16 md:h-[72px] w-auto transition-all duration-300 ${

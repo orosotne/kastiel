@@ -26,10 +26,7 @@ const Footer = memo(function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href={`/${locale}`} className="inline-block mb-6">
-              <h3 className="font-serif text-3xl text-white">In Integrum</h3>
-              <span className="text-xs uppercase tracking-[0.3em] text-gold">
-                Kaštieľ Bošany
-              </span>
+              <h3 className="font-serif text-3xl text-white">Renesančný kaštieľ Bošany</h3>
             </Link>
             <p className="text-ivory/70 text-sm leading-relaxed">
               {t("motto")}
@@ -82,7 +79,7 @@ const Footer = memo(function Footer() {
               <li className="flex items-start gap-3">
                 <Building2 size={18} className="text-gold mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong className="text-white">IN INTEGRUM</strong><br />
+                  <strong className="text-white">Renesančný kaštieľ Bošany</strong><br />
                   IČO: 42024757<br />
                   DIČ: 2022449737
                 </span>

@@ -58,7 +58,7 @@ export default function OznameniePage() {
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
                 <Building2 size={24} className="text-gold" />
-                <h3 className="font-serif text-xl text-charcoal">O občianskom združení In Integrum</h3>
+                <h3 className="font-serif text-xl text-charcoal">O občianskom združení</h3>
               </div>
               <p className="text-charcoal/80 leading-relaxed mb-4">
                 Naše občianske združenie bolo založené v roku <strong>2007</strong>. Jeho názov v latinčine znamená{" "}
@@ -219,7 +219,7 @@ export default function OznameniePage() {
       <section className="py-8 bg-cream border-t border-charcoal/10">
         <div className="container-custom max-w-4xl">
           <p className="text-center text-charcoal/50 text-sm">
-            In Integrum, o.z. • Založené 2007 • 17 rokov obnovy Kaštieľa Bošany
+            Renesančný kaštieľ Bošany • Založené 2007 • 17 rokov obnovy Kaštieľa Bošany
           </p>
         </div>
       </section>

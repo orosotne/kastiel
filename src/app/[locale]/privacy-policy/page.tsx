@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
       title: t("operator"),
       content: (
         <div className="space-y-2">
-          <p><strong>Názov:</strong> IN INTEGRUM</p>
+          <p><strong>Názov:</strong> Renesančný kaštieľ Bošany</p>
           <p><strong>IČO:</strong> 42024757</p>
           <p><strong>DIČ:</strong> 2022449737</p>
           <p><strong>Sídlo:</strong> SNP 113/1, 956 18 Bošany</p>
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
           <p>Pre uplatnenie vašich práv alebo otázky ohľadom ochrany osobných údajov nás kontaktujte:</p>
           <p className="mt-2"><strong>Email:</strong> jmiskeje@gmail.com</p>
           <p><strong>Telefón:</strong> +421 907 726 726</p>
-          <p><strong>Adresa:</strong> IN INTEGRUM, SNP 113/1, 956 18 Bošany</p>
+          <p><strong>Adresa:</strong> Renesančný kaštieľ Bošany, SNP 113/1, 956 18 Bošany</p>
         </div>
       ),
     },

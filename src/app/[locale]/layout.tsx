@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     title: t("title"),
     description: t("description"),
     keywords: ["kaštieľ", "Bošany", "castle", "weddings", "conferences", "gallery", "renaissance", "history"],
-    authors: [{ name: "In Integrum" }],
+    authors: [{ name: "Renesančný kaštieľ Bošany" }],
     icons: {
       icon: [
         { url: "/favicon.svg", type: "image/svg+xml" },
