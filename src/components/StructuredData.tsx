@@ -25,6 +25,16 @@ const faqByLocale: Record<string, Array<{ question: string; answer: string }>> =
       answer:
         "Otváracie hodiny sú Po - Ne: 9:00 - 18:00, alebo podľa predchádzajúcej dohody.",
     },
+    {
+      question: "Organizujete svadby v kaštieli Bošany?",
+      answer:
+        "Áno, Renesančný kaštieľ Bošany ponúka svadobný priestor pre do 150 hostí. Ideálne pre svadby z Partizánskeho, Topoľčian a okolia.",
+    },
+    {
+      question: "Ako ďaleko je kaštieľ od Partizánskeho?",
+      answer:
+        "Kaštieľ Bošany je vzdialený približne 15 minút autom od Partizánskeho. Bošany ležia v okrese Partizánske, Trenčiansky kraj.",
+    },
   ],
   en: [
     {
@@ -47,6 +57,16 @@ const faqByLocale: Record<string, Array<{ question: string; answer: string }>> =
       answer:
         "Opening hours are Mon - Sun: 9:00 AM - 6:00 PM, or by prior arrangement.",
     },
+    {
+      question: "Do you organize weddings at Bošany Castle?",
+      answer:
+        "Yes, Renaissance Castle Bošany offers a wedding venue for up to 150 guests. Ideal for weddings from Partizánske, Topoľčany and the surrounding area.",
+    },
+    {
+      question: "How far is the castle from Partizánske?",
+      answer:
+        "Castle Bošany is approximately 15 minutes by car from Partizánske. Bošany is located in the Partizánske district, Trenčín Region.",
+    },
   ],
   de: [
     {
@@ -68,6 +88,16 @@ const faqByLocale: Record<string, Array<{ question: string; answer: string }>> =
       question: "Was sind die Öffnungszeiten?",
       answer:
         "Öffnungszeiten sind Mo - So: 9:00 - 18:00 Uhr oder nach Vereinbarung.",
+    },
+    {
+      question: "Veranstalten Sie Hochzeiten im Schloss Bošany?",
+      answer:
+        "Ja, das Renaissanceschloss Bošany bietet einen Hochzeitsort für bis zu 150 Gäste. Ideal für Hochzeiten aus Partizánske, Topoľčany und der Umgebung.",
+    },
+    {
+      question: "Wie weit ist das Schloss von Partizánske entfernt?",
+      answer:
+        "Das Schloss Bošany ist etwa 15 Autominuten von Partizánske entfernt. Bošany liegt im Bezirk Partizánske, Region Trenčín.",
     },
   ],
 };

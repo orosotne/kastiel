@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import InternalLinks from "@/components/layout/InternalLinks";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 const interiorPhotos = [
@@ -259,6 +260,14 @@ export default function GalleryPage() {
           </AnimatePresence>
         </div>
       </section>
+
+      <InternalLinks
+        links={[
+          { href: "/svadby", labelKey: "weddings" },
+          { href: "/pribeh", labelKey: "story" },
+          { href: "/kontakt", labelKey: "contact" },
+        ]}
+      />
 
       {/* Lightbox Modal */}
       {lightboxOpen && (

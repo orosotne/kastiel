@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import BreadcrumbStructuredData from "@/components/BreadcrumbStructuredData";
+import InternalLinks from "@/components/layout/InternalLinks";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
@@ -57,6 +58,11 @@ export default function WeddingsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`Svadobný dopyt – ${formData.name}`);
+    const body = encodeURIComponent(
+      `Meno: ${formData.name}\nEmail: ${formData.email}\nTelefón: ${formData.phone}\nDátum: ${formData.date}\nPočet hostí: ${formData.guests}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:jmiskeje@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (
@@ -406,6 +412,14 @@ export default function WeddingsPage() {
           </FadeInOnScroll>
         </div>
       </section>
+
+      <InternalLinks
+        links={[
+          { href: "/galeria", labelKey: "gallery" },
+          { href: "/pribeh", labelKey: "story" },
+          { href: "/kontakt", labelKey: "contact" },
+        ]}
+      />
 
       {/* Lightbox Modal */}
       <AnimatePresence>

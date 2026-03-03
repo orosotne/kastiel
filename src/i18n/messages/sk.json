@@ -20,7 +20,7 @@
     "scroll": "Objavte príbeh"
   },
   "phoenix": {
-    "title": "17 rokov vzdoru a obnovy",
+    "title": "19 rokov vzdoru a obnovy",
     "description": "Potiahnite a odhaľte príbeh záchrany.",
     "before": "Pred obnovou",
     "after": "Po obnove",
@@ -74,13 +74,18 @@
     "copyright": "© 2025 Renesančný kaštieľ Bošany. Všetky práva vyhradené."
   },
   "story": {
+    "metadata": {
+      "title": "História Kaštieľa Bošany | Rekonštrukcia a dejiny",
+      "description": "Päť storočí histórie Renesančného kaštieľa Bošany. Od gotiky cez renesanciu po 17 rokov rekonštrukcie – príbeh, ktorý odmietol zabudnúť."
+    },
     "hero": {
       "title": "Príbeh Kaštieľa",
-      "subtitle": "Päť storočí histórie, 17 rokov obnovy"
+      "subtitle": "Päť storočí histórie, 19 rokov obnovy"
     },
     "timeline": {
       "title": "Cesta časom"
     },
+    "analytical_probe_alt": "Analytická sonda – rekonštrukcia Kaštieľa Bošany",
     "philosophy": {
       "title": "Filozofia obnovy",
       "subtitle": "Klimatizácia, ktorú navrhli pred 400 rokmi",
@@ -117,6 +122,10 @@
     }
   },
   "gallery": {
+    "metadata": {
+      "title": "Galéria Kaštieľa Bošany | Fotografie priestorov a interiér",
+      "description": "Fotogaléria Renesančného kaštieľa Bošany – interiéry, exteriéry, konferenčná sála, vínna pivnica. Objavte priestory pri Partizánskom."
+    },
     "hero": {
       "title": "Priestory a Eventy",
       "subtitle": "Fotografie priestorov a udalostí v kaštieli"
@@ -140,6 +149,10 @@
     }
   },
   "contact": {
+    "metadata": {
+      "title": "Kontakt Kaštieľ Bošany | Rezervácia a informácie",
+      "description": "Kontaktujte Renesančný kaštieľ Bošany – rezervácie svadieb, konferencií, návštevy. Adresa SNP 113/1 Bošany, telefón +421 907 726 726."
+    },
     "hero": {
       "title": "Kontakt",
       "subtitle": "Spojte sa s nami"
@@ -178,6 +191,7 @@
     "subtitle": "K nepodporeniu projektu Kaštieľ Bošany"
   },
   "common": {
+    "discover_more": "Objavte tiež",
     "close": "Zavrieť",
     "previous": "Predchádzajúci",
     "next": "Nasledujúci",
@@ -187,9 +201,9 @@
     "image": "Obrázok",
     "back_to_top": "Naspäť hore",
     "scroll_hint": "Scrollujte pre zobrazenie celej histórie",
-    "castle_interior": "Interiér kaštieľa",
-    "castle_exterior": "Exteriér kaštieľa",
-    "castle_detail": "Detail kaštieľa",
+    "castle_interior": "Interiér Kaštieľa Bošany",
+    "castle_exterior": "Exteriér Kaštieľa Bošany",
+    "castle_detail": "Detail Kaštieľa Bošany",
     "privacy_policy": "Ochrana osobných údajov",
     "page_not_found": "Stránka nenájdená",
     "page_not_found_desc": "Ospravedlňujeme sa, ale požadovaná stránka neexistuje alebo bola presunutá.",
@@ -228,9 +242,9 @@
     "romance": "Romantika",
     "guests_count": "Do 150 hostí",
     "year_round": "Celoročne",
-    "venue_alt": "Svadobný priestor",
+    "venue_alt": "Svadobný priestor Kaštieľ Bošany",
     "gallery_title": "Galéria svadieb",
-    "wedding_photo": "Svadobná fotografia",
+    "wedding_photo": "Svadba v Kaštieli Bošany",
     "mascots_label": "Naši maskoti",
     "boska": "Boška",
     "riso": "Rišo",

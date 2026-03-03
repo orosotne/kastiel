@@ -74,6 +74,10 @@
     "copyright": "© 2025 Renaissance-Schloss Bošany. Alle Rechte vorbehalten."
   },
   "story": {
+    "metadata": {
+      "title": "Geschichte des Schlosses Bošany | Sanierung und Erbe",
+      "description": "Fünf Jahrhunderte Geschichte des Renaissanceschlosses Bošany. Von der Gotik über die Renaissance bis zu 17 Jahren Sanierung – eine Geschichte, die nicht vergessen werden wollte."
+    },
     "hero": {
       "title": "Schlossgeschichte",
       "subtitle": "Fünf Jahrhunderte Geschichte, 17 Jahre Restaurierung"
@@ -81,6 +85,7 @@
     "timeline": {
       "title": "Reise durch die Zeit"
     },
+    "analytical_probe_alt": "Analytische Sonde – Sanierung Schloss Bošany",
     "philosophy": {
       "title": "Restaurierungsphilosophie",
       "subtitle": "Klimaanlage, vor 400 Jahren entworfen",
@@ -117,6 +122,10 @@
     }
   },
   "gallery": {
+    "metadata": {
+      "title": "Galerie Schloss Bošany | Fotos der Räume und Innenräume",
+      "description": "Fotogalerie des Renaissanceschlosses Bošany – Innenräume, Außenansichten, Konferenzsaal, Weinkeller. Entdecken Sie die Räume bei Partizánske."
+    },
     "hero": {
       "title": "Räume & Events",
       "subtitle": "Fotos von Räumen und Veranstaltungen im Schloss"
@@ -140,6 +149,10 @@
     }
   },
   "contact": {
+    "metadata": {
+      "title": "Kontakt Schloss Bošany | Reservierungen und Info",
+      "description": "Kontaktieren Sie das Renaissanceschloss Bošany – Hochzeits- und Konferenzreservierungen, Besuche. Adresse SNP 113/1 Bošany, Telefon +421 907 726 726."
+    },
     "hero": {
       "title": "Kontakt",
       "subtitle": "Nehmen Sie Kontakt mit uns auf"
@@ -172,6 +185,7 @@
     "next": "Nächstes"
   },
   "common": {
+    "discover_more": "Entdecken Sie mehr",
     "close": "Schließen",
     "previous": "Vorheriges",
     "next": "Nächstes",
@@ -181,9 +195,9 @@
     "image": "Bild",
     "back_to_top": "Nach oben",
     "scroll_hint": "Scrollen Sie, um die gesamte Geschichte zu sehen",
-    "castle_interior": "Schloss-Interieur",
-    "castle_exterior": "Schloss-Außenbereich",
-    "castle_detail": "Schloss-Detail",
+    "castle_interior": "Innenbereich Schloss Bošany",
+    "castle_exterior": "Außenbereich Schloss Bošany",
+    "castle_detail": "Detail Schloss Bošany",
     "privacy_policy": "Datenschutz",
     "page_not_found": "Seite nicht gefunden",
     "page_not_found_desc": "Entschuldigung, die angeforderte Seite existiert nicht oder wurde verschoben.",
@@ -222,9 +236,9 @@
     "romance": "Romantik",
     "guests_count": "Bis zu 150 Gäste",
     "year_round": "Ganzjährig",
-    "venue_alt": "Hochzeitsort",
+    "venue_alt": "Hochzeitsort Schloss Bošany",
     "gallery_title": "Hochzeitsgalerie",
-    "wedding_photo": "Hochzeitsfoto",
+    "wedding_photo": "Hochzeit im Schloss Bošany",
     "mascots_label": "Unsere Maskottchen",
     "boska": "Boška",
     "riso": "Rišo",

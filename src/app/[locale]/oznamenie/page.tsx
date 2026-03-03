@@ -219,7 +219,7 @@ export default function OznameniePage() {
       <section className="py-8 bg-cream border-t border-charcoal/10">
         <div className="container-custom max-w-4xl">
           <p className="text-center text-charcoal/50 text-sm">
-            Renesančný kaštieľ Bošany • Založené 2007 • 17 rokov obnovy Kaštieľa Bošany
+            Renesančný kaštieľ Bošany • Založené 2007 • 19 rokov obnovy Kaštieľa Bošany
           </p>
         </div>
       </section>

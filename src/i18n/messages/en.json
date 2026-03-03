@@ -20,7 +20,7 @@
     "scroll": "Discover the story"
   },
   "phoenix": {
-    "title": "17 years of resilience and restoration",
+    "title": "19 years of resilience and restoration",
     "description": "Drag and reveal the story of rescue.",
     "before": "Before restoration",
     "after": "After restoration",
@@ -74,13 +74,18 @@
     "copyright": "© 2025 Renaissance Castle Bošany. All rights reserved."
   },
   "story": {
+    "metadata": {
+      "title": "History of Bošany Castle | Restoration and Heritage",
+      "description": "Five centuries of history of Renaissance Castle Bošany. From Gothic through Renaissance to 17 years of restoration – a story that refused to be forgotten."
+    },
     "hero": {
       "title": "Castle Story",
-      "subtitle": "Five centuries of history, 17 years of restoration"
+      "subtitle": "Five centuries of history, 19 years of restoration"
     },
     "timeline": {
       "title": "Journey through time"
     },
+    "analytical_probe_alt": "Analytical probe – Bošany Castle restoration",
     "philosophy": {
       "title": "Restoration Philosophy",
       "subtitle": "Air conditioning designed 400 years ago",
@@ -117,6 +122,10 @@
     }
   },
   "gallery": {
+    "metadata": {
+      "title": "Bošany Castle Gallery | Photos of Rooms and Interiors",
+      "description": "Photo gallery of Renaissance Castle Bošany – interiors, exteriors, conference hall, wine cellar. Discover the spaces near Partizánske."
+    },
     "hero": {
       "title": "Spaces & Events",
       "subtitle": "Photos of spaces and events at the castle"
@@ -140,6 +149,10 @@
     }
   },
   "contact": {
+    "metadata": {
+      "title": "Contact Castle Bošany | Reservations and Info",
+      "description": "Contact Renaissance Castle Bošany – wedding and conference reservations, visits. Address SNP 113/1 Bošany, phone +421 907 726 726."
+    },
     "hero": {
       "title": "Contact",
       "subtitle": "Get in touch with us"
@@ -172,6 +185,7 @@
     "next": "Next"
   },
   "common": {
+    "discover_more": "Discover more",
     "close": "Close",
     "previous": "Previous",
     "next": "Next",
@@ -181,9 +195,9 @@
     "image": "Image",
     "back_to_top": "Back to top",
     "scroll_hint": "Scroll to see the full history",
-    "castle_interior": "Castle interior",
-    "castle_exterior": "Castle exterior",
-    "castle_detail": "Castle detail",
+    "castle_interior": "Bošany Castle interior",
+    "castle_exterior": "Bošany Castle exterior",
+    "castle_detail": "Bošany Castle detail",
     "privacy_policy": "Privacy Policy",
     "page_not_found": "Page not found",
     "page_not_found_desc": "We are sorry, but the requested page does not exist or has been moved.",
@@ -222,9 +236,9 @@
     "romance": "Romance",
     "guests_count": "Up to 150 guests",
     "year_round": "Year-round",
-    "venue_alt": "Wedding venue",
+    "venue_alt": "Wedding venue Bošany Castle",
     "gallery_title": "Wedding Gallery",
-    "wedding_photo": "Wedding photo",
+    "wedding_photo": "Wedding at Bošany Castle",
     "mascots_label": "Our mascots",
     "boska": "Boška",
     "riso": "Rišo",

@@ -20,7 +20,7 @@ export default function ParkSection() {
                   src="/images/park-alpacas.webp"
                   alt={t("alt")}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </FadeInOnScroll>

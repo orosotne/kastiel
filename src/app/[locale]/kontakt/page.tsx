@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import InternalLinks from "@/components/layout/InternalLinks";
 import { MapPin, Phone, Mail, Send, Clock } from "lucide-react";
 
 export default function ContactPage() {
@@ -20,6 +21,11 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(formData.subject || `Kontakt z webu – ${formData.name}`);
+    const body = encodeURIComponent(
+      `Meno: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:jmiskeje@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (
@@ -210,6 +216,14 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <InternalLinks
+        links={[
+          { href: "/svadby", labelKey: "weddings" },
+          { href: "/galeria", labelKey: "gallery" },
+          { href: "/pribeh", labelKey: "story" },
+        ]}
+      />
     </>
   );
 }

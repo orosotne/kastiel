@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import InternalLinks from "@/components/layout/InternalLinks";
 import HorizontalTimeline from "@/components/interactive/HorizontalTimeline";
 import MuseumGallery from "@/components/sections/MuseumGallery";
 import { X, ChevronLeft, ChevronRight, Landmark, Palette, Shield, Castle, ImageIcon } from "lucide-react";
@@ -407,7 +408,7 @@ export default function StoryPage() {
                 >
                   <Image
                     src={`/images/gallery/analysis-${i}.webp`}
-                    alt={`Analytická sonda ${i}`}
+                    alt={`${t("story.analytical_probe_alt")} ${i}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -449,6 +450,14 @@ export default function StoryPage() {
           )}
         </div>
       </section>
+
+      <InternalLinks
+        links={[
+          { href: "/svadby", labelKey: "weddings" },
+          { href: "/galeria", labelKey: "gallery" },
+          { href: "/kontakt", labelKey: "contact" },
+        ]}
+      />
 
       {/* Owner Photo Modal */}
       <AnimatePresence>
@@ -564,7 +573,7 @@ export default function StoryPage() {
             >
               <Image
                 src={`/images/gallery/analysis-${currentImage + 1}.webp`}
-                alt={`Analytická sonda ${currentImage + 1}`}
+                alt={`${t("story.analytical_probe_alt")} ${currentImage + 1}`}
                 fill
                 className="object-contain"
                 sizes="90vw"
