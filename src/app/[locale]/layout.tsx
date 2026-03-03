@@ -39,10 +39,9 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     authors: [{ name: "Renesančný kaštieľ Bošany" }],
     icons: {
       icon: [
-        { url: "/favicon.svg", type: "image/svg+xml" },
-        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/favicon-castle.svg", type: "image/svg+xml" },
       ],
-      apple: "/icon.svg",
+      apple: "/icon-192.png",
     },
     manifest: "/site.webmanifest",
     openGraph: {
@@ -52,7 +51,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       locale: localeToOg[locale] || "sk_SK",
       images: [
         {
-          url: "/images/Hero_image.webp",
+          url: "/opengraph-image.png",
           width: 1200,
           height: 630,
           alt: t("title"),
