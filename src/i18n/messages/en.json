@@ -26,7 +26,13 @@
     "after": "After restoration",
     "previous": "Previous",
     "next": "Next",
-    "main_facade": "Main facade"
+    "main_facade": "Main facade",
+    "restorationProgressTitle": "How the restoration progressed",
+    "restorationStepAlt": "Bošany Castle restoration – documentation phase",
+    "viewAllPhotos": "View all photos",
+    "close": "Close",
+    "viewSingle": "Single view",
+    "viewGrid": "Grid"
   },
   "chronicle": {
     "title": "Where Maria Theresa Slept",

@@ -26,7 +26,13 @@
     "after": "Po obnove",
     "previous": "Predchádzajúce",
     "next": "Nasledujúce",
-    "main_facade": "Hlavná fasáda"
+    "main_facade": "Hlavná fasáda",
+    "restorationProgressTitle": "Ako prebiehala oprava",
+    "restorationStepAlt": "Obnova kaštieľa Bošany – fotodokumentácia fáza",
+    "viewAllPhotos": "Zobraziť všetky fotky",
+    "close": "Zavrieť",
+    "viewSingle": "Jedna fotka",
+    "viewGrid": "Dlaždice"
   },
   "chronicle": {
     "title": "Kde spala Mária Terézia",

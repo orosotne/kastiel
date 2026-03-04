@@ -26,7 +26,13 @@
     "after": "Nach der Restaurierung",
     "previous": "Vorheriges",
     "next": "Nächstes",
-    "main_facade": "Hauptfassade"
+    "main_facade": "Hauptfassade",
+    "restorationProgressTitle": "Wie die Restaurierung verlief",
+    "restorationStepAlt": "Restaurierung Schloss Bošany – Dokumentationsphase",
+    "viewAllPhotos": "Alle Fotos anzeigen",
+    "close": "Schließen",
+    "viewSingle": "Einzelansicht",
+    "viewGrid": "Kacheln"
   },
   "chronicle": {
     "title": "Wo Maria Theresia schlief",

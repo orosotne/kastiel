@@ -1,12 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { debugLog } from "@/lib/debug";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight, LayoutGrid, Maximize2 } from "lucide-react";
+import Image from "next/image";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import BeforeAfterSlider from "@/components/interactive/BeforeAfterSlider";
+
+const RESTORATION_BASE = "/images/phoenix/restoration";
 
 // Konfigurácia - páry obrázkov pred/po
 // Pridajte ďalšie páry keď nahráte obrázky do public/images/phoenix/
@@ -18,6 +21,50 @@ const beforeAfterPairs = [
     after: "/images/phoenix/after-1.webp",
     titleKey: "main_facade",
   },
+];
+
+// Fotky obnovy – chronologicky od najstaršej po najnovšiu (WebP pre rýchlejšie načítanie)
+const restorationImages = [
+  `${RESTORATION_BASE}/14. april 2014 - 3.webp`,
+  `${RESTORATION_BASE}/15.Maj - 2016.webp`,
+  `${RESTORATION_BASE}/15. maj - 2016 (2).webp`,
+  `${RESTORATION_BASE}/IMG_0048.webp`,
+  `${RESTORATION_BASE}/IMG_0049.webp`,
+  `${RESTORATION_BASE}/IMG_0052.webp`,
+  `${RESTORATION_BASE}/IMG_0057.webp`,
+  `${RESTORATION_BASE}/IMG_0058.webp`,
+  `${RESTORATION_BASE}/IMG_0059.webp`,
+  `${RESTORATION_BASE}/IMG_0064.webp`,
+  `${RESTORATION_BASE}/IMG_0065.webp`,
+  `${RESTORATION_BASE}/IMG_0192.webp`,
+  `${RESTORATION_BASE}/IMG_0194.webp`,
+  `${RESTORATION_BASE}/IMG_0436.webp`,
+  `${RESTORATION_BASE}/IMG_0438.webp`,
+  `${RESTORATION_BASE}/IMG_0439.webp`,
+  `${RESTORATION_BASE}/IMG_0440.webp`,
+  `${RESTORATION_BASE}/IMG_0466.webp`,
+  `${RESTORATION_BASE}/IMG_0469.webp`,
+  `${RESTORATION_BASE}/IMG_0501.webp`,
+  `${RESTORATION_BASE}/IMG_0911.webp`,
+  `${RESTORATION_BASE}/IMG_0996.webp`,
+  `${RESTORATION_BASE}/IMG_1029.webp`,
+  `${RESTORATION_BASE}/IMG_1252.webp`,
+  `${RESTORATION_BASE}/IMG_1256.webp`,
+  `${RESTORATION_BASE}/IMG_1257.webp`,
+  `${RESTORATION_BASE}/IMG_1343.webp`,
+  `${RESTORATION_BASE}/IMG_2781.webp`,
+  `${RESTORATION_BASE}/IMG_2782.webp`,
+  `${RESTORATION_BASE}/IMG_2783.webp`,
+  `${RESTORATION_BASE}/IMG_2784.webp`,
+  `${RESTORATION_BASE}/IMG_2786.webp`,
+  `${RESTORATION_BASE}/IMG_2787.webp`,
+  `${RESTORATION_BASE}/IMG_2788.webp`,
+  `${RESTORATION_BASE}/IMG_2791.webp`,
+  `${RESTORATION_BASE}/IMG_2792.webp`,
+  `${RESTORATION_BASE}/077F2ADC-BBF6-47D8-A562-B9CB0F66EA92.webp`,
+  `${RESTORATION_BASE}/4B60797C-4129-4045-9CAE-B190C9E60DFE.webp`,
+  `${RESTORATION_BASE}/81386ABD-7EE6-40ED-A05C-AE05FEAA982D.webp`,
+  `${RESTORATION_BASE}/B1DE9CC4-13B0-46E2-B553-02564F2A6B7D.webp`,
 ];
 
 export default function PhoenixSection() {
@@ -121,7 +168,235 @@ export default function PhoenixSection() {
             {activeIndex + 1} / {beforeAfterPairs.length}
           </p>
         </FadeInOnScroll>
+
+        {/* Ako prebiehala oprava – timeline fotiek */}
+        <RestorationTimeline images={restorationImages} titleKey="restorationProgressTitle" t={t} />
       </div>
     </section>
+  );
+}
+
+function RestorationTimeline({
+  images,
+  titleKey,
+  t,
+}: {
+  images: string[];
+  titleKey: string;
+  t: (key: string) => string;
+}) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<"single" | "grid">("grid");
+  const previewImages = [
+    `${RESTORATION_BASE}/IMG_2783.webp`,
+    `${RESTORATION_BASE}/IMG_2781.webp`,
+    `${RESTORATION_BASE}/IMG_2786.webp`,
+    `${RESTORATION_BASE}/IMG_2784.webp`,
+  ];
+
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false);
+    document.body.style.overflow = "auto";
+  }, []);
+
+  const nextPhoto = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const prevPhoto = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextPhoto();
+      if (e.key === "ArrowLeft") prevPhoto();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen, closeLightbox, nextPhoto, prevPhoto]);
+
+  return (
+    <div className="mt-24 md:mt-32">
+      <FadeInOnScroll delay={0}>
+        <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-charcoal text-center mb-12 md:mb-16">
+          {t(titleKey)}
+        </h3>
+      </FadeInOnScroll>
+
+      {/* Horizontal row – 4 photos, scroll on mobile */}
+      <div className="overflow-x-auto overflow-y-hidden pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible snap-x snap-mandatory">
+        <div className="flex gap-4 md:gap-6 min-w-0">
+          {previewImages.map((src, index) => (
+            <button
+              key={src}
+              onClick={() => openLightbox(images.indexOf(src))}
+              className="flex-shrink-0 w-[85vw] md:flex-1 md:min-w-0 md:w-0 max-w-[280px] md:max-w-none snap-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-xl overflow-hidden shadow-xl bg-charcoal/5 group"
+            >
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={src}
+                  alt={t("restorationStepAlt") + " " + (index + 1)}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 85vw, 280px"
+                />
+                <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300" />
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA button */}
+      <FadeInOnScroll delay={0.1} className="text-center mt-8">
+        <button
+          onClick={() => openLightbox(0)}
+          className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-charcoal font-medium uppercase tracking-wider text-sm hover:bg-gold/90 transition-all duration-300 rounded-full shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+        >
+          {t("viewAllPhotos")} ({images.length})
+        </button>
+      </FadeInOnScroll>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] bg-black flex flex-col"
+            onClick={closeLightbox}
+            role="dialog"
+            aria-modal="true"
+          >
+            {/* Header: view toggle + close */}
+            <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 flex-shrink-0">
+              <div className="flex gap-2">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setViewMode("single");
+                  }}
+                  className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    viewMode === "single" ? "bg-gold text-charcoal" : "bg-white/20 hover:bg-white/30 text-white"
+                  }`}
+                  aria-label={t("viewSingle")}
+                >
+                  <Maximize2 size={20} />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setViewMode("grid");
+                  }}
+                  className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    viewMode === "grid" ? "bg-gold text-charcoal" : "bg-white/20 hover:bg-white/30 text-white"
+                  }`}
+                  aria-label={t("viewGrid")}
+                >
+                  <LayoutGrid size={20} />
+                </button>
+              </div>
+              <button
+                onClick={closeLightbox}
+                className="w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg border border-white/20"
+                aria-label={t("close")}
+              >
+                <X className="text-white" size={20} />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 min-h-0 flex items-center justify-center overflow-hidden px-4 md:px-6 pb-6" onClick={(e) => e.stopPropagation()}>
+              {viewMode === "single" ? (
+                <motion.div
+                  key="single"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="relative max-w-6xl w-full flex flex-col items-center"
+                >
+                  <div className="relative aspect-[4/3] md:aspect-[16/10] w-full bg-charcoal/50 rounded-xl overflow-hidden">
+                    <Image
+                      src={images[currentIndex]}
+                      alt={t("restorationStepAlt") + " " + (currentIndex + 1)}
+                      fill
+                      className="object-contain"
+                      sizes="100vw"
+                      priority
+                    />
+                  </div>
+                  <div className="flex items-center justify-center gap-6 mt-6">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        prevPhoto();
+                      }}
+                      className="w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300"
+                      aria-label={t("previous")}
+                    >
+                      <ChevronLeft className="text-white" size={24} />
+                    </button>
+                    <span className="text-white/70 text-sm min-w-[60px] text-center">
+                      {currentIndex + 1} / {images.length}
+                    </span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextPhoto();
+                      }}
+                      className="w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300"
+                      aria-label={t("next")}
+                    >
+                      <ChevronRight className="text-white" size={24} />
+                    </button>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="grid"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="w-full max-w-6xl h-full overflow-y-auto"
+                >
+                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 pb-8">
+                    {images.map((src, index) => (
+                      <button
+                        key={src}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentIndex(index);
+                          setViewMode("single");
+                        }}
+                        className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-200 ${
+                          index === currentIndex ? "ring-2 ring-gold ring-offset-2 ring-offset-black" : "hover:opacity-90"
+                        }`}
+                      >
+                        <Image
+                          src={src}
+                          alt={t("restorationStepAlt") + " " + (index + 1)}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

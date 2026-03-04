@@ -13,6 +13,8 @@ const paths = [
   '/privacy-policy',
 ];
 
+const RESTORATION_BASE = '/images/phoenix/restoration';
+
 // Hlavné obrázky na stránkach pre Image Sitemap (Google Images)
 const imagesByPath: Record<string, string[]> = {
   '': [
@@ -23,6 +25,46 @@ const imagesByPath: Record<string, string[]> = {
     '/images/phoenix/after-1.webp',
     '/images/park-alpacas.webp',
     '/images/chronicle-detail.webp',
+    `${RESTORATION_BASE}/14. april 2014 - 3.webp`,
+    `${RESTORATION_BASE}/15.Maj - 2016.webp`,
+    `${RESTORATION_BASE}/15. maj - 2016 (2).webp`,
+    `${RESTORATION_BASE}/IMG_0048.webp`,
+    `${RESTORATION_BASE}/IMG_0049.webp`,
+    `${RESTORATION_BASE}/IMG_0052.webp`,
+    `${RESTORATION_BASE}/IMG_0057.webp`,
+    `${RESTORATION_BASE}/IMG_0058.webp`,
+    `${RESTORATION_BASE}/IMG_0059.webp`,
+    `${RESTORATION_BASE}/IMG_0064.webp`,
+    `${RESTORATION_BASE}/IMG_0065.webp`,
+    `${RESTORATION_BASE}/IMG_0192.webp`,
+    `${RESTORATION_BASE}/IMG_0194.webp`,
+    `${RESTORATION_BASE}/IMG_0436.webp`,
+    `${RESTORATION_BASE}/IMG_0438.webp`,
+    `${RESTORATION_BASE}/IMG_0439.webp`,
+    `${RESTORATION_BASE}/IMG_0440.webp`,
+    `${RESTORATION_BASE}/IMG_0466.webp`,
+    `${RESTORATION_BASE}/IMG_0469.webp`,
+    `${RESTORATION_BASE}/IMG_0501.webp`,
+    `${RESTORATION_BASE}/IMG_0911.webp`,
+    `${RESTORATION_BASE}/IMG_0996.webp`,
+    `${RESTORATION_BASE}/IMG_1029.webp`,
+    `${RESTORATION_BASE}/IMG_1252.webp`,
+    `${RESTORATION_BASE}/IMG_1256.webp`,
+    `${RESTORATION_BASE}/IMG_1257.webp`,
+    `${RESTORATION_BASE}/IMG_1343.webp`,
+    `${RESTORATION_BASE}/IMG_2781.webp`,
+    `${RESTORATION_BASE}/IMG_2782.webp`,
+    `${RESTORATION_BASE}/IMG_2783.webp`,
+    `${RESTORATION_BASE}/IMG_2784.webp`,
+    `${RESTORATION_BASE}/IMG_2786.webp`,
+    `${RESTORATION_BASE}/IMG_2787.webp`,
+    `${RESTORATION_BASE}/IMG_2788.webp`,
+    `${RESTORATION_BASE}/IMG_2791.webp`,
+    `${RESTORATION_BASE}/IMG_2792.webp`,
+    `${RESTORATION_BASE}/077F2ADC-BBF6-47D8-A562-B9CB0F66EA92.webp`,
+    `${RESTORATION_BASE}/4B60797C-4129-4045-9CAE-B190C9E60DFE.webp`,
+    `${RESTORATION_BASE}/81386ABD-7EE6-40ED-A05C-AE05FEAA982D.webp`,
+    `${RESTORATION_BASE}/B1DE9CC4-13B0-46E2-B553-02564F2A6B7D.webp`,
   ],
   '/galeria': [
     '/images/gallery-hero.webp',
@@ -65,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: path === '' ? 1 : 0.8,
       };
       if (images && images.length > 0) {
-        entry.images = images.map((src) => ({ url: `${siteUrl}${src}` }));
+        (entry as MetadataRoute.Sitemap[number] & { images?: { url: string }[] }).images = images.map((src) => ({ url: `${siteUrl}${src}` }));
       }
       entries.push(entry);
     }
