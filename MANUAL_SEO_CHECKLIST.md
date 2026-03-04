@@ -17,8 +17,17 @@ Zoznam vecí, ktoré musíš spraviť sám (nie v kóde). Odporúčaný poriadok
   - Overiť, že na webe, v štruktúrovaných údajoch a v GBP je rovnaký názov, adresa a telefón.
 
 - [ ] **IndexNow**
-  - Vygenerovať kľúč na [indexnow.org](https://www.indexnow.org/), uložiť do `public/{key}.txt`.
-  - Spustiť: `INDEXNOW_KEY=tvoj_key npm run indexnow` (alebo odoslať URL cez ich webový formulár).
+  - Kľúč je pripravený: súbor `public/rkb-indexnow-a1b2c3d4.txt` obsahuje kľúč (overenie vlastníctva).
+  - **Po nasadení weba** (aby `https://rkb.sk/rkb-indexnow-a1b2c3d4.txt` bol dostupný) spusti v projekte:
+    - **Windows (PowerShell):** `$env:INDEXNOW_KEY="rkb-indexnow-a1b2c3d4"; npm run indexnow`
+    - **Windows (CMD):** `set INDEXNOW_KEY=rkb-indexnow-a1b2c3d4 && npm run indexnow`
+    - **macOS/Linux:** `INDEXNOW_KEY=rkb-indexnow-a1b2c3d4 npm run indexnow`
+  - Skript odošle všetky URL (sk, en, de × stránky) na api.indexnow.org (Bing, Yandex a ďalšie). Žiadne API kľúče z indexnow.org nie sú potrebné.
+  - **Rady z [IndexNow FAQ](https://www.indexnow.org/documentation):**
+    - **Kedy notifikovať:** pri pridaní, úprave alebo odstránení obsahu (nové stránky, zmeny textov, ceny, dostupnosti). Neodosielať nezmenené URL opakovane.
+    - **Overenie kľúča:** súbor musí byť pomenovaný presne `{kľúč}.txt`, v koreni domény, UTF-8, obsah = len samotný kľúč. Otestuj v prehliadači: `https://rkb.sk/rkb-indexnow-a1b2c3d4.txt` má zobraziť iba text kľúča.
+    - **Odpovede:** `200` = OK; `202` = prijaté, vyhľadávač ešte overuje kľúč (pri prvom odoslaní); `400` = zlý formát alebo chýbajúci kľúč; `422` = URL nepatrí k doméne alebo kľúč neplatný; `429` = príliš veľa požiadaviek – počkať (pozri hlavicu Retry-After), neodosielať zbytočne.
+    - **Dobrá prax:** IndexNow používať spolu so sitemapou; odosielať len pri skutočnej zmene; pri rate limite počkať aspoň cca 10 minút pred opakovaním.
 
 - [ ] **Google Search Console**
   - Overiť vlastníctvo domény rkb.sk.
