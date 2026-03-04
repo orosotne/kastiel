@@ -108,6 +108,21 @@ const breadcrumbHomeLabel: Record<string, string> = {
   de: "Startseite",
 };
 
+/**
+ * Podujatia – pridajte sem keď máte dátumy. Event schema sa automaticky pridá do JSON-LD.
+ * Formát startDate/endDate: ISO 8601 (napr. "2025-06-15T18:00:00" alebo "2025-06-15").
+ */
+const upcomingEvents: Array<{
+  name: string;
+  nameEn?: string;
+  nameDe?: string;
+  startDate: string;
+  endDate?: string;
+  description?: string;
+}> = [
+  // Príklad: { name: "Vernisáž výstavy", nameEn: "Exhibition opening", startDate: "2025-06-15T18:00:00" },
+];
+
 export default async function StructuredData() {
   const locale = (await getLocale()) || "sk";
 
@@ -209,7 +224,27 @@ export default async function StructuredData() {
     })),
   };
 
-  const schemaArray = [landmark, breadcrumbList, faqPage];
+  const eventSchemas = upcomingEvents.map((e) => ({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: locale === "en" ? e.nameEn ?? e.name : locale === "de" ? e.nameDe ?? e.name : e.name,
+    startDate: e.startDate,
+    ...(e.endDate && { endDate: e.endDate }),
+    ...(e.description && { description: e.description }),
+    location: {
+      "@type": "Place",
+      name: "Kaštieľ Bošany",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "SNP 113/1",
+        addressLocality: "Bošany",
+        postalCode: "956 18",
+        addressCountry: "SK",
+      },
+    },
+  }));
+
+  const schemaArray = [landmark, breadcrumbList, faqPage, ...eventSchemas];
 
   return (
     <Script
