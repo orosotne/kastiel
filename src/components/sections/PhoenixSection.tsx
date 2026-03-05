@@ -9,6 +9,8 @@ import Image from "next/image";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import BeforeAfterSlider from "@/components/interactive/BeforeAfterSlider";
 
+import restorationConfig from "../../../data/restoration-photos.json";
+
 const RESTORATION_BASE = "/images/phoenix/restoration";
 
 // Konfigurácia - páry obrázkov pred/po
@@ -23,48 +25,23 @@ const beforeAfterPairs = [
   },
 ];
 
-// Fotky obnovy – chronologicky od najstaršej po najnovšiu (WebP pre rýchlejšie načítanie)
-const restorationImages = [
-  `${RESTORATION_BASE}/14. april 2014 - 3.webp`,
-  `${RESTORATION_BASE}/15.Maj - 2016.webp`,
-  `${RESTORATION_BASE}/15. maj - 2016 (2).webp`,
-  `${RESTORATION_BASE}/IMG_0048.webp`,
-  `${RESTORATION_BASE}/IMG_0049.webp`,
-  `${RESTORATION_BASE}/IMG_0052.webp`,
-  `${RESTORATION_BASE}/IMG_0057.webp`,
-  `${RESTORATION_BASE}/IMG_0058.webp`,
-  `${RESTORATION_BASE}/IMG_0059.webp`,
-  `${RESTORATION_BASE}/IMG_0064.webp`,
-  `${RESTORATION_BASE}/IMG_0065.webp`,
-  `${RESTORATION_BASE}/IMG_0192.webp`,
-  `${RESTORATION_BASE}/IMG_0194.webp`,
-  `${RESTORATION_BASE}/IMG_0436.webp`,
-  `${RESTORATION_BASE}/IMG_0438.webp`,
-  `${RESTORATION_BASE}/IMG_0439.webp`,
-  `${RESTORATION_BASE}/IMG_0440.webp`,
-  `${RESTORATION_BASE}/IMG_0466.webp`,
-  `${RESTORATION_BASE}/IMG_0469.webp`,
-  `${RESTORATION_BASE}/IMG_0501.webp`,
-  `${RESTORATION_BASE}/IMG_0911.webp`,
-  `${RESTORATION_BASE}/IMG_0996.webp`,
-  `${RESTORATION_BASE}/IMG_1029.webp`,
-  `${RESTORATION_BASE}/IMG_1252.webp`,
-  `${RESTORATION_BASE}/IMG_1256.webp`,
-  `${RESTORATION_BASE}/IMG_1257.webp`,
-  `${RESTORATION_BASE}/IMG_1343.webp`,
-  `${RESTORATION_BASE}/IMG_2781.webp`,
-  `${RESTORATION_BASE}/IMG_2782.webp`,
-  `${RESTORATION_BASE}/IMG_2783.webp`,
-  `${RESTORATION_BASE}/IMG_2784.webp`,
-  `${RESTORATION_BASE}/IMG_2786.webp`,
-  `${RESTORATION_BASE}/IMG_2787.webp`,
-  `${RESTORATION_BASE}/IMG_2788.webp`,
-  `${RESTORATION_BASE}/IMG_2791.webp`,
-  `${RESTORATION_BASE}/IMG_2792.webp`,
-  `${RESTORATION_BASE}/077F2ADC-BBF6-47D8-A562-B9CB0F66EA92.webp`,
-  `${RESTORATION_BASE}/4B60797C-4129-4045-9CAE-B190C9E60DFE.webp`,
-  `${RESTORATION_BASE}/81386ABD-7EE6-40ED-A05C-AE05FEAA982D.webp`,
-  `${RESTORATION_BASE}/B1DE9CC4-13B0-46E2-B553-02564F2A6B7D.webp`,
+// Fotky obnovy – 3 kategórie: KPO (kaštieľ pred obnovou), KP (kaštieľ počas obnovy), ZPO (záhrada počas obnovy)
+const restorationCategories = [
+  {
+    id: "KPO",
+    titleKey: "categoryKPO",
+    images: (restorationConfig.categories.KPO as string[]).map((f) => `${RESTORATION_BASE}/${f}`),
+  },
+  {
+    id: "KP",
+    titleKey: "categoryKP",
+    images: (restorationConfig.categories.KP as string[]).map((f) => `${RESTORATION_BASE}/${f}`),
+  },
+  {
+    id: "ZPO",
+    titleKey: "categoryZPO",
+    images: (restorationConfig.categories.ZPO as string[]).map((f) => `${RESTORATION_BASE}/${f}`),
+  },
 ];
 
 export default function PhoenixSection() {
@@ -169,31 +146,36 @@ export default function PhoenixSection() {
           </p>
         </FadeInOnScroll>
 
-        {/* Ako prebiehala oprava – timeline fotiek */}
-        <RestorationTimeline images={restorationImages} titleKey="restorationProgressTitle" t={t} />
+        {/* Ako prebieha oprava – kategórie fotiek */}
+        <RestorationTimeline categories={restorationCategories} titleKey="restorationProgressTitle" t={t} />
       </div>
     </section>
   );
 }
 
+type RestorationCategory = {
+  id: string;
+  titleKey: string;
+  images: string[];
+};
+
 function RestorationTimeline({
-  images,
+  categories,
   titleKey,
   t,
 }: {
-  images: string[];
+  categories: RestorationCategory[];
   titleKey: string;
   t: (key: string) => string;
 }) {
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"single" | "grid">("grid");
-  const previewImages = [
-    `${RESTORATION_BASE}/IMG_2783.webp`,
-    `${RESTORATION_BASE}/IMG_2781.webp`,
-    `${RESTORATION_BASE}/IMG_2786.webp`,
-    `${RESTORATION_BASE}/IMG_2784.webp`,
-  ];
+
+  const activeCategory = categories[activeCategoryIndex];
+  const images = activeCategory.images;
+  const previewImages = images.slice(0, 4);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -214,6 +196,15 @@ function RestorationTimeline({
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   }, [images.length]);
 
+  const handleCategoryChange = useCallback(
+    (index: number) => {
+      setActiveCategoryIndex(index);
+      setCurrentIndex(0);
+      setLightboxOpen(false);
+    },
+    []
+  );
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxOpen) return;
@@ -233,29 +224,66 @@ function RestorationTimeline({
         </h3>
       </FadeInOnScroll>
 
-      {/* Horizontal row – 4 photos, scroll on mobile */}
-      <div className="overflow-x-auto overflow-y-hidden pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible snap-x snap-mandatory">
-        <div className="flex gap-4 md:gap-6 min-w-0">
-          {previewImages.map((src, index) => (
-            <button
-              key={src}
-              onClick={() => openLightbox(images.indexOf(src))}
-              className="flex-shrink-0 w-[85vw] md:flex-1 md:min-w-0 md:w-0 max-w-[280px] md:max-w-none snap-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-xl overflow-hidden shadow-xl bg-charcoal/5 group"
+      {/* Tab bar – 3 kategórie */}
+      <div className="flex justify-center gap-2 mb-10">
+        {categories.map((cat, index) => (
+          <button
+            key={cat.id}
+            onClick={() => handleCategoryChange(index)}
+            className="relative px-4 py-2 md:px-6 md:py-3 text-sm uppercase tracking-wider font-medium transition-colors duration-300"
+          >
+            <span
+              className={
+                activeCategoryIndex === index
+                  ? "text-charcoal"
+                  : "text-charcoal/50 hover:text-charcoal/80"
+              }
             >
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={src}
-                  alt={t("restorationStepAlt") + " " + (index + 1)}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 768px) 85vw, 280px"
-                />
-                <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300" />
-              </div>
-            </button>
-          ))}
-        </div>
+              {t(cat.titleKey)}
+            </span>
+            {activeCategoryIndex === index && (
+              <motion.div
+                layoutId="restoration-tab-underline"
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold"
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              />
+            )}
+          </button>
+        ))}
       </div>
+
+      {/* Horizontal row – 4 náhľadové fotky z aktívnej kategórie */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeCategoryIndex}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.25 }}
+          className="overflow-x-auto overflow-y-hidden pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible snap-x snap-mandatory"
+        >
+          <div className="flex gap-4 md:gap-6 min-w-0">
+            {previewImages.map((src, index) => (
+              <button
+                key={src}
+                onClick={() => openLightbox(index)}
+                className="flex-shrink-0 w-[85vw] md:flex-1 md:min-w-0 md:w-0 max-w-[280px] md:max-w-none snap-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-xl overflow-hidden shadow-xl bg-charcoal/5 group"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={src}
+                    alt={t("restorationStepAlt") + " " + (index + 1)}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 85vw, 280px"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300" />
+                </div>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* CTA button */}
       <FadeInOnScroll delay={0.1} className="text-center mt-8">
@@ -368,7 +396,7 @@ function RestorationTimeline({
                   animate={{ opacity: 1 }}
                   className="w-full max-w-6xl h-full overflow-y-auto"
                 >
-                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 pb-8">
+                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-3 p-2 pb-8">
                     {images.map((src, index) => (
                       <button
                         key={src}
@@ -378,7 +406,7 @@ function RestorationTimeline({
                           setViewMode("single");
                         }}
                         className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-200 ${
-                          index === currentIndex ? "ring-2 ring-gold ring-offset-2 ring-offset-black" : "hover:opacity-90"
+                          index === currentIndex ? "z-10 ring-2 ring-gold ring-offset-2 ring-offset-black outline-none" : "hover:opacity-90"
                         }`}
                       >
                         <Image
