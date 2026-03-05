@@ -225,31 +225,37 @@ function RestorationTimeline({
       </FadeInOnScroll>
 
       {/* Tab bar – 3 kategórie */}
-      <div className="flex justify-center gap-2 mb-10">
-        {categories.map((cat, index) => (
-          <button
-            key={cat.id}
-            onClick={() => handleCategoryChange(index)}
-            className="relative px-4 py-2 md:px-6 md:py-3 text-sm uppercase tracking-wider font-medium transition-colors duration-300"
-          >
-            <span
-              className={
+      <div className="overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible mb-10">
+        <div className="flex justify-center md:justify-center gap-2 min-w-max md:min-w-0">
+          {categories.map((cat, index) => (
+            <button
+              key={cat.id}
+              onClick={() => handleCategoryChange(index)}
+              className={`relative flex-shrink-0 whitespace-nowrap px-4 py-2.5 md:px-6 md:py-3 text-sm uppercase tracking-wider font-medium transition-all duration-300 rounded-lg border md:border-0 md:rounded-none ${
                 activeCategoryIndex === index
-                  ? "text-charcoal"
-                  : "text-charcoal/50 hover:text-charcoal/80"
-              }
+                  ? "bg-gold/10 border-gold md:bg-transparent md:border-transparent"
+                  : "bg-charcoal/5 border-charcoal/20 hover:bg-charcoal/10 md:bg-transparent md:border-transparent"
+              }`}
             >
-              {t(cat.titleKey)}
-            </span>
-            {activeCategoryIndex === index && (
-              <motion.div
-                layoutId="restoration-tab-underline"
-                className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold"
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-            )}
-          </button>
-        ))}
+              <span
+                className={
+                  activeCategoryIndex === index
+                    ? "text-charcoal"
+                    : "text-charcoal/50 hover:text-charcoal/80"
+                }
+              >
+                {t(cat.titleKey)}
+              </span>
+              {activeCategoryIndex === index && (
+                <motion.div
+                  layoutId="restoration-tab-underline"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Horizontal row – 4 náhľadové fotky z aktívnej kategórie */}
@@ -260,7 +266,7 @@ function RestorationTimeline({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.25 }}
-          className="overflow-x-auto overflow-y-hidden pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible snap-x snap-mandatory"
+          className="overflow-x-auto overflow-y-hidden scrollbar-hide pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible snap-x snap-mandatory"
         >
           <div className="flex gap-4 md:gap-6 min-w-0">
             {previewImages.map((src, index) => (

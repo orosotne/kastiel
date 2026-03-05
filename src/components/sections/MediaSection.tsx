@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, X, ExternalLink, Quote } from "lucide-react";
+import { Play, X, ExternalLink, Quote, MousePointer2 } from "lucide-react";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 
 // Konfigurácia - reálne články a médiá
@@ -150,8 +150,12 @@ export default function MediaSection() {
 
         {/* Media Articles */}
         <FadeInOnScroll delay={0.2} className="mb-20">
-          <p className="text-center text-charcoal/50 text-sm uppercase tracking-wider mb-8">
+          <p className="text-center text-charcoal/70 text-base md:text-lg font-medium mb-2">
             {t("articles")}
+          </p>
+          <p className="text-center text-charcoal/50 text-sm mb-8 flex items-center justify-center gap-2">
+            <MousePointer2 className="w-4 h-4 text-gold flex-shrink-0" aria-hidden />
+            {t("articlesClickHint")}
           </p>
           
           {useTextLogos ? (
@@ -163,7 +167,7 @@ export default function MediaSection() {
                   href={media.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-charcoal/40 hover:text-gold font-serif text-lg md:text-xl transition-all duration-300"
+                  className="text-charcoal/40 hover:text-gold font-serif text-lg md:text-xl transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg hover:ring-2 hover:ring-gold hover:ring-offset-2"
                   whileHover={{ scale: 1.05 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -176,14 +180,15 @@ export default function MediaSection() {
             </div>
           ) : (
             // Logá médií
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
               {mediaArticles.map((media, index) => (
                 <motion.a
                   key={media.name}
                   href={media.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                  title={media.title}
+                  className="group relative flex items-center justify-center p-4 md:p-5 rounded-xl border border-charcoal/20 hover:border-gold grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer hover:ring-2 hover:ring-gold hover:ring-offset-2 bg-white/50 hover:bg-charcoal/5 shadow-sm"
                   whileHover={{ scale: 1.05 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 0.6, y: 0 }}
@@ -196,6 +201,7 @@ export default function MediaSection() {
                     height={40}
                     className="h-8 md:h-10 w-auto object-contain"
                   />
+                  <ExternalLink className="absolute top-2 right-2 w-4 h-4 text-gold opacity-40 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
                 </motion.a>
               ))}
             </div>

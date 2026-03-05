@@ -188,6 +188,7 @@
     "label": "Presse & Medien",
     "title": "Sie sprechen über uns",
     "articles": "Über uns geschrieben",
+    "articlesClickHint": "Klicken Sie auf das Logo, um den Artikel zu lesen",
     "videos": "Videoreportagen",
     "quote": "Zitat",
     "previous": "Vorheriges",
