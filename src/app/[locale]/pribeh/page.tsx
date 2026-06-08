@@ -320,7 +320,7 @@ export default function StoryPage() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gold/30 transform md:-translate-x-1/2" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gold/30 -translate-x-1/2" />
 
             <div className="space-y-8">
               {owners.map((owner, index) => (
@@ -351,7 +351,7 @@ export default function StoryPage() {
                       <p className="text-white/60 text-sm mt-1">{owner.desc}</p>
                     </div>
                     
-                    <div className="absolute left-4 md:relative md:left-0 w-4 h-4 bg-gold rounded-full shadow-lg z-10" />
+                    <div className="absolute left-4 -translate-x-1/2 md:relative md:left-0 md:translate-x-0 w-4 h-4 bg-gold rounded-full shadow-lg z-10" />
                     
                     <div className="flex-1 hidden md:block" />
                   </div>
