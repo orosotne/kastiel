@@ -460,7 +460,44 @@
     "cookies_title": "Cookies",
     "your_rights": "Vaše práva",
     "contact": "Kontakt",
-    "last_updated": "Posledná aktualizácia: December 2024"
+    "last_updated": "Posledná aktualizácia: December 2024",
+    "label_name": "Názov",
+    "label_seat": "Sídlo",
+    "label_email": "Email",
+    "label_phone": "Telefón",
+    "label_address": "Adresa",
+    "data_items": [
+      "Meno a priezvisko (pri kontaktnom formulári)",
+      "Email adresa (pri kontaktnom formulári a newsletter)",
+      "Telefónne číslo (voliteľné, pri dopytoch)",
+      "Obsah správy (pri kontaktnom formulári)",
+      "Technické údaje (IP adresa, typ prehliadača - automaticky)"
+    ],
+    "purpose_items": [
+      "Odpoveď na vaše dopyty a otázky",
+      "Spracovanie rezervácií a objednávok",
+      "Zasielanie newslettera (len s vaším súhlasom)",
+      "Zlepšovanie našich služieb",
+      "Plnenie zákonných povinností"
+    ],
+    "cookies_intro": "Naša webová stránka používa cookies pre:",
+    "cookies_items": [
+      "Nevyhnutné fungovanie stránky",
+      "Zapamätanie jazykových preferencií",
+      "Analytické účely (anonymné štatistiky návštevnosti)"
+    ],
+    "cookies_note": "Používaním tejto stránky súhlasíte s použitím cookies.",
+    "rights_intro": "Podľa GDPR máte právo:",
+    "rights_items": [
+      "Na prístup k svojim osobným údajom",
+      "Na opravu nesprávnych údajov",
+      "Na vymazanie údajov („právo byť zabudnutý“)",
+      "Na obmedzenie spracovania",
+      "Na prenosnosť údajov",
+      "Namietať proti spracovaniu",
+      "Odvolať súhlas so spracovaním"
+    ],
+    "contact_intro": "Pre uplatnenie vašich práv alebo otázky ohľadom ochrany osobných údajov nás kontaktujte:"
   },
   "gallery_page": {
     "label": "Fotogaléria",

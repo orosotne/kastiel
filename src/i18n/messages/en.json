@@ -425,7 +425,44 @@
     "cookies_title": "Cookies",
     "your_rights": "Your rights",
     "contact": "Contact",
-    "last_updated": "Last updated: December 2024"
+    "last_updated": "Last updated: December 2024",
+    "label_name": "Name",
+    "label_seat": "Registered office",
+    "label_email": "Email",
+    "label_phone": "Phone",
+    "label_address": "Address",
+    "data_items": [
+      "Name and surname (via the contact form)",
+      "Email address (via the contact form and newsletter)",
+      "Phone number (optional, for enquiries)",
+      "Message content (via the contact form)",
+      "Technical data (IP address, browser type — automatically)"
+    ],
+    "purpose_items": [
+      "Responding to your enquiries and questions",
+      "Processing reservations and orders",
+      "Sending the newsletter (only with your consent)",
+      "Improving our services",
+      "Fulfilling legal obligations"
+    ],
+    "cookies_intro": "Our website uses cookies for:",
+    "cookies_items": [
+      "Essential functioning of the site",
+      "Remembering language preferences",
+      "Analytics purposes (anonymous visit statistics)"
+    ],
+    "cookies_note": "By using this site you agree to the use of cookies.",
+    "rights_intro": "Under the GDPR you have the right:",
+    "rights_items": [
+      "To access your personal data",
+      "To rectify inaccurate data",
+      "To erase data (the “right to be forgotten”)",
+      "To restrict processing",
+      "To data portability",
+      "To object to processing",
+      "To withdraw consent to processing"
+    ],
+    "contact_intro": "To exercise your rights or for questions regarding the protection of personal data, contact us:"
   },
   "gallery_page": {
     "label": "Photo Gallery",

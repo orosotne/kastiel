@@ -15,12 +15,12 @@ export default function PrivacyPolicyPage() {
       title: t("operator"),
       content: (
         <div className="space-y-2">
-          <p><strong>Názov:</strong> {BRAND}</p>
+          <p><strong>{t("label_name")}:</strong> {BRAND}</p>
           <p><strong>IČO:</strong> {CONTACT.ico}</p>
           <p><strong>DIČ:</strong> {CONTACT.dic}</p>
-          <p><strong>Sídlo:</strong> {CONTACT.address.street}, {CONTACT.address.postalCode} {CONTACT.address.city}</p>
-          <p><strong>Email:</strong> {CONTACT.email}</p>
-          <p><strong>Telefón:</strong> {CONTACT.phone}</p>
+          <p><strong>{t("label_seat")}:</strong> {CONTACT.address.street}, {CONTACT.address.postalCode} {CONTACT.address.city}</p>
+          <p><strong>{t("label_email")}:</strong> {CONTACT.email}</p>
+          <p><strong>{t("label_phone")}:</strong> {CONTACT.phone}</p>
         </div>
       ),
     },
@@ -29,11 +29,9 @@ export default function PrivacyPolicyPage() {
       title: t("data_collected"),
       content: (
         <ul className="list-disc list-inside space-y-2">
-          <li>Meno a priezvisko (pri kontaktnom formulári)</li>
-          <li>Email adresa (pri kontaktnom formulári a newsletter)</li>
-          <li>Telefónne číslo (voliteľné, pri dopytoch)</li>
-          <li>Obsah správy (pri kontaktnom formulári)</li>
-          <li>Technické údaje (IP adresa, typ prehliadača - automaticky)</li>
+          {(t.raw("data_items") as string[]).map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
       ),
     },
@@ -42,11 +40,9 @@ export default function PrivacyPolicyPage() {
       title: t("purpose"),
       content: (
         <ul className="list-disc list-inside space-y-2">
-          <li>Odpoveď na vaše dopyty a otázky</li>
-          <li>Spracovanie rezervácií a objednávok</li>
-          <li>Zasielanie newslettera (len s vaším súhlasom)</li>
-          <li>Zlepšovanie našich služieb</li>
-          <li>Plnenie zákonných povinností</li>
+          {(t.raw("purpose_items") as string[]).map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
       ),
     },
@@ -55,13 +51,13 @@ export default function PrivacyPolicyPage() {
       title: t("cookies_title"),
       content: (
         <div className="space-y-2">
-          <p>Naša webová stránka používa cookies pre:</p>
+          <p>{t("cookies_intro")}</p>
           <ul className="list-disc list-inside space-y-1 mt-2">
-            <li>Nevyhnutné fungovanie stránky</li>
-            <li>Zapamätanie jazykových preferencií</li>
-            <li>Analytické účely (anonymné štatistiky návštevnosti)</li>
+            {(t.raw("cookies_items") as string[]).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
-          <p className="mt-2">Používaním tejto stránky súhlasíte s použitím cookies.</p>
+          <p className="mt-2">{t("cookies_note")}</p>
         </div>
       ),
     },
@@ -70,15 +66,11 @@ export default function PrivacyPolicyPage() {
       title: t("your_rights"),
       content: (
         <div className="space-y-2">
-          <p>Podľa GDPR máte právo:</p>
+          <p>{t("rights_intro")}</p>
           <ul className="list-disc list-inside space-y-1 mt-2">
-            <li>Na prístup k svojim osobným údajom</li>
-            <li>Na opravu nesprávnych údajov</li>
-            <li>Na vymazanie údajov (&bdquo;právo byť zabudnutý&ldquo;)</li>
-            <li>Na obmedzenie spracovania</li>
-            <li>Na prenosnosť údajov</li>
-            <li>Namietať proti spracovaniu</li>
-            <li>Odvolať súhlas so spracovaním</li>
+            {(t.raw("rights_items") as string[]).map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
           </ul>
         </div>
       ),
@@ -88,10 +80,10 @@ export default function PrivacyPolicyPage() {
       title: t("contact"),
       content: (
         <div className="space-y-2">
-          <p>Pre uplatnenie vašich práv alebo otázky ohľadom ochrany osobných údajov nás kontaktujte:</p>
-          <p className="mt-2"><strong>Email:</strong> {CONTACT.email}</p>
-          <p><strong>Telefón:</strong> {CONTACT.phone}</p>
-          <p><strong>Adresa:</strong> {BRAND}, {CONTACT.address.street}, {CONTACT.address.postalCode} {CONTACT.address.city}</p>
+          <p>{t("contact_intro")}</p>
+          <p className="mt-2"><strong>{t("label_email")}:</strong> {CONTACT.email}</p>
+          <p><strong>{t("label_phone")}:</strong> {CONTACT.phone}</p>
+          <p><strong>{t("label_address")}:</strong> {BRAND}, {CONTACT.address.street}, {CONTACT.address.postalCode} {CONTACT.address.city}</p>
         </div>
       ),
     },

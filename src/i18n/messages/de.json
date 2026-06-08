@@ -425,7 +425,44 @@
     "cookies_title": "Cookies",
     "your_rights": "Ihre Rechte",
     "contact": "Kontakt",
-    "last_updated": "Letzte Aktualisierung: Dezember 2024"
+    "last_updated": "Letzte Aktualisierung: Dezember 2024",
+    "label_name": "Name",
+    "label_seat": "Sitz",
+    "label_email": "E-Mail",
+    "label_phone": "Telefon",
+    "label_address": "Adresse",
+    "data_items": [
+      "Vor- und Nachname (über das Kontaktformular)",
+      "E-Mail-Adresse (über das Kontaktformular und den Newsletter)",
+      "Telefonnummer (optional, bei Anfragen)",
+      "Inhalt der Nachricht (über das Kontaktformular)",
+      "Technische Daten (IP-Adresse, Browsertyp — automatisch)"
+    ],
+    "purpose_items": [
+      "Beantwortung Ihrer Anfragen und Fragen",
+      "Bearbeitung von Reservierungen und Bestellungen",
+      "Versand des Newsletters (nur mit Ihrer Einwilligung)",
+      "Verbesserung unserer Dienstleistungen",
+      "Erfüllung gesetzlicher Pflichten"
+    ],
+    "cookies_intro": "Unsere Website verwendet Cookies für:",
+    "cookies_items": [
+      "Notwendiges Funktionieren der Website",
+      "Speichern der Sprachpräferenzen",
+      "Analysezwecke (anonyme Besuchsstatistiken)"
+    ],
+    "cookies_note": "Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu.",
+    "rights_intro": "Gemäß der DSGVO haben Sie das Recht:",
+    "rights_items": [
+      "auf Zugang zu Ihren personenbezogenen Daten",
+      "auf Berichtigung unrichtiger Daten",
+      "auf Löschung der Daten („Recht auf Vergessenwerden“)",
+      "auf Einschränkung der Verarbeitung",
+      "auf Datenübertragbarkeit",
+      "der Verarbeitung zu widersprechen",
+      "die Einwilligung in die Verarbeitung zu widerrufen"
+    ],
+    "contact_intro": "Um Ihre Rechte auszuüben oder bei Fragen zum Schutz personenbezogener Daten kontaktieren Sie uns:"
   },
   "gallery_page": {
     "label": "Fotogalerie",
