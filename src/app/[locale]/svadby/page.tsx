@@ -141,6 +141,7 @@ export default function WeddingsPage() {
                     src="/images/wedding-venue.webp"
                     alt={wp("venue_alt")}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -173,6 +174,7 @@ export default function WeddingsPage() {
                     src={`/images/weddings/wedding-${i}.webp`}
                     alt={`${wp("wedding_photo")} ${i}`}
                     fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-center justify-center">

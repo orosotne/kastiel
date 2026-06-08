@@ -20,6 +20,7 @@ export default function ParkSection() {
                   src="/images/park-alpacas.webp"
                   alt={t("alt")}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-[25%_35%]"
                 />
               </div>
