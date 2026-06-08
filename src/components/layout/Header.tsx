@@ -91,7 +91,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 transition-colors duration-300 ${
+              className={`lg:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-2 transition-colors duration-300 ${
                 isScrolled ? "text-charcoal" : "text-white"
               }`}
               aria-label={isMenuOpen ? t("close_menu") : t("open_menu")}
