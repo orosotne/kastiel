@@ -4,6 +4,7 @@ import { memo, useMemo } from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { Instagram, Facebook, Mail, Phone, MapPin, Building2 } from "lucide-react";
+import { BRAND, CONTACT } from "@/lib/site-config";
 
 const Footer = memo(function Footer() {
   const t = useTranslations("footer");
@@ -26,7 +27,7 @@ const Footer = memo(function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href={`/${locale}`} className="inline-block mb-6">
-              <h3 className="font-serif text-3xl text-white">Renesančný kaštieľ Bošany</h3>
+              <h3 className="font-serif text-3xl text-white">{BRAND}</h3>
             </Link>
             <p className="text-ivory/70 text-sm leading-relaxed">
               {t("motto")}
@@ -79,34 +80,34 @@ const Footer = memo(function Footer() {
               <li className="flex items-start gap-3">
                 <Building2 size={18} className="text-gold mt-0.5 flex-shrink-0" />
                 <span>
-                  <strong className="text-white">Renesančný kaštieľ Bošany</strong><br />
-                  IČO: 42024757<br />
-                  DIČ: 2022449737
+                  <strong className="text-white">{BRAND}</strong><br />
+                  IČO: {CONTACT.ico}<br />
+                  DIČ: {CONTACT.dic}
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold mt-0.5 flex-shrink-0" />
                 <span>
-                  SNP 113/1<br />
-                  956 18 Bošany
+                  {CONTACT.address.street}<br />
+                  {CONTACT.address.postalCode} {CONTACT.address.city}
                 </span>
               </li>
               <li>
                 <a
-                  href="tel:+421907726726"
+                  href={`tel:${CONTACT.phoneHref}`}
                   className="flex items-center gap-3 hover:text-gold transition-colors duration-300"
                 >
                   <Phone size={18} className="text-gold flex-shrink-0" />
-                  +421 907 726 726
+                  {CONTACT.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:jmiskeje@gmail.com"
+                  href={`mailto:${CONTACT.email}`}
                   className="flex items-center gap-3 hover:text-gold transition-colors duration-300"
                 >
                   <Mail size={18} className="text-gold flex-shrink-0" />
-                  jmiskeje@gmail.com
+                  {CONTACT.email}
                 </a>
               </li>
             </ul>

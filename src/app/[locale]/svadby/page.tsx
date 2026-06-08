@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import { Heart, Users, Calendar, Send, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { CONTACT } from "@/lib/site-config";
 
 export default function WeddingsPage() {
   const t = useTranslations("weddings");
@@ -62,7 +63,7 @@ export default function WeddingsPage() {
     const body = encodeURIComponent(
       `Meno: ${formData.name}\nEmail: ${formData.email}\nTelefón: ${formData.phone}\nDátum: ${formData.date}\nPočet hostí: ${formData.guests}\n\n${formData.message}`
     );
-    window.location.href = `mailto:jmiskeje@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (

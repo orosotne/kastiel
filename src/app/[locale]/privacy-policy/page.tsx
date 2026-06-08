@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import { Shield, Database, Cookie, UserCheck, Mail, Building2 } from "lucide-react";
+import { BRAND, CONTACT } from "@/lib/site-config";
 
 export default function PrivacyPolicyPage() {
   const t = useTranslations("privacy");
@@ -14,12 +15,12 @@ export default function PrivacyPolicyPage() {
       title: t("operator"),
       content: (
         <div className="space-y-2">
-          <p><strong>Názov:</strong> Renesančný kaštieľ Bošany</p>
-          <p><strong>IČO:</strong> 42024757</p>
-          <p><strong>DIČ:</strong> 2022449737</p>
-          <p><strong>Sídlo:</strong> SNP 113/1, 956 18 Bošany</p>
-          <p><strong>Email:</strong> jmiskeje@gmail.com</p>
-          <p><strong>Telefón:</strong> +421 907 726 726</p>
+          <p><strong>Názov:</strong> {BRAND}</p>
+          <p><strong>IČO:</strong> {CONTACT.ico}</p>
+          <p><strong>DIČ:</strong> {CONTACT.dic}</p>
+          <p><strong>Sídlo:</strong> {CONTACT.address.street}, {CONTACT.address.postalCode} {CONTACT.address.city}</p>
+          <p><strong>Email:</strong> {CONTACT.email}</p>
+          <p><strong>Telefón:</strong> {CONTACT.phone}</p>
         </div>
       ),
     },
@@ -88,9 +89,9 @@ export default function PrivacyPolicyPage() {
       content: (
         <div className="space-y-2">
           <p>Pre uplatnenie vašich práv alebo otázky ohľadom ochrany osobných údajov nás kontaktujte:</p>
-          <p className="mt-2"><strong>Email:</strong> jmiskeje@gmail.com</p>
-          <p><strong>Telefón:</strong> +421 907 726 726</p>
-          <p><strong>Adresa:</strong> Renesančný kaštieľ Bošany, SNP 113/1, 956 18 Bošany</p>
+          <p className="mt-2"><strong>Email:</strong> {CONTACT.email}</p>
+          <p><strong>Telefón:</strong> {CONTACT.phone}</p>
+          <p><strong>Adresa:</strong> {BRAND}, {CONTACT.address.street}, {CONTACT.address.postalCode} {CONTACT.address.city}</p>
         </div>
       ),
     },
