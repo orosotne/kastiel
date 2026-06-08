@@ -13,194 +13,54 @@ import MuseumGallery from "@/components/sections/MuseumGallery";
 import { X, ChevronLeft, ChevronRight, Landmark, Palette, Shield, Castle, ImageIcon } from "lucide-react";
 import { useScrollLock } from "@/hooks/useScrollLock";
 
-// Historické fotky pre múzejnú galériu
-const historyPhotos = [
-  {
-    src: "/images/history/history-1.webp",
-    title: "Pohľadnica Nagy-Bossany",
-    year: "okolo 1905",
-    description: "Vzácna pohľadnica s celkovým pohľadom na kaštieľ v zimnom období",
-  },
-  {
-    src: "/images/history/history-2.webp",
-    title: "Letecký pohľad",
-    year: "okolo 1930",
-    description: "Vyvýšený pohľad na kaštieľ zo zadnej strany s charakteristickým cimburím",
-  },
-  {
-    src: "/images/history/history-3.webp",
-    title: "Panoráma s dedinou",
-    year: "okolo 1925",
-    description: "Kaštieľ s okolitými hospodárskymi budovami a dedinou v pozadí",
-  },
-  {
-    src: "/images/history/history-4.webp",
-    title: "Bočná fasáda",
-    year: "okolo 1955",
-    description: "Pohľad na atikové múry s dekoratívnym cimburím a plotom v popredí",
-  },
-  {
-    src: "/images/history/history-5.webp",
-    title: "Vstup do parku",
-    year: "okolo 1910",
-    description: "Pôvodná vstupná brána do kaštieľneho parku s kamennými piliermi",
-  },
-  {
-    src: "/images/history/history-6.webp",
-    title: "Päťboký bastión",
-    year: "okolo 1965",
-    description: "Renesančný bastión s viditeľnými prasklinami pred rekonštrukciou",
-  },
-  {
-    src: "/images/history/history-7.webp",
-    title: "Severozápadné krídlo",
-    year: "okolo 1975",
-    description: "Zadná strana kaštieľa so sýpkovými otvormi z 20. storočia",
-  },
-  {
-    src: "/images/history/history-8.webp",
-    title: "Vnútorné nádvorie",
-    year: "okolo 1975",
-    description: "Pohľad na nádvorie s opadanou omietkou a pôvodnou strechou",
-  },
-  {
-    src: "/images/history/history-9.webp",
-    title: "Historický krov",
-    year: "okolo 1975",
-    description: "Pôvodná drevená krovová konštrukcia z obdobia historizmu",
-  },
-  {
-    src: "/images/history/history-10.webp",
-    title: "Rekonštrukcia bastiónu",
-    year: "okolo 1980",
-    description: "Záchranné stavebné práce na obnove nárožného bastiónu",
-  },
+// Non-translatable metadata; all text comes from the i18n "story" namespace.
+type Owner = { period: string; name: string; desc: string; hasImage: boolean; image: string };
+
+const PHOTO_SRCS = [
+  "/images/history/history-1.webp",
+  "/images/history/history-2.webp",
+  "/images/history/history-3.webp",
+  "/images/history/history-4.webp",
+  "/images/history/history-5.webp",
+  "/images/history/history-6.webp",
+  "/images/history/history-7.webp",
+  "/images/history/history-8.webp",
+  "/images/history/history-9.webp",
+  "/images/history/history-10.webp",
 ];
 
-// 12 stavebných etáp kaštieľa
-const buildingHistory = [
-  {
-    year: "15. stor.",
-    period: "Gotika I.",
-    title: "Prvá etapa",
-    description: "Pôvodný objekt mal formu trojpodlažnej blokovej stavby. Z tohto obdobia pochádza nárožné kvádrovanie a fragment kruhovej rozety.",
-    color: "gothic" as const,
-  },
-  {
-    year: "kon. 15. stor.",
-    period: "Gotika II.",
-    title: "Druhá etapa",
-    description: "Značný nárast stavebnej hmoty do výšky. Zachovala sa maľba s motívom Samsona prenášajúceho bránu Gazy.",
-    color: "gothic" as const,
-  },
-  {
-    year: "zač. 16. stor.",
-    period: "Renesancia I.",
-    title: "Tretia etapa",
-    description: "Stavebný objem rozšírený pridaním nových krídel a podlaží. Zachovali sa fragmenty omietok s maľovaným vlysom.",
-    color: "renaissance" as const,
-  },
-  {
-    year: "okolo 1550",
-    period: "Renesancia II.",
-    title: "Štvrtá etapa",
-    description: "Rozšírenie západnej časti juhovýchodného krídla. Predpokladá sa prestavaný objekt s fortifikačným charakterom.",
-    color: "renaissance" as const,
-  },
-  {
-    year: "okolo 1580",
-    period: "Renesancia III.",
-    title: "Piata etapa",
-    description: "Kaštieľ získal zásadnú priestorovú a bastiónovú podobu. Vystavané päťboké nárožné bastióny.",
-    color: "renaissance" as const,
-  },
-  {
-    year: "okolo 1650",
-    period: "Barok I.",
-    title: "Šiesta etapa",
-    description: "Vystavený šesťboký bastión na juhozápadnom nároží, možno nahradil starší bastión.",
-    color: "baroque" as const,
-  },
-  {
-    year: "17. stor.",
-    period: "Barok II.",
-    title: "Siedma etapa",
-    description: "Pristavené atikové múry po celom obvode - kaštieľ získal 'hradnú' vizáž. Bohatá štuková výzdoba imitujúca Botticelliho.",
-    color: "baroque" as const,
-  },
-  {
-    year: "okolo 1730",
-    period: "Barok III.",
-    title: "Ôsma etapa",
-    description: "Vybudovaný schodiskový trakt v strednom krídle. Štuková výzdoba a kamenné dlažby v interiéri.",
-    color: "baroque" as const,
-  },
-  {
-    year: "1794",
-    period: "Luiséz",
-    title: "Deviata etapa",
-    description: "Dokumentovaná nálezom niky pre kachľovú pec a štukovou kartušou s nápisom 'AD RENOVAT 1794'.",
-    color: "baroque" as const,
-  },
-  {
-    year: "19. stor.",
-    period: "Historizmus",
-    title: "Desiata etapa",
-    description: "Kaštieľ získal romantizujúci vzhľad úpravou atikových múrov a novou drevenou konštrukciou krovu.",
-    color: "modern" as const,
-  },
-  {
-    year: "1903",
-    period: "Hospodárska",
-    title: "Jedenásta etapa",
-    description: "Objekt adaptovaný na hospodárske účely - celé severozápadné krídlo prestavané na sýpku.",
-    color: "modern" as const,
-  },
-  {
-    year: "70.-80. roky",
-    period: "Konzervačná",
-    title: "Dvanásta etapa",
-    description: "Konzervačné a neúplné rekonštrukčné práce. Práce boli zastavené po roku 1989.",
-    color: "modern" as const,
-  },
-];
+const STAGE_COLORS = [
+  "gothic", "gothic", "renaissance", "renaissance", "renaissance", "baroque",
+  "baroque", "baroque", "baroque", "modern", "modern", "modern",
+] as const;
 
-// Zaujímavosti z histórie
-const highlights = [
-  {
-    icon: Palette,
-    title: "Gotická maľba Samsona",
-    description: "V interiéri sa zachoval fragment nástenného obrazu s biblickým motívom Samsona prenášajúceho bránu Gazy z konca 15. storočia.",
-  },
-  {
-    icon: Palette,
-    title: "Botticelliho inšpirácia",
-    description: "V šesťbokom bastióne sa nachádza klenba so štukovou výzdobou, ktorej stred pôvodne niesol maliarsku kompozíciu imitujúcu Zrodenie Venuše.",
-  },
-  {
-    icon: Castle,
-    title: "Hradná vizáž",
-    description: "V 17. storočí boli pridané atikové múry po celom obvode, ktoré kaštieľu dodali charakteristickú 'hradnú' podobu.",
-  },
-  {
-    icon: Shield,
-    title: "Fortifikačný charakter",
-    description: "Obvodové múry mali obranný charakter a slúžili na ochranu dvora. Päťboké bastióny poskytovali strategickú výhodu.",
-  },
-];
+const HIGHLIGHT_ICONS = [Palette, Palette, Castle, Shield];
 
-// Majitelia kaštieľa
-const owners = [
-  { period: "12. stor.", name: "Nitrianska kapitula", desc: "Pôvodný vlastník obce Bošany", hasImage: false, image: "" },
-  { period: "13.-18. stor.", name: "Rod Bošániovcov", desc: "Hlavná vetva vlastníkov kaštieľa", hasImage: true, image: "/images/bosaniovci.webp" },
-  { period: "od 1710", name: "Ruttkayovci", desc: "Po predaji vdovou Annou Esterházyovou", hasImage: false, image: "" },
-  { period: "1864", name: "Adolf Schmitt", desc: "Priemyselník, odkúpil kaštieľ", hasImage: true, image: "/images/schmitt.webp" },
-  { period: "1865", name: "Július Bischofshausen", desc: "Barón, kúpil časť majetku", hasImage: false, image: "" },
-  { period: "1906-1944", name: "Ladislav Salzberger", desc: "Posledný významný vlastník veľkostatku", hasImage: false, image: "" },
+const OWNER_META = [
+  { hasImage: false, image: "" },
+  { hasImage: true, image: "/images/bosaniovci.webp" },
+  { hasImage: false, image: "" },
+  { hasImage: true, image: "/images/schmitt.webp" },
+  { hasImage: false, image: "" },
+  { hasImage: false, image: "" },
 ];
 
 export default function StoryPage() {
   const t = useTranslations("story");
+  const c = useTranslations("common");
+
+  const historyPhotos = (t.raw("photos") as { title: string; year: string; description: string }[]).map(
+    (p, i) => ({ ...p, src: PHOTO_SRCS[i] })
+  );
+  const buildingHistory = (t.raw("stages") as { year: string; period: string; title: string; description: string }[]).map(
+    (s, i) => ({ ...s, color: STAGE_COLORS[i] })
+  );
+  const highlights = (t.raw("highlights") as { title: string; description: string }[]).map(
+    (h, i) => ({ ...h, icon: HIGHLIGHT_ICONS[i] })
+  );
+  const owners: Owner[] = (t.raw("owners") as { period: string; name: string; desc: string }[]).map(
+    (o, i) => ({ ...o, ...OWNER_META[i] })
+  );
   
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -209,9 +69,9 @@ export default function StoryPage() {
   
   // Owner modal state
   const [ownerModalOpen, setOwnerModalOpen] = useState(false);
-  const [selectedOwner, setSelectedOwner] = useState<typeof owners[0] | null>(null);
+  const [selectedOwner, setSelectedOwner] = useState<Owner | null>(null);
   
-  const openOwnerModal = (owner: typeof owners[0]) => {
+  const openOwnerModal = (owner: Owner) => {
     setSelectedOwner(owner);
     setOwnerModalOpen(true);
   };
@@ -248,20 +108,20 @@ export default function StoryPage() {
       {/* Historical Photos Museum Gallery */}
       <MuseumGallery
         photos={historyPhotos}
-        title="Historické skvosty"
-        subtitle="Vzácne fotografické dokumenty z archívu kaštieľa zachytávajúce jeho minulosť"
+        title={t("museum_title")}
+        subtitle={t("museum_subtitle")}
       />
 
       {/* Horizontal Timeline Section */}
       <section className="py-24 md:py-32 bg-cream overflow-hidden">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
-            <SectionEyebrow label="Stavebný vývoj" className="mb-4" />
+            <SectionEyebrow label={t("eyebrow_construction")} className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">
-              Časový prierez histórie kaštieľa
+              {t("timeline_heading")}
             </h2>
             <p className="text-charcoal/60 max-w-2xl mx-auto">
-              12 stavebných etáp od gotických základov po modernú dobu
+              {t("timeline_intro")}
             </p>
           </FadeInOnScroll>
         </div>
@@ -273,9 +133,9 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-16">
-            <SectionEyebrow label="Objavy" className="mb-4" />
+            <SectionEyebrow label={t("eyebrow_discoveries")} className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
-              Zaujímavosti z histórie
+              {t("highlights_heading")}
             </h2>
           </FadeInOnScroll>
 
@@ -309,12 +169,12 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-charcoal text-white">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-16">
-            <SectionEyebrow label="Dedičstvo" className="mb-4" />
+            <SectionEyebrow label={t("eyebrow_heritage")} className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl">
-              Majitelia kaštieľa
+              {t("owners_heading")}
             </h2>
             <p className="text-white/60 mt-4 max-w-2xl mx-auto">
-              Od stredovekej šľachty po moderných priemyselníkov
+              {t("owners_intro")}
             </p>
           </FadeInOnScroll>
 
@@ -366,12 +226,12 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-cream">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
-            <SectionEyebrow label="Pred obnovou" className="mb-4" />
+            <SectionEyebrow label={t("eyebrow_before")} className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
-              Z ruín k životu
+              {t("ruins_heading")}
             </h2>
             <p className="text-charcoal/60 mt-4 max-w-2xl mx-auto">
-              Fotodokumentácia stavu kaštieľa pred začiatkom obnovy — svedectvo o rokoch chátrania a zároveň dôkaz odhodlania vrátiť mu bývalú slávu
+              {t("ruins_intro")}
             </p>
           </FadeInOnScroll>
 
@@ -409,7 +269,7 @@ export default function StoryPage() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-charcoal font-medium uppercase tracking-wider text-sm hover:bg-gold-dark transition-colors duration-300"
               >
-                Zobraziť všetky fotky ({totalImages})
+                {c("show_all")} ({totalImages})
               </motion.button>
             </FadeInOnScroll>
           )}

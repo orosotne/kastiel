@@ -99,7 +99,196 @@
       "title": "Restoration Philosophy",
       "subtitle": "Air conditioning designed 400 years ago",
       "description": "A meter of stone for your perfect comfort. We reject polystyrene and modern insulation. The thick castle walls provide natural climate - pleasant coolness in summer, warmth in winter."
-    }
+    },
+    "eyebrow_construction": "Construction development",
+    "eyebrow_discoveries": "Discoveries",
+    "eyebrow_heritage": "Heritage",
+    "eyebrow_before": "Before the restoration",
+    "timeline_heading": "A timeline of the castle's history",
+    "timeline_intro": "12 construction phases from Gothic foundations to the modern era",
+    "highlights_heading": "Highlights from history",
+    "owners_heading": "Owners of the castle",
+    "owners_intro": "From medieval nobility to modern industrialists",
+    "ruins_heading": "From ruins back to life",
+    "ruins_intro": "Photo documentation of the castle's condition before the restoration began — a testimony to years of decay and, at the same time, proof of the determination to restore its former glory",
+    "museum_title": "Historic treasures",
+    "museum_subtitle": "Rare photographic documents from the castle archive capturing its past",
+    "photos": [
+      {
+        "title": "Nagy-Bossany postcard",
+        "year": "c. 1905",
+        "description": "A rare postcard showing an overall view of the castle in winter"
+      },
+      {
+        "title": "Aerial view",
+        "year": "c. 1930",
+        "description": "An elevated view of the castle from the rear with its characteristic battlements"
+      },
+      {
+        "title": "Panorama with the village",
+        "year": "c. 1925",
+        "description": "The castle with surrounding farm buildings and the village in the background"
+      },
+      {
+        "title": "Side façade",
+        "year": "c. 1955",
+        "description": "A view of the attic walls with decorative battlements and a fence in the foreground"
+      },
+      {
+        "title": "Park entrance",
+        "year": "c. 1910",
+        "description": "The original entrance gate to the castle park with stone pillars"
+      },
+      {
+        "title": "Pentagonal bastion",
+        "year": "c. 1965",
+        "description": "The Renaissance bastion with visible cracks before reconstruction"
+      },
+      {
+        "title": "North-west wing",
+        "year": "c. 1975",
+        "description": "The rear of the castle with granary openings from the 20th century"
+      },
+      {
+        "title": "Inner courtyard",
+        "year": "c. 1975",
+        "description": "A view of the courtyard with peeling plaster and the original roof"
+      },
+      {
+        "title": "Historic roof truss",
+        "year": "c. 1975",
+        "description": "The original wooden roof truss from the Historicist period"
+      },
+      {
+        "title": "Bastion reconstruction",
+        "year": "c. 1980",
+        "description": "Rescue construction work on the restoration of the corner bastion"
+      }
+    ],
+    "stages": [
+      {
+        "year": "15th cent.",
+        "period": "Gothic I",
+        "title": "First phase",
+        "description": "The original building took the form of a three-storey block structure. The corner ashlar work and a fragment of a circular rosette date from this period."
+      },
+      {
+        "year": "late 15th cent.",
+        "period": "Gothic II",
+        "title": "Second phase",
+        "description": "A considerable increase in building mass in height. A painting depicting Samson carrying the gate of Gaza has been preserved."
+      },
+      {
+        "year": "early 16th cent.",
+        "period": "Renaissance I",
+        "title": "Third phase",
+        "description": "The building volume was expanded by adding new wings and floors. Fragments of plaster with a painted frieze have been preserved."
+      },
+      {
+        "year": "c. 1550",
+        "period": "Renaissance II",
+        "title": "Fourth phase",
+        "description": "Extension of the western part of the south-east wing. A rebuilt structure with a fortification character is assumed."
+      },
+      {
+        "year": "c. 1580",
+        "period": "Renaissance III",
+        "title": "Fifth phase",
+        "description": "The castle acquired its fundamental spatial and bastion form. Pentagonal corner bastions were built."
+      },
+      {
+        "year": "c. 1650",
+        "period": "Baroque I",
+        "title": "Sixth phase",
+        "description": "A hexagonal bastion was built on the south-west corner, possibly replacing an older bastion."
+      },
+      {
+        "year": "17th cent.",
+        "period": "Baroque II",
+        "title": "Seventh phase",
+        "description": "Attic walls were added around the entire perimeter — the castle acquired a 'fortress' appearance. Rich stucco decoration imitating Botticelli."
+      },
+      {
+        "year": "c. 1730",
+        "period": "Baroque III",
+        "title": "Eighth phase",
+        "description": "A staircase tract was built in the central wing. Stucco decoration and stone floors in the interior."
+      },
+      {
+        "year": "1794",
+        "period": "Louis XVI style",
+        "title": "Ninth phase",
+        "description": "Documented by the discovery of a niche for a tiled stove and a stucco cartouche with the inscription 'AD RENOVAT 1794'."
+      },
+      {
+        "year": "19th cent.",
+        "period": "Historicism",
+        "title": "Tenth phase",
+        "description": "The castle acquired a romanticised appearance through modifications to the attic walls and a new wooden roof structure."
+      },
+      {
+        "year": "1903",
+        "period": "Agricultural",
+        "title": "Eleventh phase",
+        "description": "The building was adapted for agricultural use — the entire north-west wing was rebuilt into a granary."
+      },
+      {
+        "year": "1970s–80s",
+        "period": "Conservation",
+        "title": "Twelfth phase",
+        "description": "Conservation and incomplete reconstruction works. The works were halted after 1989."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Gothic painting of Samson",
+        "description": "A fragment of a wall painting with the biblical motif of Samson carrying the gate of Gaza, from the late 15th century, has been preserved in the interior."
+      },
+      {
+        "title": "Botticelli inspiration",
+        "description": "The hexagonal bastion contains a vault with stucco decoration whose centre originally bore a painted composition imitating the Birth of Venus."
+      },
+      {
+        "title": "Fortress appearance",
+        "description": "In the 17th century, attic walls were added around the entire perimeter, giving the castle its characteristic 'fortress' look."
+      },
+      {
+        "title": "Fortification character",
+        "description": "The perimeter walls had a defensive character and served to protect the courtyard. The pentagonal bastions provided a strategic advantage."
+      }
+    ],
+    "owners": [
+      {
+        "period": "12th cent.",
+        "name": "Nitra Chapter",
+        "desc": "Original owner of the village of Bošany"
+      },
+      {
+        "period": "13th–18th cent.",
+        "name": "The Bošániovci family",
+        "desc": "The main line of the castle's owners"
+      },
+      {
+        "period": "from 1710",
+        "name": "The Ruttkay family",
+        "desc": "After the sale by the widow Anna Esterházy"
+      },
+      {
+        "period": "1864",
+        "name": "Adolf Schmitt",
+        "desc": "Industrialist who bought the castle"
+      },
+      {
+        "period": "1865",
+        "name": "Július Bischofshausen",
+        "desc": "Baron who bought part of the estate"
+      },
+      {
+        "period": "1906–1944",
+        "name": "Ladislav Salzberger",
+        "desc": "The last significant owner of the manor estate"
+      }
+    ]
   },
   "weddings": {
     "metadata": {
@@ -272,8 +461,10 @@
     "banner_short": "Project not state-funded",
     "title": "Official Statement",
     "subtitle": "Regarding the rejection of the Kaštieľ Bošany project"
+  },
+  "museum": {
+    "label": "Archive",
+    "view_detail": "View detail",
+    "show_more": "Load more"
   }
 }
-
-
-

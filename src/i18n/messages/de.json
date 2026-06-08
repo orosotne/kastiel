@@ -99,7 +99,196 @@
       "title": "Restaurierungsphilosophie",
       "subtitle": "Klimaanlage, vor 400 Jahren entworfen",
       "description": "Ein Meter Stein für Ihren perfekten Komfort. Wir lehnen Polystyrol und moderne Dämmung ab. Die dicken Schlossmauern bieten ein natürliches Klima - angenehme Kühle im Sommer, Wärme im Winter."
-    }
+    },
+    "eyebrow_construction": "Bauliche Entwicklung",
+    "eyebrow_discoveries": "Entdeckungen",
+    "eyebrow_heritage": "Erbe",
+    "eyebrow_before": "Vor der Restaurierung",
+    "timeline_heading": "Ein Zeitstrahl der Schlossgeschichte",
+    "timeline_intro": "12 Bauphasen von gotischen Grundmauern bis in die Moderne",
+    "highlights_heading": "Wissenswertes aus der Geschichte",
+    "owners_heading": "Besitzer des Schlosses",
+    "owners_intro": "Vom mittelalterlichen Adel bis zu modernen Industriellen",
+    "ruins_heading": "Von Ruinen zurück ins Leben",
+    "ruins_intro": "Fotodokumentation des Zustands des Schlosses vor Beginn der Restaurierung — ein Zeugnis jahrelangen Verfalls und zugleich ein Beweis der Entschlossenheit, ihm seinen einstigen Glanz zurückzugeben",
+    "museum_title": "Historische Schätze",
+    "museum_subtitle": "Seltene fotografische Dokumente aus dem Schlossarchiv, die seine Vergangenheit festhalten",
+    "photos": [
+      {
+        "title": "Postkarte Nagy-Bossány",
+        "year": "um 1905",
+        "description": "Eine seltene Postkarte mit Gesamtansicht des Schlosses im Winter"
+      },
+      {
+        "title": "Luftaufnahme",
+        "year": "um 1930",
+        "description": "Erhöhte Ansicht des Schlosses von der Rückseite mit der charakteristischen Zinnenmauer"
+      },
+      {
+        "title": "Panorama mit dem Dorf",
+        "year": "um 1925",
+        "description": "Das Schloss mit umliegenden Wirtschaftsgebäuden und dem Dorf im Hintergrund"
+      },
+      {
+        "title": "Seitenfassade",
+        "year": "um 1955",
+        "description": "Blick auf die Attikamauern mit dekorativer Zinnenmauer und einem Zaun im Vordergrund"
+      },
+      {
+        "title": "Parkeingang",
+        "year": "um 1910",
+        "description": "Das ursprüngliche Eingangstor zum Schlosspark mit Steinpfeilern"
+      },
+      {
+        "title": "Fünfeckige Bastion",
+        "year": "um 1965",
+        "description": "Die Renaissance-Bastion mit sichtbaren Rissen vor der Rekonstruktion"
+      },
+      {
+        "title": "Nordwestflügel",
+        "year": "um 1975",
+        "description": "Die Rückseite des Schlosses mit Speicheröffnungen aus dem 20. Jahrhundert"
+      },
+      {
+        "title": "Innenhof",
+        "year": "um 1975",
+        "description": "Blick auf den Hof mit abgeblättertem Putz und dem ursprünglichen Dach"
+      },
+      {
+        "title": "Historischer Dachstuhl",
+        "year": "um 1975",
+        "description": "Der ursprüngliche hölzerne Dachstuhl aus der Zeit des Historismus"
+      },
+      {
+        "title": "Rekonstruktion der Bastion",
+        "year": "um 1980",
+        "description": "Sicherungsarbeiten zur Wiederherstellung der Eckbastion"
+      }
+    ],
+    "stages": [
+      {
+        "year": "15. Jh.",
+        "period": "Gotik I",
+        "title": "Erste Phase",
+        "description": "Der ursprüngliche Bau hatte die Form eines dreigeschossigen Blockbaus. Aus dieser Zeit stammen die Eckquaderung und ein Fragment einer kreisförmigen Rosette."
+      },
+      {
+        "year": "E. 15. Jh.",
+        "period": "Gotik II",
+        "title": "Zweite Phase",
+        "description": "Eine beträchtliche Zunahme der Baumasse in die Höhe. Erhalten blieb ein Gemälde mit dem Motiv von Samson, der das Tor von Gaza trägt."
+      },
+      {
+        "year": "A. 16. Jh.",
+        "period": "Renaissance I",
+        "title": "Dritte Phase",
+        "description": "Das Bauvolumen wurde durch neue Flügel und Geschosse erweitert. Erhalten blieben Putzfragmente mit einem gemalten Fries."
+      },
+      {
+        "year": "um 1550",
+        "period": "Renaissance II",
+        "title": "Vierte Phase",
+        "description": "Erweiterung des westlichen Teils des Südostflügels. Vermutet wird ein umgebauter Bau mit Befestigungscharakter."
+      },
+      {
+        "year": "um 1580",
+        "period": "Renaissance III",
+        "title": "Fünfte Phase",
+        "description": "Das Schloss erhielt seine grundlegende räumliche Form mit Bastionen. Es entstanden fünfeckige Eckbastionen."
+      },
+      {
+        "year": "um 1650",
+        "period": "Barock I",
+        "title": "Sechste Phase",
+        "description": "An der Südwestecke wurde eine sechseckige Bastion errichtet, die möglicherweise eine ältere Bastion ersetzte."
+      },
+      {
+        "year": "17. Jh.",
+        "period": "Barock II",
+        "title": "Siebte Phase",
+        "description": "Rings um den gesamten Umfang wurden Attikamauern angebaut — das Schloss erhielt ein „burgartiges“ Aussehen. Reiche Stuckdekoration in Anlehnung an Botticelli."
+      },
+      {
+        "year": "um 1730",
+        "period": "Barock III",
+        "title": "Achte Phase",
+        "description": "Im Mittelflügel wurde ein Treppentrakt errichtet. Stuckdekoration und Steinböden im Innenraum."
+      },
+      {
+        "year": "1794",
+        "period": "Louis-seize",
+        "title": "Neunte Phase",
+        "description": "Dokumentiert durch den Fund einer Nische für einen Kachelofen und einer Stuckkartusche mit der Inschrift „AD RENOVAT 1794“."
+      },
+      {
+        "year": "19. Jh.",
+        "period": "Historismus",
+        "title": "Zehnte Phase",
+        "description": "Das Schloss erhielt durch Umgestaltung der Attikamauern und einen neuen hölzernen Dachstuhl ein romantisierendes Aussehen."
+      },
+      {
+        "year": "1903",
+        "period": "Wirtschaftlich",
+        "title": "Elfte Phase",
+        "description": "Der Bau wurde für landwirtschaftliche Zwecke umgebaut — der gesamte Nordwestflügel wurde zu einem Speicher umgestaltet."
+      },
+      {
+        "year": "1970er–80er",
+        "period": "Konservierung",
+        "title": "Zwölfte Phase",
+        "description": "Konservierungs- und unvollständige Rekonstruktionsarbeiten. Die Arbeiten wurden nach 1989 eingestellt."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Gotisches Samson-Gemälde",
+        "description": "Im Innenraum blieb ein Fragment eines Wandgemäldes mit dem biblischen Motiv von Samson, der das Tor von Gaza trägt, aus dem späten 15. Jahrhundert erhalten."
+      },
+      {
+        "title": "Botticelli-Inspiration",
+        "description": "In der sechseckigen Bastion befindet sich ein Gewölbe mit Stuckdekoration, dessen Mitte ursprünglich eine Malkomposition in Anlehnung an die Geburt der Venus trug."
+      },
+      {
+        "title": "Burgartiges Aussehen",
+        "description": "Im 17. Jahrhundert wurden rings um den gesamten Umfang Attikamauern hinzugefügt, die dem Schloss sein charakteristisches „burgartiges“ Erscheinungsbild verliehen."
+      },
+      {
+        "title": "Befestigungscharakter",
+        "description": "Die Umfassungsmauern hatten Verteidigungscharakter und dienten dem Schutz des Hofes. Die fünfeckigen Bastionen boten einen strategischen Vorteil."
+      }
+    ],
+    "owners": [
+      {
+        "period": "12. Jh.",
+        "name": "Domkapitel Nitra",
+        "desc": "Ursprünglicher Eigentümer der Gemeinde Bošany"
+      },
+      {
+        "period": "13.–18. Jh.",
+        "name": "Familie Bošániovci",
+        "desc": "Die Hauptlinie der Schlossbesitzer"
+      },
+      {
+        "period": "ab 1710",
+        "name": "Familie Ruttkay",
+        "desc": "Nach dem Verkauf durch die Witwe Anna Esterházy"
+      },
+      {
+        "period": "1864",
+        "name": "Adolf Schmitt",
+        "desc": "Industrieller, der das Schloss kaufte"
+      },
+      {
+        "period": "1865",
+        "name": "Július Bischofshausen",
+        "desc": "Baron, der einen Teil des Besitzes kaufte"
+      },
+      {
+        "period": "1906–1944",
+        "name": "Ladislav Salzberger",
+        "desc": "Der letzte bedeutende Besitzer des Gutsbetriebs"
+      }
+    ]
   },
   "weddings": {
     "metadata": {
@@ -272,8 +461,10 @@
     "banner_short": "Projekt staatlich nicht gefördert",
     "title": "Offizielle Stellungnahme",
     "subtitle": "Zur Ablehnung des Projekts Kaštieľ Bošany"
+  },
+  "museum": {
+    "label": "Archiv",
+    "view_detail": "Detail ansehen",
+    "show_more": "Mehr laden"
   }
 }
-
-
-

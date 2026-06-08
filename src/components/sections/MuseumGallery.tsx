@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
+import { useTranslations } from "next-intl";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import { useLightbox } from "@/hooks/useLightbox";
 
@@ -29,6 +30,8 @@ export default function MuseumGallery({
   title = "Historické skvosty",
   subtitle = "Vzácne fotografické dokumenty z archívu kaštieľa",
 }: MuseumGalleryProps) {
+  const m = useTranslations("museum");
+  const c = useTranslations("common");
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -67,7 +70,7 @@ export default function MuseumGallery({
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="w-16 h-[1px] bg-gold" />
               <span className="text-sm uppercase tracking-[0.3em] text-gold font-light">
-                Archív
+                {m("label")}
               </span>
               <div className="w-16 h-[1px] bg-gold" />
             </div>
@@ -109,7 +112,7 @@ export default function MuseumGallery({
                         {/* Hover overlay */}
                         <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/40 transition-colors duration-300 flex items-center justify-center">
                           <span className="text-white text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gold/80 px-4 py-2">
-                            Zobraziť detail
+                            {m("view_detail")}
                           </span>
                         </div>
 
@@ -153,12 +156,12 @@ export default function MuseumGallery({
                 {showAll ? (
                   <>
                     <Minus size={18} className="group-hover:scale-110 transition-transform" />
-                    Zobraziť menej
+                    {c("show_less")}
                   </>
                 ) : (
                   <>
                     <Plus size={18} className="group-hover:scale-110 transition-transform" />
-                    Načítať viac ({photos.length - initialCount})
+                    {m("show_more")} ({photos.length - initialCount})
                   </>
                 )}
               </button>
@@ -181,7 +184,7 @@ export default function MuseumGallery({
             <button
               onClick={closeLightbox}
               className="absolute top-4 right-4 md:top-6 md:right-6 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-gold rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg border border-white/20"
-              aria-label="Zavrieť"
+              aria-label={c("close")}
             >
               <X className="text-white" size={20} />
             </button>
@@ -231,7 +234,7 @@ export default function MuseumGallery({
                       prevPhoto();
                     }}
                     className="w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Predchádzajúca fotka"
+                    aria-label={c("previous")}
                   >
                     <ChevronLeft className="text-white group-hover:text-charcoal" size={24} />
                   </button>
@@ -246,7 +249,7 @@ export default function MuseumGallery({
                       nextPhoto();
                     }}
                     className="w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-gold rounded-full flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Nasledujúca fotka"
+                    aria-label={c("next")}
                   >
                     <ChevronRight className="text-white group-hover:text-charcoal" size={24} />
                   </button>

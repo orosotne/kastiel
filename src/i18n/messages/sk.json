@@ -99,7 +99,196 @@
       "title": "Filozofia obnovy",
       "subtitle": "Klimatizácia, ktorú navrhli pred 400 rokmi",
       "description": "Meter kameňa pre váš dokonalý komfort. Odmietame polystyrén a moderné izolácie. Hrubé múry kaštieľa poskytujú prirodzenú klímu - v lete príjemný chlad, v zime teplo."
-    }
+    },
+    "eyebrow_construction": "Stavebný vývoj",
+    "eyebrow_discoveries": "Objavy",
+    "eyebrow_heritage": "Dedičstvo",
+    "eyebrow_before": "Pred obnovou",
+    "timeline_heading": "Časový prierez histórie kaštieľa",
+    "timeline_intro": "12 stavebných etáp od gotických základov po modernú dobu",
+    "highlights_heading": "Zaujímavosti z histórie",
+    "owners_heading": "Majitelia kaštieľa",
+    "owners_intro": "Od stredovekej šľachty po moderných priemyselníkov",
+    "ruins_heading": "Z ruín k životu",
+    "ruins_intro": "Fotodokumentácia stavu kaštieľa pred začiatkom obnovy — svedectvo o rokoch chátrania a zároveň dôkaz odhodlania vrátiť mu bývalú slávu",
+    "museum_title": "Historické skvosty",
+    "museum_subtitle": "Vzácne fotografické dokumenty z archívu kaštieľa zachytávajúce jeho minulosť",
+    "photos": [
+      {
+        "title": "Pohľadnica Nagy-Bossany",
+        "year": "okolo 1905",
+        "description": "Vzácna pohľadnica s celkovým pohľadom na kaštieľ v zimnom období"
+      },
+      {
+        "title": "Letecký pohľad",
+        "year": "okolo 1930",
+        "description": "Vyvýšený pohľad na kaštieľ zo zadnej strany s charakteristickým cimburím"
+      },
+      {
+        "title": "Panoráma s dedinou",
+        "year": "okolo 1925",
+        "description": "Kaštieľ s okolitými hospodárskymi budovami a dedinou v pozadí"
+      },
+      {
+        "title": "Bočná fasáda",
+        "year": "okolo 1955",
+        "description": "Pohľad na atikové múry s dekoratívnym cimburím a plotom v popredí"
+      },
+      {
+        "title": "Vstup do parku",
+        "year": "okolo 1910",
+        "description": "Pôvodná vstupná brána do kaštieľneho parku s kamennými piliermi"
+      },
+      {
+        "title": "Päťboký bastión",
+        "year": "okolo 1965",
+        "description": "Renesančný bastión s viditeľnými prasklinami pred rekonštrukciou"
+      },
+      {
+        "title": "Severozápadné krídlo",
+        "year": "okolo 1975",
+        "description": "Zadná strana kaštieľa so sýpkovými otvormi z 20. storočia"
+      },
+      {
+        "title": "Vnútorné nádvorie",
+        "year": "okolo 1975",
+        "description": "Pohľad na nádvorie s opadanou omietkou a pôvodnou strechou"
+      },
+      {
+        "title": "Historický krov",
+        "year": "okolo 1975",
+        "description": "Pôvodná drevená krovová konštrukcia z obdobia historizmu"
+      },
+      {
+        "title": "Rekonštrukcia bastiónu",
+        "year": "okolo 1980",
+        "description": "Záchranné stavebné práce na obnove nárožného bastiónu"
+      }
+    ],
+    "stages": [
+      {
+        "year": "15. stor.",
+        "period": "Gotika I.",
+        "title": "Prvá etapa",
+        "description": "Pôvodný objekt mal formu trojpodlažnej blokovej stavby. Z tohto obdobia pochádza nárožné kvádrovanie a fragment kruhovej rozety."
+      },
+      {
+        "year": "kon. 15. stor.",
+        "period": "Gotika II.",
+        "title": "Druhá etapa",
+        "description": "Značný nárast stavebnej hmoty do výšky. Zachovala sa maľba s motívom Samsona prenášajúceho bránu Gazy."
+      },
+      {
+        "year": "zač. 16. stor.",
+        "period": "Renesancia I.",
+        "title": "Tretia etapa",
+        "description": "Stavebný objem rozšírený pridaním nových krídel a podlaží. Zachovali sa fragmenty omietok s maľovaným vlysom."
+      },
+      {
+        "year": "okolo 1550",
+        "period": "Renesancia II.",
+        "title": "Štvrtá etapa",
+        "description": "Rozšírenie západnej časti juhovýchodného krídla. Predpokladá sa prestavaný objekt s fortifikačným charakterom."
+      },
+      {
+        "year": "okolo 1580",
+        "period": "Renesancia III.",
+        "title": "Piata etapa",
+        "description": "Kaštieľ získal zásadnú priestorovú a bastiónovú podobu. Vystavané päťboké nárožné bastióny."
+      },
+      {
+        "year": "okolo 1650",
+        "period": "Barok I.",
+        "title": "Šiesta etapa",
+        "description": "Vystavený šesťboký bastión na juhozápadnom nároží, možno nahradil starší bastión."
+      },
+      {
+        "year": "17. stor.",
+        "period": "Barok II.",
+        "title": "Siedma etapa",
+        "description": "Pristavené atikové múry po celom obvode - kaštieľ získal 'hradnú' vizáž. Bohatá štuková výzdoba imitujúca Botticelliho."
+      },
+      {
+        "year": "okolo 1730",
+        "period": "Barok III.",
+        "title": "Ôsma etapa",
+        "description": "Vybudovaný schodiskový trakt v strednom krídle. Štuková výzdoba a kamenné dlažby v interiéri."
+      },
+      {
+        "year": "1794",
+        "period": "Luiséz",
+        "title": "Deviata etapa",
+        "description": "Dokumentovaná nálezom niky pre kachľovú pec a štukovou kartušou s nápisom 'AD RENOVAT 1794'."
+      },
+      {
+        "year": "19. stor.",
+        "period": "Historizmus",
+        "title": "Desiata etapa",
+        "description": "Kaštieľ získal romantizujúci vzhľad úpravou atikových múrov a novou drevenou konštrukciou krovu."
+      },
+      {
+        "year": "1903",
+        "period": "Hospodárska",
+        "title": "Jedenásta etapa",
+        "description": "Objekt adaptovaný na hospodárske účely - celé severozápadné krídlo prestavané na sýpku."
+      },
+      {
+        "year": "70.-80. roky",
+        "period": "Konzervačná",
+        "title": "Dvanásta etapa",
+        "description": "Konzervačné a neúplné rekonštrukčné práce. Práce boli zastavené po roku 1989."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Gotická maľba Samsona",
+        "description": "V interiéri sa zachoval fragment nástenného obrazu s biblickým motívom Samsona prenášajúceho bránu Gazy z konca 15. storočia."
+      },
+      {
+        "title": "Botticelliho inšpirácia",
+        "description": "V šesťbokom bastióne sa nachádza klenba so štukovou výzdobou, ktorej stred pôvodne niesol maliarsku kompozíciu imitujúcu Zrodenie Venuše."
+      },
+      {
+        "title": "Hradná vizáž",
+        "description": "V 17. storočí boli pridané atikové múry po celom obvode, ktoré kaštieľu dodali charakteristickú 'hradnú' podobu."
+      },
+      {
+        "title": "Fortifikačný charakter",
+        "description": "Obvodové múry mali obranný charakter a slúžili na ochranu dvora. Päťboké bastióny poskytovali strategickú výhodu."
+      }
+    ],
+    "owners": [
+      {
+        "period": "12. stor.",
+        "name": "Nitrianska kapitula",
+        "desc": "Pôvodný vlastník obce Bošany"
+      },
+      {
+        "period": "13.-18. stor.",
+        "name": "Rod Bošániovcov",
+        "desc": "Hlavná vetva vlastníkov kaštieľa"
+      },
+      {
+        "period": "od 1710",
+        "name": "Ruttkayovci",
+        "desc": "Po predaji vdovou Annou Esterházyovou"
+      },
+      {
+        "period": "1864",
+        "name": "Adolf Schmitt",
+        "desc": "Priemyselník, odkúpil kaštieľ"
+      },
+      {
+        "period": "1865",
+        "name": "Július Bischofshausen",
+        "desc": "Barón, kúpil časť majetku"
+      },
+      {
+        "period": "1906-1944",
+        "name": "Ladislav Salzberger",
+        "desc": "Posledný významný vlastník veľkostatku"
+      }
+    ]
   },
   "weddings": {
     "metadata": {
@@ -272,8 +461,10 @@
     "geese": "Husi",
     "swans": "Labute",
     "dog": "Pes"
+  },
+  "museum": {
+    "label": "Archív",
+    "view_detail": "Zobraziť detail",
+    "show_more": "Načítať viac"
   }
 }
-
-
-
