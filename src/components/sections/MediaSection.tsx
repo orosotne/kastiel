@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, ExternalLink, Quote, MousePointer2 } from "lucide-react";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 
 // Konfigurácia - reálne články a médiá
 const mediaArticles = [
@@ -96,13 +97,7 @@ export default function MediaSection() {
       <div className="container-custom">
         {/* Section Header */}
         <FadeInOnScroll className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 h-[1px] bg-gold" />
-            <span className="text-sm uppercase tracking-[0.2em] text-gold">
-              {t("label")}
-            </span>
-            <div className="w-12 h-[1px] bg-gold" />
-          </div>
+          <SectionEyebrow label={t("label")} className="mb-4" />
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-charcoal">
             {t("title")}
           </h2>

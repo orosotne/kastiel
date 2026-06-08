@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { AlertTriangle, Heart, Building2, FileText, X, ZoomIn } from "lucide-react";
 
 export default function OznameniePage() {
@@ -74,13 +75,7 @@ export default function OznameniePage() {
       <section className="py-16 md:py-24 bg-cream">
         <div className="container-custom max-w-4xl">
           <FadeInOnScroll>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                Naše stanovisko
-              </span>
-              <div className="w-12 h-[1px] bg-gold" />
-            </div>
+            <SectionEyebrow label="Naše stanovisko" className="mb-8" />
           </FadeInOnScroll>
 
           <FadeInOnScroll delay={0.1}>

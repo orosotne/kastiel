@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import InternalLinks from "@/components/layout/InternalLinks";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { useLightbox } from "@/hooks/useLightbox";
@@ -143,13 +144,7 @@ export default function GalleryPage() {
       <section className="py-24 md:py-32 bg-cream">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                {gp("label")}
-              </span>
-              <div className="w-12 h-[1px] bg-gold" />
-            </div>
+            <SectionEyebrow label={gp("label")} className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
               {gp("title")}
             </h2>

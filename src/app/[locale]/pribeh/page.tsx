@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import InternalLinks from "@/components/layout/InternalLinks";
 import HorizontalTimeline from "@/components/interactive/HorizontalTimeline";
 import MuseumGallery from "@/components/sections/MuseumGallery";
@@ -255,13 +256,7 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-cream overflow-hidden">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                Stavebný vývoj
-              </span>
-              <div className="w-12 h-[1px] bg-gold" />
-            </div>
+            <SectionEyebrow label="Stavebný vývoj" className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">
               Časový prierez histórie kaštieľa
             </h2>
@@ -278,13 +273,7 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                Objavy
-              </span>
-              <div className="w-12 h-[1px] bg-gold" />
-            </div>
+            <SectionEyebrow label="Objavy" className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
               Zaujímavosti z histórie
             </h2>
@@ -320,13 +309,7 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-charcoal text-white">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                Dedičstvo
-              </span>
-              <div className="w-12 h-[1px] bg-gold" />
-            </div>
+            <SectionEyebrow label="Dedičstvo" className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl">
               Majitelia kaštieľa
             </h2>
@@ -383,13 +366,7 @@ export default function StoryPage() {
       <section className="py-24 md:py-32 bg-cream">
         <div className="container-custom">
           <FadeInOnScroll className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                Pred obnovou
-              </span>
-              <div className="w-12 h-[1px] bg-gold" />
-            </div>
+            <SectionEyebrow label="Pred obnovou" className="mb-4" />
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
               Z ruín k životu
             </h2>
