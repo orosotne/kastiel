@@ -137,9 +137,9 @@ export default function HorizontalTimeline({
                   transition={{ delay: index * 0.05 }}
                   className="flex flex-col items-center w-[280px] flex-shrink-0"
                 >
-                  {/* Year Badge */}
+                  {/* Year Badge — fixed height so the dot center always lands on the line */}
                   <div
-                    className={`${colors.accent} text-white font-bold px-4 py-2 rounded-full text-sm mb-4 shadow-md`}
+                    className={`${colors.accent} inline-flex h-9 items-center justify-center text-white font-bold px-4 rounded-full text-sm mb-4 shadow-md`}
                   >
                     {event.year}
                   </div>
