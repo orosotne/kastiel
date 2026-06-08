@@ -49,12 +49,12 @@ const exteriorPhotos = [
   "/images/gallery/exterior/exterior-9.webp",
   "/images/gallery/exterior/exterior-13.webp",
   "/images/gallery/exterior/exterior-14.webp",
-  "/images/gallery/exterior/exterior-15.webp",
+  // "/images/gallery/exterior/exterior-15.webp", // DOČASNE SKRYTÉ – odkomentuj pre návrat
   "/images/gallery/exterior/exterior-16.webp",
   "/images/gallery/exterior/exterior-17.webp",
   "/images/gallery/exterior/exterior-18.webp",
   "/images/gallery/exterior/exterior-19.webp",
-  "/images/gallery/exterior/exterior-21.webp",
+  // "/images/gallery/exterior/exterior-21.webp", // DOČASNE SKRYTÉ – odkomentuj pre návrat
   "/images/gallery/exterior/exterior-22.webp",
   "/images/gallery/exterior/exterior-23.webp",
   "/images/gallery/exterior/exterior-25.webp",
