@@ -49,9 +49,9 @@
   },
   "services": {
     "interior": {
-      "title": "Conferences & Culture",
-      "description": "Hall for 120 guests, gallery and technical facilities in historical attire.",
-      "cta": "Learn more about rental"
+      "title": "Photo Gallery",
+      "description": "Discover the beauty of the Renaissance castle through the lens. Interiors, exteriors and the atmosphere of history.",
+      "cta": "View gallery"
     },
     "exterior": {
       "title": "Weddings & Events",
@@ -223,6 +223,10 @@
     "close": "Close"
   },
   "privacy": {
+    "metadata": {
+      "title": "Privacy Policy | Renaissance Castle Bošany",
+      "description": "Privacy policy and cookie usage for the Renaissance Castle Bošany website."
+    },
     "hero_title": "Privacy Policy",
     "hero_subtitle": "GDPR and privacy protection principles",
     "intro": "Protecting your personal data is important to us. This page explains how we collect, use, and protect your personal data in accordance with the GDPR (General Data Protection Regulation).",
@@ -260,6 +264,10 @@
     "dog": "Dog"
   },
   "announcement": {
+    "metadata": {
+      "title": "Official Statement | Renaissance Castle Bošany",
+      "description": "Official statement regarding the non-funding of the Renaissance Castle Bošany restoration project."
+    },
     "banner": "IMPORTANT: Our project was not supported. We continue with private funding.",
     "banner_short": "Project not state-funded",
     "title": "Official Statement",

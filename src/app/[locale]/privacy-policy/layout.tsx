@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { buildAlternates } from "@/lib/metadata";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const { locale } = params;
-  return {
-    alternates: buildAlternates(locale, "privacy-policy"),
-  };
+  return buildPageMetadata({
+    locale: params.locale,
+    namespace: "privacy",
+    path: "privacy-policy",
+  });
 }
 
 export default function PrivacyPolicyLayout({

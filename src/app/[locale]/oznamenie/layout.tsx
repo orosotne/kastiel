@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { buildAlternates } from "@/lib/metadata";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const { locale } = params;
-  return {
-    alternates: buildAlternates(locale, "oznamenie"),
-  };
+  return buildPageMetadata({
+    locale: params.locale,
+    namespace: "announcement",
+    path: "oznamenie",
+  });
 }
 
 export default function OznamenieLayout({

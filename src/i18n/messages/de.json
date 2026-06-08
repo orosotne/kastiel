@@ -49,9 +49,9 @@
   },
   "services": {
     "interior": {
-      "title": "Konferenzen & Kultur",
-      "description": "Saal für 120 Gäste, Galerie und technische Einrichtungen im historischen Gewand.",
-      "cta": "Mehr über die Vermietung erfahren"
+      "title": "Fotogalerie",
+      "description": "Entdecken Sie die Schönheit des Renaissanceschlosses durch die Linse. Innenräume, Außenbereiche und die Atmosphäre der Geschichte.",
+      "cta": "Galerie ansehen"
     },
     "exterior": {
       "title": "Hochzeiten & Veranstaltungen",
@@ -223,6 +223,10 @@
     "close": "Schließen"
   },
   "privacy": {
+    "metadata": {
+      "title": "Datenschutz | Renaissanceschloss Bošany",
+      "description": "Datenschutzrichtlinie und Cookie-Nutzung der Website des Renaissanceschlosses Bošany."
+    },
     "hero_title": "Datenschutz",
     "hero_subtitle": "DSGVO und Datenschutzgrundsätze",
     "intro": "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Seite erklärt, wie wir Ihre persönlichen Daten gemäß der DSGVO (Datenschutz-Grundverordnung) erfassen, verwenden und schützen.",
@@ -260,6 +264,10 @@
     "dog": "Hund"
   },
   "announcement": {
+    "metadata": {
+      "title": "Offizielle Stellungnahme | Renaissanceschloss Bošany",
+      "description": "Offizielle Stellungnahme zur Nichtförderung des Restaurierungsprojekts des Renaissanceschlosses Bošany."
+    },
     "banner": "WICHTIG: Unser Projekt wurde nicht unterstützt. Wir fahren mit privater Finanzierung fort.",
     "banner_short": "Projekt staatlich nicht gefördert",
     "title": "Offizielle Stellungnahme",
