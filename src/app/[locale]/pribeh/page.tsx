@@ -408,7 +408,7 @@ export default function StoryPage() {
                 >
                   <Image
                     src={`/images/gallery/analysis-${i}.webp`}
-                    alt={`${t("story.analytical_probe_alt")} ${i}`}
+                    alt={`${t("analytical_probe_alt")} ${i}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -573,7 +573,7 @@ export default function StoryPage() {
             >
               <Image
                 src={`/images/gallery/analysis-${currentImage + 1}.webp`}
-                alt={`${t("story.analytical_probe_alt")} ${currentImage + 1}`}
+                alt={`${t("analytical_probe_alt")} ${currentImage + 1}`}
                 fill
                 className="object-contain"
                 sizes="90vw"

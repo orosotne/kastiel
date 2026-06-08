@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import HeroSection from "@/components/sections/HeroSection";
 import StructuredData from "@/components/StructuredData";
-import { debugLog } from "@/lib/debug";
 import { buildAlternates } from "@/lib/metadata";
 
 // Lazy load sections below the fold for better initial load
@@ -33,10 +33,8 @@ const ParkSection = dynamic(() => import("@/components/sections/ParkSection"), {
   loading: () => <div className="min-h-[50vh]" />,
 });
 
-export default function HomePage() {
-  // #region agent log
-  debugLog({ location: 'page.tsx:HomePage', message: 'HomePage render', data: { page: 'home' }, hypothesisId: 'H4' });
-  // #endregion
+export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
   return (
     <>
       <StructuredData />
