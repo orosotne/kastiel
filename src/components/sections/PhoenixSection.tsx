@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { debugLog } from "@/lib/debug";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight, LayoutGrid, Maximize2 } from "lucide-react";
 import Image from "next/image";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import BeforeAfterSlider from "@/components/interactive/BeforeAfterSlider";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 import restorationConfig from "../../../data/restoration-photos.json";
 
@@ -47,9 +47,6 @@ const restorationCategories = [
 export default function PhoenixSection() {
   const t = useTranslations("phoenix");
   const [activeIndex, setActiveIndex] = useState(0);
-  // #region agent log
-  useEffect(() => { debugLog({ location: 'PhoenixSection.tsx', message: 'PhoenixSection mounted', data: { section: 'phoenix' }, hypothesisId: 'H4' }); }, []);
-  // #endregion
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev + 1) % beforeAfterPairs.length);
@@ -177,15 +174,15 @@ function RestorationTimeline({
   const images = activeCategory.images;
   const previewImages = images.slice(0, 4);
 
+  useScrollLock(lightboxOpen);
+
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = useCallback(() => {
     setLightboxOpen(false);
-    document.body.style.overflow = "auto";
   }, []);
 
   const nextPhoto = useCallback(() => {

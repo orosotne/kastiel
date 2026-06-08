@@ -1,6 +1,5 @@
 import Script from "next/script";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rkb.sk";
+import { SITE_URL } from "@/lib/site-config";
 
 interface BreadcrumbItem {
   name: string;
@@ -20,7 +19,7 @@ export default function BreadcrumbStructuredData({ locale, items }: BreadcrumbSt
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${siteUrl}/${locale}${item.path}`,
+      item: `${SITE_URL}/${locale}${item.path}`,
     })),
   };
 

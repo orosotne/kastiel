@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
-import { debugLog } from "@/lib/debug";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
@@ -10,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useScroll } from "@/hooks/useScroll";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 export default function Header() {
   const isScrolled = useScroll(50);
@@ -18,18 +18,7 @@ export default function Header() {
   const locale = useLocale();
   const pathname = usePathname();
 
-  // #region agent log
-  useEffect(() => {
-    debugLog({ location: 'Header.tsx', message: 'Header mounted', data: { locale, pathname }, hypothesisId: 'H3' });
-  }, []);
-  // #endregion
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [isMenuOpen]);
+  useScrollLock(isMenuOpen);
 
   const navLinks = useMemo(() => [
     { href: `/${locale}`, label: t("home") },

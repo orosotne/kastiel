@@ -7,6 +7,7 @@ import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import InternalLinks from "@/components/layout/InternalLinks";
 import { MapPin, Phone, Mail, Send, Clock } from "lucide-react";
+import { CONTACT } from "@/lib/site-config";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
@@ -25,7 +26,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Meno: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     );
-    window.location.href = `mailto:jmiskeje@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (
@@ -139,8 +140,8 @@ export default function ContactPage() {
                           {t("info.address")}
                         </h4>
                         <p className="text-charcoal/60">
-                          SNP 113/1<br />
-                          956 18 Bošany<br />
+                          {CONTACT.address.street}<br />
+                          {CONTACT.address.postalCode} {CONTACT.address.city}<br />
                           Slovensko
                         </p>
                       </div>
@@ -155,10 +156,10 @@ export default function ContactPage() {
                           {t("info.phone")}
                         </h4>
                         <a
-                          href="tel:+421907726726"
+                          href={`tel:${CONTACT.phoneHref}`}
                           className="text-charcoal/60 hover:text-gold transition-colors duration-300"
                         >
-                          +421 907 726 726
+                          {CONTACT.phone}
                         </a>
                       </div>
                     </div>
@@ -172,10 +173,10 @@ export default function ContactPage() {
                           {t("info.email")}
                         </h4>
                         <a
-                          href="mailto:jmiskeje@gmail.com"
+                          href={`mailto:${CONTACT.email}`}
                           className="text-charcoal/60 hover:text-gold transition-colors duration-300"
                         >
-                          jmiskeje@gmail.com
+                          {CONTACT.email}
                         </a>
                       </div>
                     </div>

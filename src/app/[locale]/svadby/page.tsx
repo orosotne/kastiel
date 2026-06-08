@@ -9,6 +9,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import { Heart, Users, Calendar, Send, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { CONTACT } from "@/lib/site-config";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 export default function WeddingsPage() {
   const t = useTranslations("weddings");
@@ -30,15 +32,15 @@ export default function WeddingsPage() {
   const [currentImage, setCurrentImage] = useState(0);
   const totalImages = 8;
 
+  useScrollLock(lightboxOpen);
+
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = "auto";
   };
 
   const nextImage = () => {
@@ -62,7 +64,7 @@ export default function WeddingsPage() {
     const body = encodeURIComponent(
       `Meno: ${formData.name}\nEmail: ${formData.email}\nTelefón: ${formData.phone}\nDátum: ${formData.date}\nPočet hostí: ${formData.guests}\n\n${formData.message}`
     );
-    window.location.href = `mailto:jmiskeje@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (
@@ -139,6 +141,7 @@ export default function WeddingsPage() {
                     src="/images/wedding-venue.webp"
                     alt={wp("venue_alt")}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -171,6 +174,7 @@ export default function WeddingsPage() {
                     src={`/images/weddings/wedding-${i}.webp`}
                     alt={`${wp("wedding_photo")} ${i}`}
                     fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-center justify-center">

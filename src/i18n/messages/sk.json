@@ -195,6 +195,10 @@
     "next": "Nasledujúce"
   },
   "announcement": {
+    "metadata": {
+      "title": "Oficiálne stanovisko | Renesančný kaštieľ Bošany",
+      "description": "Oficiálne stanovisko k nepodporeniu projektu obnovy Renesančného kaštieľa Bošany."
+    },
     "banner": "DÔLEŽITÉ: Náš projekt nebol podporený. Pokračujeme z vlastných zdrojov.",
     "banner_short": "Projekt nepodporený štátom",
     "title": "Oficiálne stanovisko",
@@ -229,6 +233,10 @@
     "close": "Zavrieť"
   },
   "privacy": {
+    "metadata": {
+      "title": "Ochrana osobných údajov | Renesančný kaštieľ Bošany",
+      "description": "Zásady ochrany osobných údajov a používania cookies na webe Renesančného kaštieľa Bošany."
+    },
     "hero_title": "Ochrana osobných údajov",
     "hero_subtitle": "GDPR a zásady ochrany súkromia",
     "intro": "Ochrana vašich osobných údajov je pre nás dôležitá. Táto stránka vysvetľuje, ako zhromažďujeme, používame a chránime vaše osobné údaje v súlade s nariadením GDPR (General Data Protection Regulation).",

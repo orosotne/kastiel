@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next';
 import { locales } from '@/i18n/request';
+import { SITE_URL } from '@/lib/site-config';
 import restorationConfig from '../../data/restoration-photos.json';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rkb.sk';
 
 const paths = [
   '',
@@ -69,13 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const path of paths) {
       const images = imagesByPath[path];
       const entry: MetadataRoute.Sitemap[number] = {
-        url: `${siteUrl}/${locale}${path}`,
+        url: `${SITE_URL}/${locale}${path}`,
         lastModified: new Date(),
         changeFrequency: path === '' || path === '/galeria' ? 'weekly' : 'monthly',
         priority: path === '' ? 1 : 0.8,
       };
       if (images && images.length > 0) {
-        (entry as MetadataRoute.Sitemap[number] & { images?: { url: string }[] }).images = images.map((src) => ({ url: `${siteUrl}${src}` }));
+        (entry as MetadataRoute.Sitemap[number] & { images?: { url: string }[] }).images = images.map((src) => ({ url: `${SITE_URL}${src}` }));
       }
       entries.push(entry);
     }

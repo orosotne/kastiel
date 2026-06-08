@@ -76,6 +76,7 @@ export default function ChronicleSection() {
                   src="/images/chronicle-detail.webp"
                   alt={t("title")}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

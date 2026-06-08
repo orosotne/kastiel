@@ -1,7 +1,6 @@
 import Script from "next/script";
 import { getLocale } from "next-intl/server";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rkb.sk";
+import { SITE_URL, CONTACT } from "@/lib/site-config";
 
 const faqByLocale: Record<string, Array<{ question: string; answer: string }>> = {
   sk: [
@@ -133,16 +132,16 @@ export default async function StructuredData() {
     alternateName: "Renesančný kaštieľ Bošany",
     description:
       "Renesančný kaštieľ Bošany - miesto kde sa história vracia do života. Svadby, konferencie, galéria a kultúrne podujatia.",
-    url: siteUrl,
-    telephone: "+421907726726",
-    email: "jmiskeje@gmail.com",
+    url: SITE_URL,
+    telephone: CONTACT.phoneHref,
+    email: CONTACT.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "SNP 113/1",
-      addressLocality: "Bošany",
-      addressRegion: "Trenčiansky kraj",
-      postalCode: "956 18",
-      addressCountry: "SK",
+      streetAddress: CONTACT.address.street,
+      addressLocality: CONTACT.address.city,
+      addressRegion: CONTACT.address.region,
+      postalCode: CONTACT.address.postalCode,
+      addressCountry: CONTACT.address.country,
     },
     areaServed: [
       { "@type": "City", name: "Bošany" },
@@ -174,8 +173,8 @@ export default async function StructuredData() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "48.5819",
-      longitude: "18.2461",
+      latitude: CONTACT.geo.lat,
+      longitude: CONTACT.geo.lng,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -192,8 +191,8 @@ export default async function StructuredData() {
       closes: "18:00",
     },
     image: [
-      `${siteUrl}/images/story-hero.webp`,
-      `${siteUrl}/images/castle-after.webp`,
+      `${SITE_URL}/images/story-hero.webp`,
+      `${SITE_URL}/images/castle-after.webp`,
     ],
   };
 
@@ -205,7 +204,7 @@ export default async function StructuredData() {
         "@type": "ListItem",
         position: 1,
         name: breadcrumbHomeLabel[locale] || "Domov",
-        item: `${siteUrl}/${locale}`,
+        item: `${SITE_URL}/${locale}`,
       },
     ],
   };
@@ -236,10 +235,10 @@ export default async function StructuredData() {
       name: "Kaštieľ Bošany",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "SNP 113/1",
-        addressLocality: "Bošany",
-        postalCode: "956 18",
-        addressCountry: "SK",
+        streetAddress: CONTACT.address.street,
+        addressLocality: CONTACT.address.city,
+        postalCode: CONTACT.address.postalCode,
+        addressCountry: CONTACT.address.country,
       },
     },
   }));
