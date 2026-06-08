@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight, LayoutGrid, Maximi
 import Image from "next/image";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import BeforeAfterSlider from "@/components/interactive/BeforeAfterSlider";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 import restorationConfig from "../../../data/restoration-photos.json";
 
@@ -173,15 +174,15 @@ function RestorationTimeline({
   const images = activeCategory.images;
   const previewImages = images.slice(0, 4);
 
+  useScrollLock(lightboxOpen);
+
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = useCallback(() => {
     setLightboxOpen(false);
-    document.body.style.overflow = "auto";
   }, []);
 
   const nextPhoto = useCallback(() => {

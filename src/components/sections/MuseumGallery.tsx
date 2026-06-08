@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import { useLightbox } from "@/hooks/useLightbox";
 
 interface HistoryPhoto {
   src: string;
@@ -28,10 +29,11 @@ export default function MuseumGallery({
   title = "Historické skvosty",
   subtitle = "Vzácne fotografické dokumenty z archívu kaštieľa",
 }: MuseumGalleryProps) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  const lightbox = useLightbox(photos.length);
+  const { isOpen: lightboxOpen, index: currentIndex } = lightbox;
 
   useEffect(() => {
     const checkMobile = () => {
@@ -46,24 +48,10 @@ export default function MuseumGallery({
   const displayedPhotos = showAll ? photos : photos.slice(0, initialCount);
   const hasMore = photos.length > initialCount;
 
-  const openLightbox = (index: number) => {
-    // Find the actual index in full photos array
-    const actualIndex = showAll ? index : index;
-    setCurrentIndex(actualIndex);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
-
-  const nextPhoto = () => {
-    setCurrentIndex((prev) => (prev + 1) % photos.length);
-  };
-
-  const prevPhoto = () => {
-    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
-  };
+  const openLightbox = lightbox.openAt;
+  const closeLightbox = lightbox.close;
+  const nextPhoto = lightbox.next;
+  const prevPhoto = lightbox.prev;
 
   return (
     <>
@@ -94,7 +82,7 @@ export default function MuseumGallery({
           {/* Gallery Grid - 2 columns on mobile, 3 on desktop */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-10">
             {displayedPhotos.map((photo, index) => (
-              <FadeInOnScroll key={index} delay={index * 0.1}>
+              <FadeInOnScroll key={photo.src} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}

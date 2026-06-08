@@ -10,6 +10,7 @@ import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import { Heart, Users, Calendar, Send, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { CONTACT } from "@/lib/site-config";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 export default function WeddingsPage() {
   const t = useTranslations("weddings");
@@ -31,15 +32,15 @@ export default function WeddingsPage() {
   const [currentImage, setCurrentImage] = useState(0);
   const totalImages = 8;
 
+  useScrollLock(lightboxOpen);
+
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = "auto";
   };
 
   const nextImage = () => {

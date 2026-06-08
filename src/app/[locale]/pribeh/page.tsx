@@ -10,6 +10,7 @@ import InternalLinks from "@/components/layout/InternalLinks";
 import HorizontalTimeline from "@/components/interactive/HorizontalTimeline";
 import MuseumGallery from "@/components/sections/MuseumGallery";
 import { X, ChevronLeft, ChevronRight, Landmark, Palette, Shield, Castle, ImageIcon } from "lucide-react";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 // Historické fotky pre múzejnú galériu
 const historyPhotos = [
@@ -216,15 +217,15 @@ export default function StoryPage() {
   const totalImages = 62;
   const initialDisplay = 8;
 
+  useScrollLock(lightboxOpen);
+
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = "auto";
   };
 
   const nextImage = () => {

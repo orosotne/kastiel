@@ -8,6 +8,7 @@ import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import InternalLinks from "@/components/layout/InternalLinks";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { useLightbox } from "@/hooks/useLightbox";
 
 const interiorPhotos = [
   "/images/gallery/interior/interior-1.webp",
@@ -85,9 +86,6 @@ export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState<TabKey>("interior");
   const [showAllInterior, setShowAllInterior] = useState(false);
   const [showAllExterior, setShowAllExterior] = useState(false);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
-
   const lightboxRef = useRef<HTMLDivElement>(null);
 
   const showAll = activeTab === "interior" ? showAllInterior : showAllExterior;
@@ -99,26 +97,15 @@ export default function GalleryPage() {
     [showAll, allPhotos]
   );
 
+  const lightbox = useLightbox(allPhotos.length);
+  const { isOpen: lightboxOpen, index: currentImage } = lightbox;
+
   const altPrefix = activeTab === "interior" ? c("castle_interior") : c("castle_exterior");
 
-  const openLightbox = useCallback((index: number) => {
-    setCurrentImage(index);
-    setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
-  }, []);
-
-  const closeLightbox = useCallback(() => {
-    setLightboxOpen(false);
-    document.body.style.overflow = "auto";
-  }, []);
-
-  const nextImage = useCallback(() => {
-    setCurrentImage((prev) => (prev + 1) % allPhotos.length);
-  }, [allPhotos.length]);
-
-  const prevImage = useCallback(() => {
-    setCurrentImage((prev) => (prev - 1 + allPhotos.length) % allPhotos.length);
-  }, [allPhotos.length]);
+  const openLightbox = lightbox.openAt;
+  const closeLightbox = lightbox.close;
+  const nextImage = lightbox.next;
+  const prevImage = lightbox.prev;
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -137,9 +124,8 @@ export default function GalleryPage() {
 
   const handleTabChange = useCallback((tab: TabKey) => {
     setActiveTab(tab);
-    setLightboxOpen(false);
-    setCurrentImage(0);
-  }, []);
+    lightbox.close();
+  }, [lightbox]);
 
   const tabs: { key: TabKey; label: string }[] = [
     { key: "interior", label: gp("tab_interior") },
