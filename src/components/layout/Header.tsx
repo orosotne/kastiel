@@ -10,6 +10,7 @@ import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useScroll } from "@/hooks/useScroll";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { Button } from "@/components/ui/Button";
 
 export default function Header() {
   const isScrolled = useScroll(50);
@@ -146,13 +147,12 @@ export default function Header() {
                 transition={{ delay: 0.4 }}
                 className="mt-8"
               >
-                <Link
+                <Button
                   href={`/${locale}/kontakt`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="btn-primary"
                 >
                   {t("reserve")}
-                </Link>
+                </Button>
               </motion.div>
             </motion.nav>
           </motion.div>

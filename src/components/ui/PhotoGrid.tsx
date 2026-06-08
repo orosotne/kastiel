@@ -7,6 +7,7 @@ import { cn } from "@/lib/cn";
 import { Skeleton } from "./Skeleton";
 import { Button } from "./Button";
 import { Lightbox } from "./Lightbox";
+import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
 import { useLightbox } from "@/hooks/useLightbox";
 
 export type Photo = { src: string; alt?: string };
@@ -20,6 +21,7 @@ export type PhotoGridLabels = {
   close: string;
   previous: string;
   next: string;
+  image: string;
 };
 
 const DEFAULT_LABELS: PhotoGridLabels = {
@@ -29,6 +31,7 @@ const DEFAULT_LABELS: PhotoGridLabels = {
   close: "Close",
   previous: "Previous",
   next: "Next",
+  image: "Image",
 };
 
 // Static class maps so Tailwind can see every class at build time.
@@ -64,6 +67,9 @@ export function PhotoGrid({
   loadingCount,
   emptyState,
   enableLightbox = true,
+  hoverLabel,
+  showThumbnails = false,
+  revealOnScroll = false,
   sizes,
   labels,
   className,
@@ -75,6 +81,12 @@ export function PhotoGrid({
   loadingCount?: number;
   emptyState?: React.ReactNode;
   enableLightbox?: boolean;
+  /** Optional hint shown over a tile on hover (e.g. "Zoom"). */
+  hoverLabel?: string;
+  /** Show the lightbox thumbnail dot strip (best for small galleries). */
+  showThumbnails?: boolean;
+  /** Reveal tiles with a staggered fade as they scroll into view. */
+  revealOnScroll?: boolean;
   sizes?: string;
   labels?: Partial<PhotoGridLabels>;
   className?: string;
@@ -123,28 +135,47 @@ export function PhotoGrid({
       <ul className={gridClass} role="list">
         {displayed.map((photo, i) => {
           const tileInner = (
-            <Image
-              src={photo.src}
-              alt={photo.alt ?? ""}
-              fill
-              sizes={resolvedSizes}
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            <>
+              <Image
+                src={photo.src}
+                alt={photo.alt ?? ""}
+                fill
+                sizes={resolvedSizes}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {hoverLabel && (
+                <span className="absolute inset-0 flex items-center justify-center bg-charcoal/0 transition-colors duration-300 group-hover:bg-charcoal/30">
+                  <span className="text-sm font-medium tracking-wide text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {hoverLabel}
+                  </span>
+                </span>
+              )}
+            </>
+          );
+
+          const tileClasses = "group relative block aspect-square w-full overflow-hidden";
+          const tile = enableLightbox ? (
+            <button
+              type="button"
+              onClick={() => lightbox.openAt(i)}
+              aria-label={photo.alt || `Photo ${i + 1}`}
+              className={cn(
+                tileClasses,
+                "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+              )}
+            >
+              {tileInner}
+            </button>
+          ) : (
+            <div className={tileClasses}>{tileInner}</div>
           );
 
           return (
-            <li key={photo.src} className="relative aspect-square overflow-hidden">
-              {enableLightbox ? (
-                <button
-                  type="button"
-                  onClick={() => lightbox.openAt(i)}
-                  aria-label={photo.alt || `Photo ${i + 1}`}
-                  className="group block h-full w-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
-                >
-                  {tileInner}
-                </button>
+            <li key={photo.src}>
+              {revealOnScroll ? (
+                <FadeInOnScroll delay={Math.min(i * 0.05, 0.3)}>{tile}</FadeInOnScroll>
               ) : (
-                <div className="group h-full w-full">{tileInner}</div>
+                tile
               )}
             </li>
           );
@@ -172,7 +203,9 @@ export function PhotoGrid({
           onClose={lightbox.close}
           onNext={lightbox.next}
           onPrev={lightbox.prev}
-          labels={{ close: l.close, previous: l.previous, next: l.next }}
+          onSelect={lightbox.setIndex}
+          showThumbnails={showThumbnails}
+          labels={{ close: l.close, previous: l.previous, next: l.next, image: l.image }}
         />
       )}
     </>

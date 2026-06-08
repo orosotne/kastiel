@@ -19,9 +19,14 @@ export type LightboxImage = { src: string; alt?: string };
  * Edge cases: renders nothing when closed or empty; hides prev/next for a
  * single image; counter only shown for 2+ images.
  */
-type Labels = { close: string; previous: string; next: string };
+type Labels = { close: string; previous: string; next: string; image: string };
 
-const DEFAULT_LABELS: Labels = { close: "Close", previous: "Previous", next: "Next" };
+const DEFAULT_LABELS: Labels = {
+  close: "Close",
+  previous: "Previous",
+  next: "Next",
+  image: "Image",
+};
 
 export function Lightbox({
   images,
@@ -30,6 +35,8 @@ export function Lightbox({
   onClose,
   onNext,
   onPrev,
+  onSelect,
+  showThumbnails = false,
   labels,
 }: {
   images: LightboxImage[];
@@ -38,6 +45,9 @@ export function Lightbox({
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
+  /** Jump straight to an index (enables the thumbnail dot strip). */
+  onSelect?: (index: number) => void;
+  showThumbnails?: boolean;
   labels?: Partial<Labels>;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -126,6 +136,27 @@ export function Lightbox({
           )}
         >
           {index + 1} / {images.length}
+        </div>
+      )}
+
+      {showThumbnails && onSelect && hasMany && (
+        <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect(i);
+              }}
+              aria-label={`${l.image} ${i + 1}`}
+              aria-current={i === index || undefined}
+              className={cn(
+                "h-2 rounded-full transition-all duration-300",
+                i === index ? "w-6 bg-gold" : "w-2 bg-white/30 hover:bg-white/50"
+              )}
+            />
+          ))}
         </div>
       )}
     </div>

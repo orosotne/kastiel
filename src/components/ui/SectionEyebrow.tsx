@@ -35,6 +35,7 @@ export function SectionEyebrow({
     </span>
   );
 
+  // Centered eyebrows are line–label–line; left-aligned are line–label.
   return (
     <div
       className={cn(
@@ -43,9 +44,9 @@ export function SectionEyebrow({
         className
       )}
     >
-      {align === "center" && line}
-      {labelEl}
       {line}
+      {labelEl}
+      {align === "center" && line}
     </div>
   );
 }

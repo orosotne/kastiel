@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { ArrowRight, FileX } from "lucide-react";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 
 export default function ChronicleSection() {
   const t = useTranslations("chronicle");
@@ -18,12 +19,7 @@ export default function ChronicleSection() {
           <FadeInOnScroll direction="left">
             <div className="space-y-8">
               {/* Section Label */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-[1px] bg-gold" />
-                <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                  {t("subtitle")}
-                </span>
-              </div>
+              <SectionEyebrow label={t("subtitle")} align="left" />
 
               {/* Title */}
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-charcoal">

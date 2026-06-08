@@ -5,12 +5,13 @@ import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import BreadcrumbStructuredData from "@/components/BreadcrumbStructuredData";
 import InternalLinks from "@/components/layout/InternalLinks";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import PageHero from "@/components/ui/PageHero";
 import FadeInOnScroll from "@/components/interactive/FadeInOnScroll";
-import { Heart, Users, Calendar, Send, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import { Heart, Users, Calendar, Send } from "lucide-react";
 import { CONTACT } from "@/lib/site-config";
-import { useScrollLock } from "@/hooks/useScrollLock";
+import { PhotoGrid } from "@/components/ui/PhotoGrid";
 
 export default function WeddingsPage() {
   const t = useTranslations("weddings");
@@ -26,37 +27,6 @@ export default function WeddingsPage() {
     guests: "",
     message: "",
   });
-  
-  // Lightbox state
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
-  const totalImages = 8;
-
-  useScrollLock(lightboxOpen);
-
-  const openLightbox = (index: number) => {
-    setCurrentImage(index);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % totalImages);
-  };
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + totalImages) % totalImages);
-  };
-
-  // Handle keyboard navigation
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowRight") nextImage();
-    if (e.key === "ArrowLeft") prevImage();
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,12 +64,7 @@ export default function WeddingsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeInOnScroll direction="left">
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-[1px] bg-gold" />
-                  <span className="text-sm uppercase tracking-[0.2em] text-gold">
-                    {wp("venue_label")}
-                  </span>
-                </div>
+                <SectionEyebrow label={wp("venue_label")} align="left" />
                 <h2 className="font-serif text-3xl md:text-4xl text-charcoal">
                   {t("venue.title")}
                 </h2>
@@ -161,31 +126,19 @@ export default function WeddingsPage() {
             </h2>
           </FadeInOnScroll>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <FadeInOnScroll key={i} delay={i * 0.05}>
-                <motion.div 
-                  className="relative aspect-square overflow-hidden group cursor-pointer"
-                  onClick={() => openLightbox(i - 1)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Image
-                    src={`/images/weddings/wedding-${i}.webp`}
-                    alt={`${wp("wedding_photo")} ${i}`}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-center justify-center">
-                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium tracking-wide">
-                      {c("zoom")}
-                    </span>
-                  </div>
-                </motion.div>
-              </FadeInOnScroll>
-            ))}
-          </div>
+          <PhotoGrid
+            photos={[1, 2, 3, 4, 5, 6, 7, 8].map((i) => ({
+              src: `/images/weddings/wedding-${i}.webp`,
+              alt: `${wp("wedding_photo")} ${i}`,
+            }))}
+            columns={4}
+            initialCount={8}
+            hoverLabel={c("zoom")}
+            showThumbnails
+            revealOnScroll
+            sizes="(max-width: 768px) 50vw, 25vw"
+            labels={{ close: c("close"), previous: c("previous"), next: c("next"), image: c("image") }}
+          />
         </div>
       </section>
 
@@ -425,97 +378,6 @@ export default function WeddingsPage() {
         ]}
       />
 
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
-            onClick={closeLightbox}
-            onKeyDown={handleKeyDown}
-            tabIndex={0}
-          >
-            {/* Close button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-6 right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label={c("close")}
-            >
-              <X className="text-white" size={24} />
-            </button>
-
-            {/* Previous button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                prevImage();
-              }}
-              className="absolute left-4 md:left-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label={c("previous")}
-            >
-              <ChevronLeft className="text-white" size={28} />
-            </button>
-
-            {/* Next button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                nextImage();
-              }}
-              className="absolute right-4 md:right-8 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-300"
-              aria-label={c("next")}
-            >
-              <ChevronRight className="text-white" size={28} />
-            </button>
-
-            {/* Image container */}
-            <motion.div
-              key={currentImage}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-[90vw] h-[85vh] flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={`/images/weddings/wedding-${currentImage + 1}.webp`}
-                alt={`${wp("wedding_photo")} ${currentImage + 1}`}
-                fill
-                className="object-contain"
-                sizes="90vw"
-                priority
-              />
-            </motion.div>
-
-            {/* Image counter */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium tracking-wider">
-              {currentImage + 1} / {totalImages}
-            </div>
-
-            {/* Thumbnail navigation */}
-            <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <button
-                  key={i}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentImage(i - 1);
-                  }}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentImage === i - 1
-                      ? "bg-gold w-6"
-                      : "bg-white/30 hover:bg-white/50"
-                  }`}
-                  aria-label={`${c("image")} ${i}`}
-                />
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
